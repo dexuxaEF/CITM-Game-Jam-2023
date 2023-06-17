@@ -62,22 +62,40 @@ public class PlayerInCombat : MonoBehaviour
 
 
     }
-
+    /// <summary>
+    /// Move with coordinates
+    /// </summary>
     private void Move()
     {
-        Vector3 movement = new Vector3();
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        movement.x += Input.GetAxis("Horizontal");
-        movement.y += Input.GetAxis("Vertical");
-
-        if(movement.x > 0 && movement.y > 0)
-            movement.Normalize();
-
-        if (movement.magnitude > 0)
+        if (moveX != 0 || moveY != 0)
         {
-            _rigidbody.velocity = movement * playerSpeed;
+            Vector3 movement = new Vector3(moveX, moveY).normalized;
+            Vector3 newPosition = transform.position + movement * playerSpeed * Time.deltaTime;
+            transform.position = newPosition;
         }
     }
+
+    /// <summary>
+    /// Move with Physics
+    /// </summary>
+    //private void Move()
+    //{
+    //    Vector3 movement = new Vector3();
+
+    //    movement.x += Input.GetAxis("Horizontal");
+    //    movement.y += Input.GetAxis("Vertical");
+
+    //    if (movement.x > 0 && movement.y > 0)
+    //        movement.Normalize();
+
+    //    if (movement.magnitude > 0)
+    //    {
+    //        _rigidbody.velocity = movement * playerSpeed;
+    //    }
+    //}
 
     private void DesactivateParry()
     {
