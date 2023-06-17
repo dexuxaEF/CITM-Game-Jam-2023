@@ -9,6 +9,9 @@ public class PlayerInCombat : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public GameObject _parry;
 
+    [SerializeField]
+    public float timeParryAvailable = 0.35f;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -32,7 +35,7 @@ public class PlayerInCombat : MonoBehaviour
             if(!_parry.activeInHierarchy)
             {
                 _parry.SetActive(true);
-                Invoke(nameof(DesactivateParry),0.5f);
+                Invoke(nameof(DesactivateParry), timeParryAvailable);
             }
         }
 
@@ -45,7 +48,7 @@ public class PlayerInCombat : MonoBehaviour
 
         Vector3 playerPos = this.transform.position;
 
-        //Distancia de player al ratón
+        //Distancia de player al ratï¿½n
         float distanceX = playerPos.x - worldPos.x;
         float distanceY = playerPos.y - worldPos.y;
 

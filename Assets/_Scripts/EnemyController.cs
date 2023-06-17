@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 
     private GameObject player;
 
+    [SerializeField]
     private float reloadTime = 4f, counter = 0f;
     
 
