@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInCombat : MonoBehaviour
 {
-    [SerializeField] [Min(1.0f)] private float playerSpeed;
+    [SerializeField] [Min(1.0f)] private float playerSpeed=1f;
 
     private Rigidbody2D _rigidbody;
     public GameObject _parry;
@@ -12,34 +12,86 @@ public class PlayerInCombat : MonoBehaviour
     [SerializeField]
     public float timeParryAvailable = 0.35f;
 
+    [Header("Dash")]
+    //Fuerza del DASH
+    [SerializeField] [Min(5f)] private float DashForce =5f;
+    //Tiempo que dura el DASH
+    [SerializeField] [Min(0.2f)] private float DashTime =0.2f;
+    //Tiempo que te tienes que esperar para volver a usar el DASH
+    [SerializeField] [Min(0.1f)] private float DashCooldown=1f;
+
+
+    //Mientras esta varialbe sea True el personaje estar haciendo el DASH
+    private bool isDashing;
+    //Nos permite saber si tiene el dash disponible
+    private bool canDash=true;
+
+    [SerializeField] [Min(0.01f)] private float iframes;
+    [HideInInspector]
+    public bool invulnerability;
+     private float KnockBackForce = 5f;
+    [SerializeField] [Min(0.01f)] private float knockbackTime=0.1f;
+
+    [HideInInspector]
+    public bool isKnockBack= false;
+
+    //LaDireccion a la que te quieres mover
+    [HideInInspector]
+    public Vector3 direction;
+
+    public int lives;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        lives = 3;
+        invulnerability = false;
+        isDashing = false;
+        isKnockBack = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
         Rotate();
-        Move();
 
-        if(Input.GetMouseButtonDown(0))
+        if (!isDashing && !isKnockBack)
         {
-            if(!_parry.activeInHierarchy)
+            Move();
+            if (Input.GetMouseButtonDown(0))
             {
-                _parry.SetActive(true);
-                Invoke(nameof(DesactivateParry), timeParryAvailable);
+                if (!_parry.activeInHierarchy)
+                {
+                    _parry.SetActive(true);
+                    Invoke(nameof(DesactivateParry), timeParryAvailable);
+                }
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && !isKnockBack)
+        {
+            StartCoroutine(Dash());
+        }
+
+        //if (Input.GetKeyDown(KeyCode.Z) &&  !isKnockBack)
+        //{
+        //    StartCoroutine(Knockback(new Vector3(2,2)));
+        //}
+
+
     }
+
+
 
     void Rotate()
     {
@@ -65,41 +117,75 @@ public class PlayerInCombat : MonoBehaviour
     /// <summary>
     /// Move with coordinates
     /// </summary>
-    private void Move()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+    //private void Move()
+    //{
+    //    float moveX = Input.GetAxisRaw("Horizontal");
+    //    float moveY = Input.GetAxisRaw("Vertical");
 
-        if (moveX != 0 || moveY != 0)
-        {
-            Vector3 movement = new Vector3(moveX, moveY).normalized;
-            Vector3 newPosition = transform.position + movement * playerSpeed * Time.deltaTime;
-            transform.position = newPosition;
-        }
-    }
+    //    if (moveX != 0 || moveY != 0)
+    //    {
+    //        Vector2 movement = new Vector2(moveX, moveY).normalized;
+    //        Vector2 newPosition = transform.position + movement * playerSpeed * Time.deltaTime;
+    //        transform.position = newPosition;
+    //    }
+    //}
 
     /// <summary>
     /// Move with Physics
     /// </summary>
-    //private void Move()
-    //{
-    //    Vector3 movement = new Vector3();
+    private void Move()
+    {
+        Vector3 movement = new Vector3();
 
-    //    movement.x += Input.GetAxis("Horizontal");
-    //    movement.y += Input.GetAxis("Vertical");
+        movement.x += Input.GetAxis("Horizontal");
+        movement.y += Input.GetAxis("Vertical");
 
-    //    if (movement.x > 0 && movement.y > 0)
-    //        movement.Normalize();
+        if (movement.x > 0 && movement.y > 0)
+            movement.Normalize();
 
-    //    if (movement.magnitude > 0)
-    //    {
-    //        _rigidbody.velocity = movement * playerSpeed;
-    //    }
-    //}
+        if (movement.magnitude > 0)
+        {
+            _rigidbody.velocity = movement * playerSpeed;
+        }
+    }
 
     private void DesactivateParry()
     {
         _parry.SetActive(false);
     }
+
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        canDash = false;
+        iframes = DashTime;
+        invulnerability = true;
+        _rigidbody.velocity = new Vector2(direction.x*DashForce,direction.y*DashForce);
+        yield return new WaitForSeconds(iframes);
+        invulnerability = false;
+        yield return new WaitForSeconds(DashTime);
+        isDashing = false;
+        yield return new WaitForSeconds(DashCooldown);
+        canDash = true;
+
+    }   
+
+    public IEnumerator Knockback(Vector3 dir)
+    {
+        
+        lives--;
+        iframes = 1f;
+        invulnerability = true;
+        isKnockBack = true;
+
+        _rigidbody.velocity = new Vector2(dir.x* KnockBackForce, dir.y* KnockBackForce);
+
+        yield return new WaitForSeconds(iframes);   
+        invulnerability = false;
+        yield return new WaitForSeconds(knockbackTime);
+        isKnockBack = false;
+
+    }
+
 
 }

@@ -7,7 +7,7 @@ public class ProjectileController : MonoBehaviour
     [SerializeField][Min(1.0f)] private float speed;
 
     public Vector3 direction;
-
+    private PlayerInCombat player;
     private Rigidbody2D _rigidbody;
 
     private float maxDuration = 10f, currentDuration = 0f;
@@ -51,12 +51,27 @@ public class ProjectileController : MonoBehaviour
             Vector2 wallNormal = collision.transform.up;
 
             direction = Vector2.Reflect(direction, wallNormal).normalized;
+         
         }
 
 
         if(collision.gameObject.CompareTag("Parry"))
         {
             direction = collision.transform.up;
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+        
+            if (!player.invulnerability)
+            {
+              
+               Vector3 dir = Vector2.Reflect(direction, player.direction).normalized;
+               StartCoroutine( player.Knockback(new Vector3(2, 2)));
+
+            }
+
         }
 
 
