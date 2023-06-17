@@ -9,6 +9,9 @@ public class PlayerInCombat : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public GameObject _parry;
 
+    [SerializeField]
+    public float timeParryAvailable = 0.35f;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -32,7 +35,7 @@ public class PlayerInCombat : MonoBehaviour
             if(!_parry.activeInHierarchy)
             {
                 _parry.SetActive(true);
-                Invoke(nameof(DesactivateParry), 2.0f);
+                Invoke(nameof(DesactivateParry), timeParryAvailable);
             }
         }
 
