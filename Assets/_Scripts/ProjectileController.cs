@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class ProjectileController : MonoBehaviour
 {
@@ -51,6 +52,10 @@ public class ProjectileController : MonoBehaviour
             Vector2 wallNormal = collision.transform.up;
 
             direction = Vector2.Reflect(direction, wallNormal).normalized;
+
+            // Trigger screen shake when ball colliding with wall
+            // For game feel
+            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
         }
 
 

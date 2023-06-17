@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   direction: {x: 0, y: 0, z: 0}
+  cameraShake: {fileID: 0}
 --- !u!58 &4747306081111727549
 CircleCollider2D:
   m_ObjectHideFlags: 0
