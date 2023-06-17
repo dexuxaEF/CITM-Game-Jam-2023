@@ -32,7 +32,7 @@ public class PlayerInCombat : MonoBehaviour
             if(!_parry.activeInHierarchy)
             {
                 _parry.SetActive(true);
-                Invoke(nameof(DesactivateParry), 2.0f);
+                Invoke(nameof(DesactivateParry),0.5f);
             }
         }
 
