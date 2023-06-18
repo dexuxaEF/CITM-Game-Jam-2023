@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField]
+    private Fade fadeScript;
 
     public string playSceneName;
     public void QuitGame()
@@ -18,6 +20,16 @@ public class UIManager : MonoBehaviour
 
     public void PlayGame()
     {
+        StartCoroutine(WaitForFadeToEnd());
+               
+    }
+
+    IEnumerator WaitForFadeToEnd()
+    {
+        fadeScript.FadeOut();
+
+        yield return new WaitForSeconds(2);
+
         SceneManager.LoadScene(playSceneName);
     }
 }
