@@ -27,7 +27,7 @@ public class PlayerInCombat : MonoBehaviour
     private bool canDash=true;
 
     [Header("KnockBack")]
-    [SerializeField] [Min(0.01f)] private float iframes;
+    [SerializeField] [Min(0.01f)] private float iframes=1f;
     [HideInInspector]
     public bool invulnerability;
     [SerializeField] [Min(0.01f)] private float KnockBackForce = 5f;
@@ -39,6 +39,8 @@ public class PlayerInCombat : MonoBehaviour
     //LaDireccion a la que te quieres mover
     [HideInInspector]
     public Vector3 direction;
+
+    [Min(0.01f)] public float parryacceleration =1.50f;
 
     public int lives;
 

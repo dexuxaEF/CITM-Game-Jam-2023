@@ -12,6 +12,8 @@ public class ProjectileController : MonoBehaviour
     private PlayerInCombat player;
 
     private float maxDuration = 10f, currentDuration = 0f;
+    private bool parryTrigger = false;
+    private bool isparry = false;
     private void Awake()
     {
        
@@ -28,9 +30,10 @@ public class ProjectileController : MonoBehaviour
     private void FixedUpdate()
     {
 
-
-        _rigidbody.velocity = speed * direction;
-
+        if (!parryTrigger)
+        {
+            _rigidbody.velocity = speed * direction;
+        }
 
 
         currentDuration += Time.deltaTime;
@@ -60,7 +63,15 @@ public class ProjectileController : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Parry"))
         {
-            direction = collision.transform.up;
+            if (!parryTrigger)
+            {
+                parryTrigger = true;
+                isparry = true;
+                direction = collision.transform.up;
+                _rigidbody.velocity = new Vector2(0, 0);
+                Invoke(nameof(Parry), 0.1f);
+            }
+
         }
 
         if (collision.gameObject.CompareTag("Player"))
@@ -86,6 +97,12 @@ public class ProjectileController : MonoBehaviour
     private void Explsion()
     {
         Destroy(gameObject);
+    }
+
+    private void Parry()
+    {
+        speed = speed * player.parryacceleration;
+        parryTrigger = false;
     }
 
 }
