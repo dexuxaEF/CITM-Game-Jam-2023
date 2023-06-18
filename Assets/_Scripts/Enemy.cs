@@ -13,9 +13,6 @@ public class Enemy : MonoBehaviour
     protected float speed;
 
     [SerializeField]
-    protected float radiusPlayerDetection = 1.1f;
-
-    [SerializeField]
     [Tooltip("Damage done to this monster")]
     protected int getDamage;
 
@@ -100,7 +97,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void Move()
     {
-        if (Vector2.Distance(transform.position, nextPosition) < 0.1f || !PlayerOutOfNextPosition())
+        if (Vector2.Distance(transform.position, nextPosition) < 0.1f)
         {
             nextPosition = RandomPositionInsideBoundaries();
         }
@@ -115,21 +112,6 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
     }
 
-    bool PlayerOutOfNextPosition()
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radiusPlayerDetection);
-
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.CompareTag("Player"))
-            {
-                return false;
-            }
-        }
-
-        return true;
-
-    }
 
     Vector2 RandomPositionInsideBoundaries()
     {
@@ -184,12 +166,6 @@ public class Enemy : MonoBehaviour
         true
         );
 
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radiusPlayerDetection);
     }
     #endregion
 

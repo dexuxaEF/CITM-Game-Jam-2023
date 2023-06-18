@@ -363,6 +363,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouth Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6650031956328842552, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650031956328842552, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
+      propertyPath: m_TagString
+      value: Enemys
+      objectReference: {fileID: 0}
     - target: {fileID: 7711265965069702293, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -427,6 +435,10 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
+    - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
+      propertyPath: radiusPlayerDetection
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
 --- !u!1001 &220537955
@@ -902,9 +914,17 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
+    - target: {fileID: 5398531977255211059, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
+      propertyPath: radiusPlayerDetection
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6763311481521984809, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
       propertyPath: m_Name
       value: Puppet Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763311481521984809, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
+      propertyPath: m_TagString
+      value: Enemys
       objectReference: {fileID: 0}
     - target: {fileID: 7680423709277963396, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
       propertyPath: m_RootOrder
@@ -1215,6 +1235,17 @@ MonoBehaviour:
   playerSpeed: 3
   _parry: {fileID: 1754282974}
   timeParryAvailable: 0.35
+  DashForce: 10
+  DashTime: 0.2
+  DashCooldown: 1
+  iframes: 1
+  invulnerability: 0
+  KnockBackForce: 5
+  knockbackTime: 0.1
+  isKnockBack: 0
+  direction: {x: 0, y: 0, z: 0}
+  parryacceleration: 1.5
+  lives: 0
 --- !u!61 &1235189715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1289,9 +1320,21 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
+    - target: {fileID: 671710159321196785, guid: a5b285ac7716bb44799d36a64bd7611b, type: 3}
+      propertyPath: radiusPlayerDetection
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2190173401981871798, guid: a5b285ac7716bb44799d36a64bd7611b, type: 3}
       propertyPath: m_Name
       value: HeartEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190173401981871798, guid: a5b285ac7716bb44799d36a64bd7611b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190173401981871798, guid: a5b285ac7716bb44799d36a64bd7611b, type: 3}
+      propertyPath: m_TagString
+      value: Enemys
       objectReference: {fileID: 0}
     - target: {fileID: 2967674535892186907, guid: a5b285ac7716bb44799d36a64bd7611b, type: 3}
       propertyPath: m_RootOrder

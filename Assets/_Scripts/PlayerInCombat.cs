@@ -14,7 +14,7 @@ public class PlayerInCombat : MonoBehaviour
 
     [Header("Dash")]
     //Fuerza del DASH
-    [SerializeField] [Min(5f)] private float DashForce =5f;
+    [SerializeField] [Min(5f)] private float DashForce =10f;
     //Tiempo que dura el DASH
     [SerializeField] [Min(0f)] private float DashTime =0.2f;
     //Tiempo que te tienes que esperar para volver a usar el DASH
@@ -94,7 +94,25 @@ public class PlayerInCombat : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Trigger con el Proyectil del Player
+        if (collision.gameObject.CompareTag("Enemys"))
+        {
 
+            if (!invulnerability)
+            {
+
+                lives--;
+                Vector3 dir = collision.transform.up;
+                //StartCoroutine( player.Knockback(dir));
+                KnockBack2(dir);
+           
+
+            }
+        }
+
+    }
 
     void Rotate()
     {
@@ -150,6 +168,10 @@ public class PlayerInCombat : MonoBehaviour
         {
             _rigidbody.velocity = movement * playerSpeed;
         }
+        else
+        {
+            _rigidbody.velocity = movement * playerSpeed;
+        }
     }
 
     private void DesactivateParry()
@@ -171,8 +193,8 @@ public class PlayerInCombat : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(direction.x * DashForce, direction.y * DashForce);
         }
+        Invoke(nameof(Invulnerability), iframes);
         yield return new WaitForSeconds(DashTime);
-        invulnerability = false;
         isDashing = false;
         yield return new WaitForSeconds(DashCooldown);
         canDash = true;
@@ -192,8 +214,7 @@ public class PlayerInCombat : MonoBehaviour
         yield return new WaitForSeconds(knockbackTime);
         _rigidbody.velocity = new Vector2(0, 0);
         isKnockBack = false;
-        yield return new WaitForSeconds(iframes);   
-        invulnerability = false;
+        Invoke(nameof(Invulnerability), iframes);
 
 
     }

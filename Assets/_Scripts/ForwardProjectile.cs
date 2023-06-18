@@ -27,7 +27,7 @@ public class ForwardProjectile : Projectile
     {
 
         Move();
-        Debug.Log(speed);
+       
 
 
     }
@@ -58,9 +58,12 @@ public class ForwardProjectile : Projectile
         if (collision.gameObject.CompareTag("Parry"))
         {
             parryTrigger = true;
-            direction = collision.transform.up;
+            //direction = collision.transform.up;
+            Vector2 worldPos = Input.mousePosition;
+            worldPos = Camera.main.ScreenToWorldPoint(worldPos);
+            direction = (worldPos - _rigidbody.position).normalized;
             _rigidbody.velocity = new Vector2(0, 0);
-            Invoke(nameof(Parry), 0.1f);
+            Invoke(nameof(Parry), 0.2f);
             maxWallBounces = 1; 
         }
 

@@ -8,6 +8,8 @@ TagManager:
   - Parry
   - Ball
   - CorridorTrigger
+  - Projectile
+  - Enemys
   layers:
   - Default
   - TransparentFX

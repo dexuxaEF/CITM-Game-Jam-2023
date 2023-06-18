@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PuppetEnemy : Enemy
 {
-
+     
     
-    void Start()
+     void  Start()
     {
         base.Start();
 
