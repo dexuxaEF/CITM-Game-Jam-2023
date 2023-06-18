@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Move();
         }
+        if (MoveCamera.isCutsceneOn == true)
+        {
+            Stop();
+        }
 
     }
 
@@ -64,6 +68,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.velocity = movement * playerSpeed;
         }
+    }
+    private void Stop()
+    {
+        _rigidbody.velocity = new Vector3(0, 0, 0); 
     }
 
 
