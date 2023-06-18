@@ -10,7 +10,27 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected float speed;
 
+    [SerializeField]
+    [Tooltip("Damage done to this monster")]
+    protected int getDamage;
+
+    [SerializeField]
+    protected float delayTimeToAttack = 2f;
+
+    [Header("Projectile")]
+    [SerializeField]
+    protected GameObject projectilePrefab;
+    [SerializeField]
+    protected int initialPoolSize = 15;
+
+    [Tooltip("Time between shoot")]
+    protected float reloadTime = 1.0f;
+
+    protected Queue<GameObject> projectilePool = new();
+    protected GameObject projectileParent;
+
     protected GameObject player;
+    protected Vector3 playerDirection;
 
     private AudioSource _audioSource;
 

@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class HearthEnemy : Enemy
 {
-    public int damage = 3;
-    public Vector3 playerDirection;
-
-    [Header("Projectile")]
-    public GameObject projectilePrefab;
-    public int initialPoolSize = 15;
-    private Queue<GameObject> projectilePool = new();
-    GameObject projectileParent;
     public float coneAngle = 30f;
-
-    public float delayTimeToAttack = 2f;
-
-    
-
 
     private void Start()
     {
         base.Start();
 
-        projectileParent = new GameObject("ProjectileParent");
+        projectileParent = new GameObject("HeartProjectileParent");
 
         for (int i = 0; i < initialPoolSize; i++)
         {
@@ -32,7 +19,7 @@ public class HearthEnemy : Enemy
             projectilePool.Enqueue(projectile);
         }
 
-
+        playerDirection = (player.transform.position - this.transform.position);
         Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
 
 
@@ -44,6 +31,8 @@ public class HearthEnemy : Enemy
         if (health <= 0) 
             Die();
 
+        playerDirection = (player.transform.position - this.transform.position).normalized;
+
         Move();
         Attack();
     }
@@ -52,17 +41,12 @@ public class HearthEnemy : Enemy
     {
         base.Move();
 
-        Vector3 direction = (player.transform.position - this.transform.position).normalized;
-
-        transform.Translate(direction*speed*Time.deltaTime);
+        transform.Translate(playerDirection * speed*Time.deltaTime);
     }
 
     public override void Attack()
     {
         base.Attack();
-
-        playerDirection = (player.transform.position - this.transform.position);
-
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -88,7 +72,7 @@ public class HearthEnemy : Enemy
             projectile.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
             ConeProjectile projectileBehavior = projectile.GetComponent<ConeProjectile>();
             projectile.SetActive(true);
-            projectileBehavior.direction = Quaternion.Euler(0f, 0f, coneAngle) * playerDirection.normalized;            
+            projectileBehavior.direction = Quaternion.Euler(0f, 0f, coneAngle) * playerDirection;            
 
         }
             projectilePool.Enqueue(projectile);
@@ -116,7 +100,7 @@ public class HearthEnemy : Enemy
         //Trigger con el Proyectil del Player
         if (collision.gameObject.CompareTag("Player"))
         {
-            health -= damage;
+            health -= getDamage;
         }
             
 
@@ -140,10 +124,9 @@ public class HearthEnemy : Enemy
         {
             SpawnLeftProjectile();
             SpawnRightProjectile();
-            yield return new WaitForSeconds(1f); // Espera 1 segundo
+            yield return new WaitForSeconds(reloadTime); // Espera 1 segundo
         }
     }
-
 
 
 }
