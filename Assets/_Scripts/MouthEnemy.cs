@@ -43,7 +43,7 @@ public class MouthEnemy : Enemy
     {
         base.Move();
 
-
+        
 
         
     }
@@ -119,7 +119,7 @@ public class MouthEnemy : Enemy
         while (true)
         {
             SpawnProjectile();
-            yield return new WaitForSeconds(reloadTime); // Espera 1 segundo
+            yield return new WaitForSeconds(Random.Range(minReloadTime,maxReloadTime));
         }
     }
 

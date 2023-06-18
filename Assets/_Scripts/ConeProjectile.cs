@@ -31,7 +31,8 @@ public class ConeProjectile : Projectile
     {
         
         Move();
-        Debug.Log(speed);
+        
+        
     }
 
     protected override void Move()

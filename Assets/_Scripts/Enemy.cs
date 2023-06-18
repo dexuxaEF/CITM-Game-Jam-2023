@@ -20,6 +20,13 @@ public class Enemy : MonoBehaviour
     protected float delayTimeToAttack = 2f;
 
     [SerializeField]
+    [Tooltip("Min. Time between each shoot")]
+    protected float minReloadTime = 1.0f;
+    [SerializeField]
+    [Tooltip("Max. Time between each shoot")]
+    protected float maxReloadTime = 1.0f;
+
+    [SerializeField]
     protected float delayTimeToMove = 0.8f;
 
 
@@ -41,8 +48,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int initialPoolSize = 15;
 
-    [Tooltip("Time between shoot")]
-    protected float reloadTime = 1.0f;
+
 
     protected Queue<GameObject> projectilePool = new();
     protected GameObject projectileParent;

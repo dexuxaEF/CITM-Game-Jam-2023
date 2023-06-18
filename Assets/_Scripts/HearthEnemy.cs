@@ -123,7 +123,7 @@ public class HearthEnemy : Enemy
         {
             SpawnLeftProjectile();
             SpawnRightProjectile();
-            yield return new WaitForSeconds(reloadTime); // Espera 1 segundo
+            yield return new WaitForSeconds(Random.Range(minReloadTime, maxReloadTime));
         }
     }
 
