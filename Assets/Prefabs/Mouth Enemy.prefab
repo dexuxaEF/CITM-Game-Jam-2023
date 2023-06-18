@@ -125,9 +125,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  speed: 0
+  speed: 3
+  radiusPlayerDetection: 1.1
   getDamage: 0
-  delayTimeToAttack: 2
+  delayTimeToAttack: 5
+  leftBoundary: {fileID: 0}
+  rightBoundary: {fileID: 0}
+  topBoundary: {fileID: 0}
+  bottomBoundary: {fileID: 0}
   projectilePrefab: {fileID: 3648415444523150833, guid: b0ba6aa189f5411408bb300adf8bb0ea, type: 3}
   initialPoolSize: 60
   minNumProjectiles: 3
