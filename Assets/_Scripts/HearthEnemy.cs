@@ -49,15 +49,15 @@ public class HearthEnemy : Enemy
     {
         base.Attack();
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            SpawnLeftProjectile();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    SpawnLeftProjectile();
+        //}
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            SpawnRightProjectile();
-        }
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    SpawnRightProjectile();
+        //}
 
 
 

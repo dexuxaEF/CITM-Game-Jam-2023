@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     protected float speed;
 
     [SerializeField]
-    protected float radiusPlayerDetection = 1.1f;
+    protected float radiusPlayerDetection = 0.6f;
 
     [SerializeField]
     [Tooltip("Damage done to this monster")]

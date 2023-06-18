@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class CircleProjectile : Projectile
 {
@@ -24,7 +25,6 @@ public class CircleProjectile : Projectile
     {
 
         Move();
-        Debug.Log(speed);
     }
 
     protected override void Move()
@@ -48,6 +48,7 @@ public class CircleProjectile : Projectile
             maxWallBounces -= 1;
             Vector2 wallNormal = collision.transform.up;
             direction = Vector2.Reflect(direction, wallNormal).normalized;
+            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
         }
 
         if (collision.gameObject.CompareTag("Parry"))

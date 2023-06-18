@@ -52,10 +52,10 @@ public class MouthEnemy : Enemy
     {
         base.Attack();
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            SpawnProjectile();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    SpawnProjectile();
+        //}
 
     }
 

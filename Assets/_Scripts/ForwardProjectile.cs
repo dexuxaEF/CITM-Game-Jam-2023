@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class ForwardProjectile : Projectile
 {
@@ -27,7 +28,7 @@ public class ForwardProjectile : Projectile
     {
 
         Move();
-        Debug.Log(speed);
+        
 
 
     }
@@ -53,6 +54,9 @@ public class ForwardProjectile : Projectile
             maxWallBounces -= 1;
             Vector2 wallNormal = collision.transform.up;
             direction = Vector2.Reflect(direction, wallNormal).normalized;
+            // Trigger screen shake when ball colliding with wall
+            // For game feel
+            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
         }
 
         if (collision.gameObject.CompareTag("Parry"))
