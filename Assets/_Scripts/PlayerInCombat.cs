@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerInCombat : MonoBehaviour
 {
+    [SerializeField]
+    private SlowMotion slowMoScript;
+
     [HideInInspector]
     [SerializeField] [Min(1.0f)] private float playerSpeed;
 
@@ -208,8 +211,9 @@ public class PlayerInCombat : MonoBehaviour
         _rigidbody.velocity = new Vector2(0, 0);
         _rigidbody.AddForce(dir * KnockBackForce, ForceMode2D.Impulse);
         Invoke(nameof(Explsion), knockbackTime);
-        Invoke(nameof(Invulnerability), iframes);   
+        Invoke(nameof(Invulnerability), iframes);
 
+        slowMoScript.StartDamageSlowMo(1.0f);
     }
 
     private void Explsion()
