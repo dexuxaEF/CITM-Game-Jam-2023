@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
     protected Vector3 newDirection;
 
     private bool nextPositionCalculated = false;
+    protected bool isMoving = false;
 
     private void Awake()
     {
@@ -108,12 +109,14 @@ public class Enemy : MonoBehaviour
             if(!nextPositionCalculated)
             {
                 nextPositionCalculated = true;
+                isMoving = false;
                 Invoke(nameof(CalculateNextPosition), delayTimeToMove);
 
             }
         }
         else
         {
+            isMoving = true;
             newDirection = (nextPosition - this.transform.position).normalized;
         }
 

@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PuppetEnemy : Enemy
 {
+    public bool isCurved = true;
 
-    
+    private Rigidbody2D _rigidbody;
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         base.Start();
@@ -40,7 +46,12 @@ public class PuppetEnemy : Enemy
     {
         base.Move();
 
-        //transform.Translate(playerDirection * speed * Time.deltaTime);
+        if(isMoving && isCurved) 
+        {
+            this.transform.position = new Vector3(this.transform.position.x + Mathf.Sin((0.8f * Time.deltaTime)),
+                                                this.transform.position.y + Mathf.Sin((0.8f * Time.deltaTime)),
+                                                this.transform.position.z);
+        }
     }
 
     public override void Attack()
