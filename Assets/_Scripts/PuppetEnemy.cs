@@ -8,6 +8,9 @@ public class PuppetEnemy : Enemy
 
     private Rigidbody2D _rigidbody;
 
+    [Tooltip("notDefaultAttack: kinda tracking projectile")]
+    public bool defaultAttack = true;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -57,12 +60,6 @@ public class PuppetEnemy : Enemy
     public override void Attack()
     {
         base.Attack();
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    SpawnProjectile();
-        //}
-
     }
 
     public void SpawnProjectile()
@@ -74,10 +71,22 @@ public class PuppetEnemy : Enemy
             ForwardProjectile projectileBehavior = projectile.GetComponent<ForwardProjectile>();
             projectile.SetActive(true);
             projectileBehavior.direction = playerDirection;
+           
+
+            if (defaultAttack)
+            {
+                projectileBehavior.isTracking = false;
+            }
+            else
+            {
+                projectileBehavior.isTracking = true;
+            }
+            
 
         }
         projectilePool.Enqueue(projectile);
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

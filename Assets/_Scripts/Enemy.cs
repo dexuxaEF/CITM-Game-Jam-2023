@@ -171,6 +171,7 @@ public class Enemy : MonoBehaviour
         return Random.Range(bottomBoundary.transform.position.y, topBoundary.transform.position.y);
     }
 
+
     #endregion
 
     #region debug

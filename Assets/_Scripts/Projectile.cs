@@ -40,4 +40,14 @@ public abstract class Projectile : MonoBehaviour
 
     }
 
+    public void DefaultSpeed()
+    {
+        speed = defaultSpeed;
+    }
+
+    private void OnEnable()
+    {
+        DefaultSpeed();
+    }
+
 }

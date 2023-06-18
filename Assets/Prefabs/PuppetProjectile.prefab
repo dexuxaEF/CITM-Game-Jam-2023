@@ -139,5 +139,6 @@ MonoBehaviour:
   maxWallBounces: 3
   defaultMaxWallBounces: 3
   speed: 5
-  defaultSpeed: 2
+  defaultSpeed: 5
   direction: {x: 0, y: 0, z: 0}
+  isTracking: 0
