@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EZCameraShake;
 
 public class ProjectileController : MonoBehaviour
 {
@@ -23,11 +22,6 @@ public class ProjectileController : MonoBehaviour
         player = playerobject.GetComponent<PlayerInCombat>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     private void FixedUpdate()
     {
 
@@ -54,14 +48,11 @@ public class ProjectileController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Wall in");
+            
+
             Vector2 wallNormal = collision.transform.up;
 
             direction = Vector2.Reflect(direction, wallNormal).normalized;
-
-            // Trigger screen shake when ball colliding with wall
-            // For game feel
-            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
         }
 
 

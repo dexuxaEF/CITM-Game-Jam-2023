@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScript: {fileID: 614148423}
-  playSceneName: SchoolScene
+  playSceneName: School
 --- !u!4 &132541209
 Transform:
   m_ObjectHideFlags: 0
