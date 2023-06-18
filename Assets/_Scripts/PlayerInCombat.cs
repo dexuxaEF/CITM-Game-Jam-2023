@@ -18,7 +18,7 @@ public class PlayerInCombat : MonoBehaviour
     //Tiempo que dura el DASH
     [SerializeField] [Min(0f)] private float DashTime =0.2f;
     //Tiempo que te tienes que esperar para volver a usar el DASH
-    [SerializeField] [Min(0.1f)] private float DashCooldown=1f;
+    [SerializeField] [Min(0.1f)] private float DashCooldown=1f;         
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
@@ -34,7 +34,7 @@ public class PlayerInCombat : MonoBehaviour
     [SerializeField] [Min(0.01f)] private float knockbackTime=0.1f;
 
     [HideInInspector]
-    public bool isKnockBack= false;
+    public bool isKnockBack= false; 
 
     //LaDireccion a la que te quieres mover
     [HideInInspector]
