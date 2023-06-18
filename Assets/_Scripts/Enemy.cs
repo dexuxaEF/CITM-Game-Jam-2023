@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     protected int health;
 
     [SerializeField]
-    [Min(1f)] 
+    [Min(0f)] 
     protected float speed;
 
     [SerializeField]

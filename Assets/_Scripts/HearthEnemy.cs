@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class HearthEnemy : Enemy
 {
+    [Range(1.0f,180f)]
     public float coneAngle = 5f;
+
+    [Range(2,6)]
+    public int numProjectiles = 2;
+
+    [Tooltip("defaultAttack: only 2 projectiles")]
+    public bool defaultAttack = true;
+
 
     private void Start()
     {
@@ -36,6 +44,7 @@ public class HearthEnemy : Enemy
 
         Move();
         Attack();
+        
     }
 
     public override void Move()
@@ -66,7 +75,6 @@ public class HearthEnemy : Enemy
     public void SpawnLeftProjectile()
     {
 
-
         GameObject projectile = projectilePool.Dequeue();
         if (projectile != null)
         {
@@ -77,9 +85,6 @@ public class HearthEnemy : Enemy
 
         }
             projectilePool.Enqueue(projectile);
-
-        
-
     }
 
     public void SpawnRightProjectile()
@@ -96,17 +101,25 @@ public class HearthEnemy : Enemy
         projectilePool.Enqueue(projectile);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void SpawnMultipleProjectile()
     {
-      
+        //aux to get the cone projectiles centered to the playerDirection
+        int aux = Mathf.RoundToInt(numProjectiles / 2.0f);
+
+        for (int i=0-aux; i<numProjectiles-aux; i++)
+        {
             
+            GameObject projectile = projectilePool.Dequeue();
+            if (projectile != null)
+            {
+                projectile.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
+                ConeProjectile projectileBehavior = projectile.GetComponent<ConeProjectile>();
+                projectile.SetActive(true);
+                projectileBehavior.direction = Quaternion.Euler(0f, 0f, coneAngle*i) * playerDirection;
 
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision Enemy");
-
+            }
+            projectilePool.Enqueue(projectile);
+        }
        
     }
 
@@ -121,8 +134,16 @@ public class HearthEnemy : Enemy
     {
         while (true)
         {
-            SpawnLeftProjectile();
-            SpawnRightProjectile();
+            if(defaultAttack)
+            {
+                SpawnLeftProjectile();
+                SpawnRightProjectile();
+            }
+            else
+            {
+                SpawnMultipleProjectile();
+            }
+            
             yield return new WaitForSeconds(Random.Range(minReloadTime, maxReloadTime));
         }
     }

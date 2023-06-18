@@ -127,8 +127,16 @@ MonoBehaviour:
   health: 5
   speed: 0
   getDamage: 3
-  playerDirection: {x: 0, y: 0, z: 0}
-  projectilePrefab: {fileID: 3648415444523150833, guid: e84cea5e49b350a4fbd34d4555c92069, type: 3}
-  initialPoolSize: 15
-  coneAngle: 30
   delayTimeToAttack: 2
+  minReloadTime: 1
+  maxReloadTime: 1
+  delayTimeToMove: 0.8
+  leftBoundary: {fileID: 0}
+  rightBoundary: {fileID: 0}
+  topBoundary: {fileID: 0}
+  bottomBoundary: {fileID: 0}
+  projectilePrefab: {fileID: 3648415444523150833, guid: e84cea5e49b350a4fbd34d4555c92069, type: 3}
+  initialPoolSize: 40
+  coneAngle: 30
+  numProjectiles: 2
+  defaultAttack: 1
