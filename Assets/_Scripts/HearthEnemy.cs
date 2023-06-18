@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HearthEnemy : Enemy
 {
-    public float coneAngle = 30f;
+    public float coneAngle = 5f;
 
     private void Start()
     {
@@ -89,7 +89,7 @@ public class HearthEnemy : Enemy
             projectile.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
             ConeProjectile projectileBehavior = projectile.GetComponent<ConeProjectile>();
             projectile.SetActive(true);
-            projectileBehavior.direction = Quaternion.Euler(0f, 0f, -coneAngle) * playerDirection.normalized;
+            projectileBehavior.direction = Quaternion.Euler(0f, 0f, -coneAngle) * playerDirection;
 
         }
         projectilePool.Enqueue(projectile);

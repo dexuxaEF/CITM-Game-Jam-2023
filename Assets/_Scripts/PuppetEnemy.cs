@@ -5,7 +5,7 @@ using UnityEngine;
 public class PuppetEnemy : Enemy
 {
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         base.Start();
@@ -19,12 +19,12 @@ public class PuppetEnemy : Enemy
             projectilePool.Enqueue(projectile);
         }
 
-
+        playerDirection = (player.transform.position - this.transform.position);
         Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (health <= 0)
