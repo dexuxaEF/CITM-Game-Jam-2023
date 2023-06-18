@@ -6,23 +6,33 @@ public class CircleProjectile : Projectile
 {
     private Rigidbody2D _rigidbody;
 
+    private GameObject playerobject;
+    private PlayerInCombat player;
+    private bool parryTrigger = false;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         direction = new Vector3(0, 0, 0);
+
+        playerobject = GameObject.FindWithTag("Player");
+        player = playerobject.GetComponent<PlayerInCombat>();
     }
 
 
     private void FixedUpdate()
     {
-        
+
         Move();
+        Debug.Log(speed);
     }
 
     protected override void Move()
     {
-
-        _rigidbody.velocity = speed * direction;
+        if (!parryTrigger)
+        {
+            _rigidbody.velocity = speed * direction;
+        }
 
     }
 
@@ -42,12 +52,25 @@ public class CircleProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Parry"))
         {
+            parryTrigger = true;
             direction = collision.transform.up;
+            _rigidbody.velocity = new Vector2(0, 0);
+            Invoke(nameof(Parry), 0.1f);
+            maxWallBounces = 1;
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            ProjectileDestruction();
+            if (!player.invulnerability)
+            {
+
+                Vector3 dir = (direction).normalized;
+                //StartCoroutine( player.Knockback(dir));
+                player.KnockBack2(dir);
+
+
+                ProjectileDestruction();
+            }
         }
 
         if (maxWallBounces <= 0)
@@ -58,7 +81,13 @@ public class CircleProjectile : Projectile
 
     private void ProjectileDestruction()
     {
+        speed = 5;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;
+    }
+    private void Parry()
+    {
+        speed = speed * player.parryacceleration;
+        parryTrigger = false;
     }
 }

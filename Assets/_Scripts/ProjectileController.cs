@@ -13,7 +13,7 @@ public class ProjectileController : MonoBehaviour
 
     private float maxDuration = 10f, currentDuration = 0f;
     private bool parryTrigger = false;
-    private bool isparry = false;
+  
     private void Awake()
     {
        
@@ -61,7 +61,6 @@ public class ProjectileController : MonoBehaviour
             if (!parryTrigger)
             {
                 parryTrigger = true;
-                isparry = true;
                 direction = collision.transform.up;
                 _rigidbody.velocity = new Vector2(0, 0);
                 Invoke(nameof(Parry), 0.1f);
@@ -80,7 +79,7 @@ public class ProjectileController : MonoBehaviour
                 //StartCoroutine( player.Knockback(dir));
                player.KnockBack2(dir);
                gameObject.SetActive(false);
-               Invoke(nameof(Explsion), 0.2f);
+              
               
 
             }
@@ -89,10 +88,7 @@ public class ProjectileController : MonoBehaviour
         
 
     }
-    private void Explsion()
-    {
-        Destroy(gameObject);
-    }
+
 
     private void Parry()
     {
