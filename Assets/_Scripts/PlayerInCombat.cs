@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerInCombat : MonoBehaviour
 {
+    [HideInInspector]
     [SerializeField] [Min(1.0f)] private float playerSpeed;
 
+    [HideInInspector]
     private Rigidbody2D _rigidbody;
+
     public GameObject _parry;
 
     [SerializeField]

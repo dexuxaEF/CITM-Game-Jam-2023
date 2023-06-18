@@ -5,11 +5,11 @@ using EZCameraShake;
 
 public class ProjectileController : MonoBehaviour
 {
-    [SerializeField][Min(1.0f)] private float speed;
+    [SerializeField][Min(1.0f)] public float speed;
 
     public Vector3 direction;
 
-    private Rigidbody2D _rigidbody;
+    public Rigidbody2D _rigidbody;
 
     private float maxDuration = 10f, currentDuration = 0f;
     private void Awake()
