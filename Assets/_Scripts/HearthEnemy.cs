@@ -98,14 +98,7 @@ public class HearthEnemy : Enemy
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Trigger con el Proyectil del Player
-        if (collision.gameObject.CompareTag("Player"))
-        {
-
-            health -= getDamage;
-        }
-
-        
+      
             
 
     }
