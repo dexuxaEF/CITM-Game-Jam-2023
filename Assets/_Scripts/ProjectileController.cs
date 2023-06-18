@@ -17,11 +17,6 @@ public class ProjectileController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     private void FixedUpdate()
     {
 
@@ -48,6 +43,7 @@ public class ProjectileController : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Wall in");
+
             Vector2 wallNormal = collision.transform.up;
 
             direction = Vector2.Reflect(direction, wallNormal).normalized;
