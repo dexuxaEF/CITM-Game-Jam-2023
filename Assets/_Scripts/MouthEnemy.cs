@@ -43,7 +43,9 @@ public class MouthEnemy : Enemy
     {
         base.Move();
 
-        transform.Translate(playerDirection * speed * Time.deltaTime);
+
+
+        
     }
 
     public override void Attack()
@@ -116,7 +118,7 @@ public class MouthEnemy : Enemy
     {
         while (true)
         {
-            //Función proyectil        
+            SpawnProjectile();
             yield return new WaitForSeconds(reloadTime); // Espera 1 segundo
         }
     }

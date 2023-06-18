@@ -40,7 +40,7 @@ public class PuppetEnemy : Enemy
     {
         base.Move();
 
-        transform.Translate(playerDirection * speed * Time.deltaTime);
+        //transform.Translate(playerDirection * speed * Time.deltaTime);
     }
 
     public override void Attack()

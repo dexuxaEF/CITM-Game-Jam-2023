@@ -22,6 +22,7 @@ public class HearthEnemy : Enemy
         playerDirection = (player.transform.position - this.transform.position);
         Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
 
+       
 
     }
     
@@ -41,7 +42,7 @@ public class HearthEnemy : Enemy
     {
         base.Move();
 
-        transform.Translate(playerDirection * speed*Time.deltaTime);
+
     }
 
     public override void Attack()
@@ -100,8 +101,11 @@ public class HearthEnemy : Enemy
         //Trigger con el Proyectil del Player
         if (collision.gameObject.CompareTag("Player"))
         {
+
             health -= getDamage;
         }
+
+        
             
 
     }
@@ -109,6 +113,8 @@ public class HearthEnemy : Enemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision Enemy");
+
+       
     }
 
 
@@ -127,6 +133,7 @@ public class HearthEnemy : Enemy
             yield return new WaitForSeconds(reloadTime); // Espera 1 segundo
         }
     }
+
 
 
 }
