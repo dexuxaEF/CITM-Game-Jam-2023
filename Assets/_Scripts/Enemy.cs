@@ -19,6 +19,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected float delayTimeToAttack = 2f;
 
+    [SerializeField]
+    protected float delayTimeToMove = 0.8f;
+
 
     [Header("Map Info:")]
     [SerializeField]
@@ -51,6 +54,8 @@ public class Enemy : MonoBehaviour
 
     protected Vector3 nextPosition;
     protected Vector3 newDirection;
+
+    private bool nextPositionCalculated = false;
 
     private void Awake()
     {
@@ -99,7 +104,13 @@ public class Enemy : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, nextPosition) < 0.1f)
         {
-            nextPosition = RandomPositionInsideBoundaries();
+            //nextPosition = RandomPositionInsideBoundaries();
+            if(!nextPositionCalculated)
+            {
+                nextPositionCalculated = true;
+                Invoke(nameof(CalculateNextPosition), delayTimeToMove);
+
+            }
         }
         else
         {
@@ -112,6 +123,11 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
     }
 
+    void CalculateNextPosition()
+    {
+        nextPosition = RandomPositionInsideBoundaries();
+        nextPositionCalculated = false;
+    }
 
     Vector2 RandomPositionInsideBoundaries()
     {
