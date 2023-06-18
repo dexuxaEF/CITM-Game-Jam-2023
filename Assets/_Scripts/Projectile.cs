@@ -14,6 +14,9 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField]
     public float speed;
 
+    [SerializeField]
+    public float defaultSpeed;
+
     private AudioSource _audioSource;
 
     [HideInInspector]

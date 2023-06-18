@@ -89,7 +89,7 @@ public class ConeProjectile : Projectile
 
     private void ProjectileDestruction()
     {
-        speed = 5;
+        speed = defaultSpeed;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;
     }

@@ -162,11 +162,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radiusPlayerDetection);
-    }
     #endregion
 
 }

@@ -92,7 +92,7 @@ public class ForwardProjectile : Projectile
     private void ProjectileDestruction()
     {
         gameObject.SetActive(false);
-        speed = 5;
+        speed = defaultSpeed;
         maxWallBounces = defaultMaxWallBounces;
     }
     private void Parry()
