@@ -222,7 +222,7 @@ public class PlayerInCombat : MonoBehaviour
 
     public void Invulnerability() 
     {
-      invulnerability = false;
+       invulnerability = false;
 
     }
 
