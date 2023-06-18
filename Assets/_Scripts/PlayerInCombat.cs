@@ -16,7 +16,7 @@ public class PlayerInCombat : MonoBehaviour
     //Fuerza del DASH
     [SerializeField] [Min(5f)] private float DashForce =5f;
     //Tiempo que dura el DASH
-    [SerializeField] [Min(0.2f)] private float DashTime =0.2f;
+    [SerializeField] [Min(0f)] private float DashTime =0.2f;
     //Tiempo que te tienes que esperar para volver a usar el DASH
     [SerializeField] [Min(0.1f)] private float DashCooldown=1f;
 
@@ -26,10 +26,11 @@ public class PlayerInCombat : MonoBehaviour
     //Nos permite saber si tiene el dash disponible
     private bool canDash=true;
 
+    [Header("KnockBack")]
     [SerializeField] [Min(0.01f)] private float iframes;
     [HideInInspector]
     public bool invulnerability;
-     private float KnockBackForce = 5f;
+    [SerializeField] [Min(0.01f)] private float KnockBackForce = 5f;
     [SerializeField] [Min(0.01f)] private float knockbackTime=0.1f;
 
     [HideInInspector]
@@ -160,10 +161,16 @@ public class PlayerInCombat : MonoBehaviour
         canDash = false;
         iframes = DashTime;
         invulnerability = true;
-        _rigidbody.velocity = new Vector2(direction.x*DashForce,direction.y*DashForce);
-        yield return new WaitForSeconds(iframes);
-        invulnerability = false;
+        if (direction.x != 0 && direction.y != 0)
+        {
+            _rigidbody.velocity = new Vector2(direction.x * DashForce * 0.5f, direction.y * DashForce * 0.5f);
+        }
+        else
+        {
+            _rigidbody.velocity = new Vector2(direction.x * DashForce, direction.y * DashForce);
+        }
         yield return new WaitForSeconds(DashTime);
+        invulnerability = false;
         isDashing = false;
         yield return new WaitForSeconds(DashCooldown);
         canDash = true;
@@ -180,10 +187,35 @@ public class PlayerInCombat : MonoBehaviour
 
         _rigidbody.velocity = new Vector2(dir.x* KnockBackForce, dir.y* KnockBackForce);
 
+        yield return new WaitForSeconds(knockbackTime);
+        _rigidbody.velocity = new Vector2(0, 0);
+        isKnockBack = false;
         yield return new WaitForSeconds(iframes);   
         invulnerability = false;
-        yield return new WaitForSeconds(knockbackTime);
+
+
+    }
+
+    public void KnockBack2(Vector3 dir)
+    {
+        invulnerability = true;
+        isKnockBack = true;
+        _rigidbody.velocity = new Vector2(0, 0);
+        _rigidbody.AddForce(dir * KnockBackForce, ForceMode2D.Impulse);
+        Invoke(nameof(Explsion), knockbackTime);
+        Invoke(nameof(Invulnerability), iframes);   
+
+    }
+
+    private void Explsion()
+    {
+        _rigidbody.velocity = new Vector2(0, 0);
         isKnockBack = false;
+    }
+
+    private void Invulnerability() 
+    {
+        invulnerability = false;
 
     }
 

@@ -7,14 +7,17 @@ public class ProjectileController : MonoBehaviour
     [SerializeField][Min(1.0f)] private float speed;
 
     public Vector3 direction;
-    private PlayerInCombat player;
+    private GameObject playerobject;
     private Rigidbody2D _rigidbody;
+    private PlayerInCombat player;
 
     private float maxDuration = 10f, currentDuration = 0f;
     private void Awake()
     {
        
         _rigidbody = GetComponent<Rigidbody2D>();
+        playerobject = GameObject.FindWithTag("Player");
+        player = playerobject.GetComponent<PlayerInCombat>();
     }
 
     // Start is called before the first frame update
@@ -63,19 +66,26 @@ public class ProjectileController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-        
+            
             if (!player.invulnerability)
             {
               
-               Vector3 dir = Vector2.Reflect(direction, player.direction).normalized;
-               StartCoroutine( player.Knockback(new Vector3(2, 2)));
+               Vector3 dir = (direction).normalized;
+                //StartCoroutine( player.Knockback(dir));
+               player.KnockBack2(dir);
+               gameObject.SetActive(false);
+               Invoke(nameof(Explsion), 0.2f);
+              
 
             }
 
         }
-
+        
 
     }
-
+    private void Explsion()
+    {
+        Destroy(gameObject);
+    }
 
 }
