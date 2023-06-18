@@ -11,9 +11,10 @@ public class ForwardProjectile : Projectile
     private PlayerInCombat player;
     private bool parryTrigger = false;
 
+    public float timeToTrackPlayer = 1.0f;
+
     [HideInInspector]
     public bool isTracking = false;
-
     private bool stopTracking = false;
 
     private void Awake()
@@ -48,7 +49,7 @@ public class ForwardProjectile : Projectile
                 if(!stopTracking)
                 {
                    stopTracking = true;
-                   Invoke(nameof(StopTracking), 1.0f);
+                   Invoke(nameof(StopTracking), timeToTrackPlayer);
                 }
                
             }
