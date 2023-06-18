@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWallBounces: 3
+  defaultMaxWallBounces: 3
   speed: 5
   direction: {x: 0, y: 0, z: 0}
 --- !u!58 &-3741337284222137577

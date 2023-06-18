@@ -42,7 +42,7 @@ public class ProjectileController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Wall in");
+            
 
             Vector2 wallNormal = collision.transform.up;
 

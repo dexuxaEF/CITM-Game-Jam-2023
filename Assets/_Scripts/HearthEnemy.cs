@@ -1,35 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class HearthEnemy : Enemy
 {
     public int damage = 3;
-
-    [Header("Object Pool")]
-    public IObjectPool<ConeProjectile> pool;
-    public bool collectionCheks = false;
-    public int defaultCapacity = 15;
-    public int maxCapacity = 25;
-
     public Vector3 playerDirection;
+
+    [Header("Projectile")]
+    public GameObject projectilePrefab;
+    public int initialPoolSize = 15;
+    private Queue<GameObject> projectilePool = new();
+    GameObject projectileParent;
+    public float coneAngle = 30f;
+
+    public float delayTimeToAttack = 2f;
+
     
-    public ConeProjectile projectilePrefab;
+
 
     private void Start()
     {
         base.Start();
 
-        pool = new ObjectPool<ConeProjectile>(
-            CreatePooledItem,
-            OnTakeFromPool,
-            OnReturnedToPool,
-            OnDestroyPoolObject,
-            collectionCheks,
-            defaultCapacity,
-            maxCapacity
-            );
+        projectileParent = new GameObject("ProjectileParent");
+
+        for (int i = 0; i < initialPoolSize; i++)
+        {
+            GameObject projectile = Instantiate(projectilePrefab, projectileParent.transform);
+            projectile.SetActive(false);
+            projectilePool.Enqueue(projectile);
+        }
+
+
+        Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
+
 
     }
     
@@ -64,31 +69,46 @@ public class HearthEnemy : Enemy
             SpawnLeftProjectile();
         }
 
-        //Invoke(nameof(SpawnLeftProjectile), 1.0f);
-        //Invoke(nameof(SpawnRightProjectile), 3.3f);
+        if (Input.GetMouseButtonDown(1))
+        {
+            SpawnRightProjectile();
+        }
+
+
 
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision Enemy");
-    }
-
 
     public void SpawnLeftProjectile()
     {
-        var projectile = pool.Get();
-        projectile.transform.position = this.transform.position;
-        projectile.direction = playerDirection.normalized;
-        projectile.Init(Kill);
+
+
+        GameObject projectile = projectilePool.Dequeue();
+        if (projectile != null)
+        {
+            projectile.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
+            ConeProjectile projectileBehavior = projectile.GetComponent<ConeProjectile>();
+            projectile.SetActive(true);
+            projectileBehavior.direction = Quaternion.Euler(0f, 0f, coneAngle) * playerDirection.normalized;            
+
+        }
+            projectilePool.Enqueue(projectile);
+
+        
+
     }
 
     public void SpawnRightProjectile()
     {
-        var projectile = pool.Get();
-        projectile.transform.position = this.transform.position;
-        projectile.direction = playerDirection.normalized;
-        projectile.Init(Kill);
+        GameObject projectile = projectilePool.Dequeue();
+        if (projectile != null)
+        {
+            projectile.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
+            ConeProjectile projectileBehavior = projectile.GetComponent<ConeProjectile>();
+            projectile.SetActive(true);
+            projectileBehavior.direction = Quaternion.Euler(0f, 0f, -coneAngle) * playerDirection.normalized;
+
+        }
+        projectilePool.Enqueue(projectile);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -102,38 +122,28 @@ public class HearthEnemy : Enemy
 
     }
 
-    #region ObjectPool
-    private ConeProjectile CreatePooledItem()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        return Instantiate(projectilePrefab);
+        Debug.Log("Collision Enemy");
     }
 
 
-    // Called when an item is returned to the pool using Release
-    private void OnReturnedToPool(ConeProjectile system)
+    private void CoroutineWithDelay()
     {
-        system.gameObject.SetActive(false);
+        StartCoroutine(ProjectileCoroutine());
+        
     }
 
-    // Called when an item is taken from the pool using Get
-    private void OnTakeFromPool(ConeProjectile system)
+    IEnumerator ProjectileCoroutine()
     {
-        system.gameObject.SetActive(true);
-
+        while (true)
+        {
+            SpawnLeftProjectile();
+            SpawnRightProjectile();
+            yield return new WaitForSeconds(1f); // Espera 1 segundo
+        }
     }
 
-    // If the pool capacity is reached then any items returned will be destroyed.
-    // We can control what the destroy behavior does, here we destroy the GameObject.
-    private void OnDestroyPoolObject(ConeProjectile system)
-    {
-        Destroy(system.gameObject);
-    }
 
-    private void Kill(ConeProjectile projectile)
-    {
-        pool.Release(projectile);
-    }
-
-    #endregion
 
 }

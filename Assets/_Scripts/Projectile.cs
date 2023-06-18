@@ -8,7 +8,11 @@ public abstract class Projectile : MonoBehaviour
     protected int maxWallBounces;
 
     [SerializeField]
-    protected float speed;
+    protected int defaultMaxWallBounces;
+    
+
+    [SerializeField]
+    public float speed;
 
     private AudioSource _audioSource;
 

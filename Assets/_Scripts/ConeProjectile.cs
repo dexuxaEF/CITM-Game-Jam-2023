@@ -8,9 +8,6 @@ public class ConeProjectile : Projectile
 {
     private Rigidbody2D _rigidbody;
 
-    private Action<ConeProjectile> OnKill;
-
-
     private void Awake()
     {
 
@@ -18,20 +15,17 @@ public class ConeProjectile : Projectile
         direction = new Vector3(0, 0, 0);
     }
 
-    public void Init(Action<ConeProjectile> actionKill)
-    {
-        OnKill = actionKill;
-    }
 
 
     private void FixedUpdate()
     {
+        
         Move();
     }
 
     protected override void Move()
     {
-        Debug.Log(direction);
+        
         _rigidbody.velocity = speed * direction;
 
     }
@@ -57,14 +51,19 @@ public class ConeProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            OnKill(this);
+            ProjectileDestruction();
         }
 
         if (maxWallBounces <= 0)
         {
-            OnKill(this);
+            ProjectileDestruction();
         }
     }
 
+    private void ProjectileDestruction()
+    {
+        gameObject.SetActive(false);
+        maxWallBounces = defaultMaxWallBounces;
+    }
 
 }
