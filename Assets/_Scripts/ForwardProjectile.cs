@@ -2,98 +2,98 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileController : MonoBehaviour
+public class ForwardProjectile : Projectile
 {
-    [SerializeField][Min(1.0f)] public float speed;
-
-    public Vector3 direction;
-    private GameObject playerobject;
     private Rigidbody2D _rigidbody;
-    private PlayerInCombat player;
 
-    private float maxDuration = 10f, currentDuration = 0f;
+    private GameObject playerobject;
+    private PlayerInCombat player;
     private bool parryTrigger = false;
-  
+   
+
     private void Awake()
     {
-       
+
         _rigidbody = GetComponent<Rigidbody2D>();
+        direction = new Vector3(0, 0, 0);
+
         playerobject = GameObject.FindWithTag("Player");
         player = playerobject.GetComponent<PlayerInCombat>();
     }
 
+
+
     private void FixedUpdate()
     {
 
+        Move();
+        Debug.Log(speed);
+
+
+    }
+
+    protected override void Move()
+    {
         if (!parryTrigger)
         {
             _rigidbody.velocity = speed * direction;
         }
 
-
-        currentDuration += Time.deltaTime;
-
-        if (currentDuration > maxDuration)
-            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-    
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Wall"))
         {
-            
-
+            maxWallBounces -= 1;
             Vector2 wallNormal = collision.transform.up;
-
             direction = Vector2.Reflect(direction, wallNormal).normalized;
         }
 
-
-        if(collision.gameObject.CompareTag("Parry"))
+        if (collision.gameObject.CompareTag("Parry"))
         {
-            if (!parryTrigger)
-            {
-                parryTrigger = true;
-                direction = collision.transform.up;
-                _rigidbody.velocity = new Vector2(0, 0);
-                Invoke(nameof(Parry), 0.1f);
-            }
-
+            parryTrigger = true;
+            direction = collision.transform.up;
+            _rigidbody.velocity = new Vector2(0, 0);
+            Invoke(nameof(Parry), 0.1f);
+            maxWallBounces = 1; 
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
-
-            
             if (!player.invulnerability)
             {
-              
-               Vector3 dir = (direction).normalized;
+
+                Vector3 dir = (direction).normalized;
                 //StartCoroutine( player.Knockback(dir));
-               player.KnockBack2(dir);
-               gameObject.SetActive(false);
-              
-              
+                player.KnockBack2(dir);
+               
 
+                ProjectileDestruction();
             }
-
+          
         }
-        
 
+        if (maxWallBounces <= 0)
+        {
+            ProjectileDestruction();
+        }
     }
 
-
+    private void ProjectileDestruction()
+    {
+        gameObject.SetActive(false);
+        speed = 5;
+        maxWallBounces = defaultMaxWallBounces;
+    }
     private void Parry()
     {
         speed = speed * player.parryacceleration;
         parryTrigger = false;
     }
-
 }

@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Fade fadeScript;
 
+    [SerializeField]
     public string playSceneName;
     public void QuitGame()
     {
