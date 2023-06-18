@@ -77,7 +77,7 @@ public class ProjectileController : MonoBehaviour
               
                Vector3 dir = (direction).normalized;
                 //StartCoroutine( player.Knockback(dir));
-               player.KnockBack2(dir);
+               player.KnockBack(dir);
                gameObject.SetActive(false);
               
               

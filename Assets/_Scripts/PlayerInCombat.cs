@@ -76,9 +76,11 @@ public class PlayerInCombat : MonoBehaviour
                 if (!_parry.activeInHierarchy)
                 {
                     _parry.SetActive(true);
+                    playerSpeed = 0;
                     Invoke(nameof(DesactivateParry), timeParryAvailable);
+                    Invoke(nameof(NormalSpeed), 0.5f);
                 }
-            }
+            }   
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && !isKnockBack)
@@ -105,8 +107,8 @@ public class PlayerInCombat : MonoBehaviour
 
                 lives--;
                 Vector3 dir = collision.transform.up;
-                //StartCoroutine( player.Knockback(dir));
-                KnockBack2(dir);
+              
+                KnockBack(dir);
            
 
             }
@@ -183,7 +185,7 @@ public class PlayerInCombat : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
-        iframes = DashTime;
+        iframes = 1f;
         invulnerability = true;
         if (direction.x != 0 && direction.y != 0)
         {
@@ -201,25 +203,7 @@ public class PlayerInCombat : MonoBehaviour
 
     }   
 
-    public IEnumerator Knockback(Vector3 dir)
-    {
-        
-        lives--;
-        iframes = 1f;
-        invulnerability = true;
-        isKnockBack = true;
-
-        _rigidbody.velocity = new Vector2(dir.x* KnockBackForce, dir.y* KnockBackForce);
-
-        yield return new WaitForSeconds(knockbackTime);
-        _rigidbody.velocity = new Vector2(0, 0);
-        isKnockBack = false;
-        Invoke(nameof(Invulnerability), iframes);
-
-
-    }
-
-    public void KnockBack2(Vector3 dir)
+    public void KnockBack(Vector3 dir)
     {
         invulnerability = true;
         isKnockBack = true;
@@ -236,10 +220,16 @@ public class PlayerInCombat : MonoBehaviour
         isKnockBack = false;
     }
 
-    private void Invulnerability() 
+    public void Invulnerability() 
     {
-        invulnerability = false;
+      invulnerability = false;
 
+    }
+
+    public void NormalSpeed() 
+    {
+        playerSpeed = 5;
+    
     }
 
 
