@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class PlayerInCombat : MonoBehaviour
 {
+    [Header("Game Feel")]
+    // Game Feel
     [SerializeField]
     private SlowMotion slowMoScript;
+    [SerializeField]
+    private GameObject bloodParticles;
 
     [HideInInspector]
     [SerializeField] [Min(1.0f)] private float playerSpeed;
@@ -213,7 +218,12 @@ public class PlayerInCombat : MonoBehaviour
         Invoke(nameof(Explsion), knockbackTime);
         Invoke(nameof(Invulnerability), iframes);
 
+        // Game feel
+        CameraShaker.Instance.ShakeOnce(5.0f, 5.0f, 0f, 1.0f);
         slowMoScript.StartDamageSlowMo(1.0f);
+        Instantiate(bloodParticles, transform.position, Quaternion.identity);
+        //Destroy(gameObject);
+
     }
 
     private void Explsion()
