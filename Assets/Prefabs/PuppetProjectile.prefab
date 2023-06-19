@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2971485162887740720}
   m_Layer: 0
   m_Name: PuppetProjectile
-  m_TagString: Projectile
+  m_TagString: PuppetProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   defaultSpeed: 5
   direction: {x: 0, y: 0, z: 0}
   echoEffect: {fileID: 2971485162887740720}
+  isparried: 0
   timeToTrackPlayer: 1
   isTracking: 0
 --- !u!114 &2971485162887740720
@@ -158,6 +159,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTimeBtwSpawns: 0.05
-  timeBtwSpawnsDefault: 0
   destroyTime: 0.3
   echo: {fileID: 1818081262332937292, guid: f0a82768e7cbaa9439afad6854ccdea8, type: 3}

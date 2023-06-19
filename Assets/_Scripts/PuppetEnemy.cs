@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class PuppetEnemy : Enemy
 {
+
+     private GameObject playerobject;
+     private PlayerInCombat _player;
+
     public bool isCurved = true;
+
+    public int lives = 2;
 
     [Tooltip("notDefaultAttack: kinda tracking projectile")]
     public bool defaultAttack = true;
+    public bool invulnerability = false;
+
 
 
 
     private void Awake()
     {
-        
+        playerobject = GameObject.FindWithTag("Player");
+        _player = playerobject.GetComponent<PlayerInCombat>();
+
     }
     void Start()
     {
         base.Start();
-
+        
+        
         projectileParent = new GameObject("PuppetProjectileParent");
 
         for (int i = 0; i < initialPoolSize; i++)
@@ -30,14 +41,18 @@ public class PuppetEnemy : Enemy
 
         playerDirection = (player.transform.position - this.transform.position);
         Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
-
+       
     }
 
     
     void Update()
     {
-        if (health <= 0)
+        if (lives <= 0)
+        {
+            _player.win = true;
             Die();
+            
+        }
 
         playerDirection = (player.transform.position - this.transform.position).normalized;
 
@@ -104,5 +119,10 @@ public class PuppetEnemy : Enemy
             yield return new WaitForSeconds(reloadTime);
             
         }
+    }
+
+    private void ChangeInvulnerability()
+    {
+        invulnerability = false;
     }
 }

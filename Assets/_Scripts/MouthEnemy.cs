@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class MouthEnemy : Enemy
 {
+    private GameObject playerobject;
+    private PlayerInCombat _player;
+    private GameObject projectileobject;
+    private CircleProjectile projectile;
+
     public int minNumProjectiles = 3;
     public int maxNumProjectiles = 6;
+    public int lives = 2;
 
     [Tooltip("Area to spawn projectiles")]
     public float totalAngle = 360f;
 
+    public bool invulnerability = false;
+    public bool isKnockBack = false;
 
-
+    private void Awake()
+    {
+        playerobject = GameObject.FindWithTag("Player");
+        _player = playerobject.GetComponent<PlayerInCombat>();
+       
+        projectileobject = GameObject.FindWithTag("MouthProjectile");
+        projectile = projectileobject.GetComponent<CircleProjectile>();
+    }
     void Start()
     {
         base.Start();
@@ -40,6 +55,18 @@ public class MouthEnemy : Enemy
 
         Move();
         Attack();
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MouthProjectile") && projectile.isparried)
+        {
+
+            health--;
+            projectile.ProjectileDestruction();
+
+        }
 
     }
     public override void Move()
@@ -97,16 +124,7 @@ public class MouthEnemy : Enemy
 
     //Función proyectil
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Trigger con el Proyectil del Player
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            health -= getDamage;
-        }
 
-
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -130,6 +148,7 @@ public class MouthEnemy : Enemy
             yield return new WaitForSeconds(reloadTime);
         }
     }
+
 
 
 }

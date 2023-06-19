@@ -11,6 +11,11 @@ TagManager:
   - Projectile
   - Enemys
   - Heart
+  - Puppet
+  - Mouth
+  - PuppetProjectile
+  - MouthProjectile
+  - HeartProjectile
   layers:
   - Default
   - TransparentFX
@@ -50,4 +55,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2225130149
     locked: 0

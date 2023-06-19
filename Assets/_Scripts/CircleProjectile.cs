@@ -9,7 +9,12 @@ public class CircleProjectile : Projectile
 
     private GameObject playerobject;
     private PlayerInCombat player;
+
+    private GameObject mouthobject;
+    private MouthEnemy mouth;
+
     private bool parryTrigger = false;
+    public bool isparried = false;
 
     private void Awake()
     {
@@ -18,6 +23,13 @@ public class CircleProjectile : Projectile
 
         playerobject = GameObject.FindWithTag("Player");
         player = playerobject.GetComponent<PlayerInCombat>();
+
+   
+
+        mouthobject = GameObject.FindWithTag("Mouth");
+        mouth = mouthobject.GetComponent<MouthEnemy>();
+
+   
     }
 
 
@@ -53,7 +65,7 @@ public class CircleProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Parry"))
         {
-         
+            isparried = true;
             parryTrigger = true;
             player.invulnerability = true;
             //direction = collision.transform.up;
@@ -80,13 +92,27 @@ public class CircleProjectile : Projectile
             }
         }
 
+        if (collision.gameObject.CompareTag("Mouth") && isparried)
+        {
+
+            if (!mouth.invulnerability)
+            {
+
+                mouth.lives--;
+                ProjectileDestruction();
+            }
+
+        }
+
+       
+
         if (maxWallBounces <= 0)
         {
             ProjectileDestruction();
         }
     }
 
-    private void ProjectileDestruction()
+    public void ProjectileDestruction()
     {
         speed = defaultSpeed;
         gameObject.SetActive(false);

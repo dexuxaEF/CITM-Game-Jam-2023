@@ -9,7 +9,16 @@ public class ForwardProjectile : Projectile
 
     private GameObject playerobject;
     private PlayerInCombat player;
+    private GameObject puppetobject;
+    private PuppetEnemy puppet;
+    private GameObject mouthobject;
+    private MouthEnemy mouth;
+    private GameObject heartobject;
+    private HearthEnemy heart;
     private bool parryTrigger = false;
+    [HideInInspector]
+    public bool isparried = false;
+
 
     public float timeToTrackPlayer = 1.0f;
 
@@ -25,6 +34,11 @@ public class ForwardProjectile : Projectile
 
         playerobject = GameObject.FindWithTag("Player");
         player = playerobject.GetComponent<PlayerInCombat>();
+
+        puppetobject = GameObject.FindWithTag("Puppet");
+        puppet = puppetobject.GetComponent<PuppetEnemy>();
+
+
     }
 
 
@@ -83,6 +97,7 @@ public class ForwardProjectile : Projectile
             isTracking = false;
             parryTrigger = true;
             player.invulnerability = true;
+            isparried = true;
             //direction = collision.transform.up;
             Vector2 worldPos = Input.mousePosition;
             worldPos = Camera.main.ScreenToWorldPoint(worldPos);
@@ -101,8 +116,8 @@ public class ForwardProjectile : Projectile
 
                 Vector3 dir = (direction).normalized;
                 //StartCoroutine( player.Knockback(dir));
-                player.KnockBack(dir);
-                ProjectileDestruction();
+              player.KnockBack(dir);
+              ProjectileDestruction();
             }
             else
             {
@@ -112,13 +127,24 @@ public class ForwardProjectile : Projectile
 
         }
 
+        if (collision.gameObject.CompareTag("Puppet") && !puppet.invulnerability && isparried )
+        {
+
+            puppet.lives--;
+            ProjectileDestruction();
+
+
+        }
+
+
+
         if (maxWallBounces <= 0)
         {
             ProjectileDestruction();
         }
     }
 
-    private void ProjectileDestruction()
+    public void ProjectileDestruction()
     {
         gameObject.SetActive(false);
         speed = defaultSpeed;
@@ -145,7 +171,10 @@ public class ForwardProjectile : Projectile
 
     private void OnEnable()
     {
-        Reset();        
+        Reset();
+
+        // Restart Wave count
+        echoEffect.RestartWaveCount();
     }
 
 }
