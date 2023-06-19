@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c52cc179092b9cd4c847698a567e6c1e
+guid: ea199642ca1193a4e84e1d6a82165690
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,106 +104,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heart_chainUp_0
+      name: heart_attack_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 804
-        height: 848
+        y: 2185
+        width: 819
+        height: 1092
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 799afd05fcdcd604b85c31440ccb3927
-      internalID: 489110227
+      spriteID: 026bc48e4e997484384b4a6d94f6d0fb
+      internalID: -1840948926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_1
+      name: heart_attack_1
       rect:
         serializedVersion: 2
-        x: 804
-        y: 0
-        width: 804
-        height: 848
+        x: 819
+        y: 2185
+        width: 819
+        height: 1092
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6da09758f1b7b9b47be26129863ce332
-      internalID: -1911267878
+      spriteID: 5d6c295d8b0aede4d9a09bd6008f2434
+      internalID: -1097614040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_2
+      name: heart_attack_2
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 0
-        width: 804
-        height: 848
+        x: 1638
+        y: 2185
+        width: 819
+        height: 1092
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d736cf7c710b844980cc1d5314fba84
-      internalID: 100825775
+      spriteID: 4e15736c62fe01041b1b33143a2ca1b1
+      internalID: -667212964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_3
+      name: heart_attack_3
       rect:
         serializedVersion: 2
-        x: 2412
-        y: 0
-        width: 804
-        height: 848
+        x: 2457
+        y: 2185
+        width: 819
+        height: 1092
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1adbba7729fbf14f8c0440b23cba405
-      internalID: 44209565
+      spriteID: a06bfac1dd3167a4cb6fc74a51f4d5a6
+      internalID: 747936438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_4
+      name: heart_attack_4
       rect:
         serializedVersion: 2
-        x: 3216
-        y: 0
-        width: 804
-        height: 848
+        x: 0
+        y: 1093
+        width: 819
+        height: 1092
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fcdd7c376cca7a4aa2f6738b6a46d82
-      internalID: -1947830221
+      spriteID: e711221dba1da494193f0014eb46291a
+      internalID: -359543898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart_attack_5
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1093
+        width: 819
+        height: 1092
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2745b0f7d417ea44b4ea17d82781189
+      internalID: 254681527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart_attack_6
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1093
+        width: 819
+        height: 1092
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5571e70ed59741479f2f0905791d88d
+      internalID: 496578636
       vertices: []
       indices: 
       edges: []
@@ -219,11 +261,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      heart_chainUp_4: -1947830221
-      heart_chainUp_0: 489110227
-      heart_chainUp_1: -1911267878
-      heart_chainUp_2: 100825775
-      heart_chainUp_3: 44209565
+      heart_attack_6: 496578636
+      heart_attack_4: -359543898
+      heart_attack_5: 254681527
+      heart_attack_2: -667212964
+      heart_attack_0: -1840948926
+      heart_attack_3: 747936438
+      heart_attack_1: -1097614040
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
