@@ -11,8 +11,12 @@ public class ConeProjectile : Projectile
 
     private GameObject playerobject;
     private PlayerInCombat player;
+
+    private GameObject heartobject;
+    private HearthEnemy heart;
     private bool parryTrigger = false;
-   
+    public bool isparried = false;
+
 
 
     private void Awake()
@@ -23,6 +27,9 @@ public class ConeProjectile : Projectile
 
         playerobject = GameObject.FindWithTag("Player");
         player = playerobject.GetComponent<PlayerInCombat>();
+
+        heartobject = GameObject.FindWithTag("Heart");
+        heart = heartobject.GetComponent<HearthEnemy>();
     }
 
 
@@ -62,6 +69,7 @@ public class ConeProjectile : Projectile
         if (collision.gameObject.CompareTag("Parry"))
         {
             parryTrigger = true;
+            isparried = true;
             player.invulnerability = true;
             //direction = collision.transform.up;
             Vector2 worldPos = Input.mousePosition;
@@ -87,13 +95,29 @@ public class ConeProjectile : Projectile
             }
         }
 
+      
+
+        if (collision.gameObject.CompareTag("Heart") && isparried)
+        {
+
+            if (!heart.invulnerability)
+            {
+
+                heart.lives--;
+                ProjectileDestruction();
+            }
+
+        }
+
+        
+
         if (maxWallBounces <= 0)
         {
             ProjectileDestruction();
         }
     }
 
-    private void ProjectileDestruction()
+    public void ProjectileDestruction()
     {
         speed = defaultSpeed;
         gameObject.SetActive(false);

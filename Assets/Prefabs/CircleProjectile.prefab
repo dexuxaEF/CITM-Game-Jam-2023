@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2666732231893798844}
   m_Layer: 0
   m_Name: CircleProjectile
-  m_TagString: Projectile
+  m_TagString: MouthProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   defaultSpeed: 5
   direction: {x: 0, y: 0, z: 0}
   echoEffect: {fileID: 2666732231893798844}
+  isparried: 0
 --- !u!114 &2666732231893798844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +157,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTimeBtwSpawns: 0.05
-  timeBtwSpawnsDefault: 0
   destroyTime: 0.3
   echo: {fileID: 1818081262332937292, guid: f0a82768e7cbaa9439afad6854ccdea8, type: 3}
