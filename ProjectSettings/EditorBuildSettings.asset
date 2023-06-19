@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 85c6358fecae9384cbdaf3e14e0f25ad
+  - enabled: 1
+    path: Assets/Scenes/Psycho.unity
+    guid: 67a25619ce94c78479afbf15b502d71d
   m_configObjects: {}
