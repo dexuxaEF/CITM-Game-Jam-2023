@@ -1123,6 +1123,7 @@ GameObject:
   - component: {fileID: 1235189714}
   - component: {fileID: 1235189717}
   - component: {fileID: 1235189716}
+  - component: {fileID: 1235189718}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1218,6 +1219,7 @@ MonoBehaviour:
   DashForce: 10
   DashTime: 0.2
   DashCooldown: 1
+  isDashing: 0
   iframes: 1
   invulnerability: 0
   KnockBackForce: 5
@@ -1286,6 +1288,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowMotionTimescale: 0.1
+--- !u!114 &1235189718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235189711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4365cd140a95a23489e73587b6f344fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeBtwSpawns: 0.03
+  destroyTime: 1
+  echo: {fileID: 3341675619202148648, guid: 45dc3616fce67714ea134eb568e0de08, type: 3}
 --- !u!1001 &1318797783
 PrefabInstance:
   m_ObjectHideFlags: 0

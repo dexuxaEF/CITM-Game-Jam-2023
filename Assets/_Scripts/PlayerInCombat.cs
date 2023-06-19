@@ -34,7 +34,8 @@ public class PlayerInCombat : MonoBehaviour
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
-    private bool isDashing;
+    [HideInInspector]
+    public bool isDashing;
     //Nos permite saber si tiene el dash disponible
     private bool canDash=true;
 
@@ -228,13 +229,9 @@ public class PlayerInCombat : MonoBehaviour
         CameraShaker.Instance.ShakeOnce(5.0f, 5.0f, 0f, 1.0f);
         slowMoScript.StartDamageSlowMo(1.0f);
         bloodParticleInstance = Instantiate(bloodParticles, transform.position, Quaternion.identity);
-        Invoke("DestroyParticle", 1);
+        Destroy(bloodParticleInstance, 1);
+    }
 
-    }
-    private void DestroyParticle()
-    {
-        Destroy(bloodParticleInstance);
-    }
 
     private void Explsion()
     {
