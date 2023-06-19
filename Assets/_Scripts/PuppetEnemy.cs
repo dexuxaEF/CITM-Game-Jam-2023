@@ -9,6 +9,8 @@ public class PuppetEnemy : Enemy
     [Tooltip("notDefaultAttack: kinda tracking projectile")]
     public bool defaultAttack = true;
 
+
+
     private void Awake()
     {
         
@@ -47,7 +49,7 @@ public class PuppetEnemy : Enemy
     {
         base.Move();
 
-        if(isMoving && isCurved) 
+        if(isMoving && isCurved && !isStopped) 
         {
             this.transform.position = new Vector3(this.transform.position.x + Mathf.Sin((0.8f * Time.deltaTime)),
                                                 this.transform.position.y + Mathf.Sin((0.8f * Time.deltaTime)),
@@ -83,17 +85,8 @@ public class PuppetEnemy : Enemy
 
         }
         projectilePool.Enqueue(projectile);
-    }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
+        Invoke(nameof(AllowMovement), stoppedTime);
     }
 
     private void CoroutineWithDelay()
@@ -107,7 +100,9 @@ public class PuppetEnemy : Enemy
         while (true)
         {
             SpawnProjectile();
+            isStopped = true;
             yield return new WaitForSeconds(Random.Range(minReloadTime, maxReloadTime));
+            
         }
     }
 }
