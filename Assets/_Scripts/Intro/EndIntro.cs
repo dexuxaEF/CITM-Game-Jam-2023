@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class NextScene : MonoBehaviour
+public class EndIntro : MonoBehaviour
 {
+    public static bool hasended = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +14,9 @@ public class NextScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke(nameof(nextscene), 13);
-    }
-    void nextscene()
-    {
-        GameManager.Instance.hasteacherended = true;
-        SceneManager.LoadScene("School");
+        if(hasended == true)
+        {
+            SceneManager.LoadScene("School");
+        }
     }
 }
