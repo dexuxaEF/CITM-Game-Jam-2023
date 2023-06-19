@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Group1Battle : MonoBehaviour
 {
 
@@ -27,8 +27,14 @@ public class Group1Battle : MonoBehaviour
             if (GameManager.Instance.battle1win == false)
             {
                 MoveCamera.isCutsceneOn = true;
+                Invoke(nameof(StartBattle), 7);
                 GameManager.Instance.battle1enter = true;
             }
         }
+    }
+    void StartBattle()
+    {
+        SceneManager.LoadScene("Combat1Scene");
+
     }
 }

@@ -42,20 +42,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(battle1enter == true)
-        {
-            timer = true;
-        }
-        if (timer == true)
-        {
-            Invoke(nameof(startbattle1), 4);
-            timer = false;
-        }
+
 
     }
-    void startbattle1()
-    {
-        schoolpos = PlayerMovement.position;
-        SceneManager.LoadScene("Combat1Scene");
-    }
+
 }
