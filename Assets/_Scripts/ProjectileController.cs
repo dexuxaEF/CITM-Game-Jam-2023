@@ -80,8 +80,6 @@ public class ProjectileController : MonoBehaviour
                player.KnockBack(dir);
                gameObject.SetActive(false);
               
-              
-
             }
 
         }

@@ -11,6 +11,7 @@ public class PlayerInCombat : MonoBehaviour
     private SlowMotion slowMoScript;
     [SerializeField]
     private GameObject bloodParticles;
+    private GameObject bloodParticleInstance;
 
     [HideInInspector]
     [SerializeField] [Min(1.0f)] private float playerSpeed;
@@ -226,9 +227,13 @@ public class PlayerInCombat : MonoBehaviour
         // Game feel
         CameraShaker.Instance.ShakeOnce(5.0f, 5.0f, 0f, 1.0f);
         slowMoScript.StartDamageSlowMo(1.0f);
-        Instantiate(bloodParticles, transform.position, Quaternion.identity);
-        //Destroy(gameObject);
+        bloodParticleInstance = Instantiate(bloodParticles, transform.position, Quaternion.identity);
+        Invoke("DestroyParticle", 1);
 
+    }
+    private void DestroyParticle()
+    {
+        Destroy(bloodParticleInstance);
     }
 
     private void Explsion()
