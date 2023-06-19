@@ -13,6 +13,10 @@ public class HearthEnemy : Enemy
     [Tooltip("defaultAttack: only 2 projectiles")]
     public bool defaultAttack = true;
 
+    [Tooltip("bool to trigger animation loop")]
+    public bool triggerAnimation = false;
+
+    private float timeToRestartMoveAnimation = 0.95f;
 
     private void Start()
     {
@@ -37,6 +41,8 @@ public class HearthEnemy : Enemy
 
     void Update()
     {
+        
+
         if (health <= 0) 
             Die();
 
@@ -133,27 +139,44 @@ public class HearthEnemy : Enemy
         
     }
 
+
     IEnumerator ProjectileCoroutine()
     {
+
         while (true)
         {
-            if(defaultAttack)
-            {
 
-                SpawnLeftProjectile();
-                SpawnRightProjectile();
-                isStopped = true;
-            }
-            else
-            {
-                SpawnMultipleProjectile();
-                isStopped = true;
-            }
-            
-            yield return new WaitForSeconds(Random.Range(minReloadTime, maxReloadTime));
+            triggerAnimation = true;
+            _animator.SetBool("triggerLoop", triggerAnimation);
+
+
+
+            Invoke(nameof(PrepareAttackAnimation), timeToRestartMoveAnimation);
+            yield return new WaitForSeconds(reloadTime);
         }
     }
 
+
+    private void PrepareAttackAnimation()
+    {
+
+        if (defaultAttack)
+        {
+
+            SpawnLeftProjectile();
+            SpawnRightProjectile();
+            isStopped = true;
+        }
+        else
+        {
+            SpawnMultipleProjectile();
+            isStopped = true;
+        }
+
+        triggerAnimation = false;
+        _animator.SetBool("triggerLoop", triggerAnimation);
+
+    }
 
 
 }
