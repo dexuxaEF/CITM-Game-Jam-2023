@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6650031956328842552, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7711265965069702293, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
       propertyPath: m_RootOrder
@@ -789,6 +789,14 @@ PrefabInstance:
     - target: {fileID: 5398531977255211059, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
       propertyPath: defaultAttack
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398531977255211059, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
+      propertyPath: maxReloadTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398531977255211059, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
+      propertyPath: minReloadTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5398531977255211059, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
       propertyPath: rightBoundary
@@ -1752,7 +1760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2190173401981871798, guid: a5b285ac7716bb44799d36a64bd7611b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2967674535892186907, guid: a5b285ac7716bb44799d36a64bd7611b, type: 3}
       propertyPath: m_RootOrder
