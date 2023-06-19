@@ -13,8 +13,10 @@ public class PlayerInCombat : MonoBehaviour
     private GameObject bloodParticles;
     private GameObject bloodParticleInstance;
 
+    [Header("Player")]
     [HideInInspector]
-    [SerializeField] [Min(1.0f)] private float playerSpeed;
+    [SerializeField] [Min(1.0f)] private float playerSpeed =10f;
+    [Min(0f)] public float lives= 3f;
 
     [HideInInspector]
     private Rigidbody2D _rigidbody;
@@ -53,9 +55,12 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     public Vector3 direction;
 
+    [Header("Parry")]
     [Min(0.01f)] public float parryacceleration =1.50f;
+    [Min(0f)] public float invulnerabilityParryTimer =0.5f;
+    [HideInInspector]
+    public bool invulnerabilityParry = false;
 
-    public int lives;
 
     private void Awake()
     {
@@ -101,10 +106,11 @@ public class PlayerInCombat : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        //if (Input.GetKeyDown(KeyCode.Z) &&  !isKnockBack)
-        //{
-        //    StartCoroutine(Knockback(new Vector3(2,2)));
-        //}
+        if (invulnerabilityParry) 
+        {
+            Invoke(nameof(Invulnerability), invulnerabilityParryTimer);
+        }
+    
 
 
     }
@@ -242,6 +248,7 @@ public class PlayerInCombat : MonoBehaviour
     public void Invulnerability() 
     {
        invulnerability = false;
+       invulnerabilityParry = false;
 
     }
 
