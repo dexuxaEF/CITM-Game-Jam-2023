@@ -126,21 +126,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  speed: 2
+  speed: 1.5
   getDamage: 3
   delayTimeToAttack: 2.5
   reloadTime: 2.5
   delayTimeToMove: 0.8
-  stoppedTime: 0.2
+  stoppedTime: 0.4
   leftBoundary: {fileID: 0}
   rightBoundary: {fileID: 0}
   topBoundary: {fileID: 0}
   bottomBoundary: {fileID: 0}
   projectilePrefab: {fileID: 3648415444523150833, guid: e84cea5e49b350a4fbd34d4555c92069, type: 3}
-  initialPoolSize: 40
+  initialPoolSize: 55
   isStopped: 0
   _animator: {fileID: 4110933821386589895}
-  coneAngle: 5
+  coneAngle: 10
   numProjectiles: 6
   defaultAttack: 0
   triggerAnimation: 0
