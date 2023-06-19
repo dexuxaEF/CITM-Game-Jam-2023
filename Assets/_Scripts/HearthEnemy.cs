@@ -37,6 +37,10 @@ public class HearthEnemy : Enemy
 
     void Update()
     {
+
+        _animator.SetBool("animIsMoving", isMoving);
+        _animator.SetBool("animIsMoving", isStopped);
+
         if (health <= 0) 
             Die();
 

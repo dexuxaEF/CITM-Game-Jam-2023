@@ -70,6 +70,12 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected bool isStopped = false;
 
+    [SerializeField]
+    protected Animator _animator;
+
+    [SerializeField]
+    protected Rigidbody2D _rigidBody2d;
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
