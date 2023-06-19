@@ -16,7 +16,7 @@ public class Group3Battle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.battle3win == true)
+        if(GameManager.Instance.battle3win == true)
         {
             Destroy(gameObject);
         }
@@ -25,9 +25,9 @@ public class Group3Battle : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            if (GameManager.battle3win == false)
+            if (GameManager.Instance.battle3win == false)
             {
-                GameManager.battle3enter = true;
+                GameManager.Instance.battle3enter = true;
             }
         }
     }

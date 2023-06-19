@@ -3,46 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TextScriptTeacher : MonoBehaviour
+public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
 
-    private bool start;
     private int index;
-    private float time;
+
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
-        start = true;
-        time = -1;
+        StartDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(start==true && TeacherScene.teacherscene == true)
-        {
-            if (GameManager.Instance.hasteacherended == false)
-            {
-                StartDialogue();
-                start = false;
-            }
-        }
-        if (time > 2.5)
+        if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
             {
-
                 NextLine();
-
             }
-        }
-        if(time >= 0)
-        {
-            time += Time.deltaTime;
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
         }
     }
 
@@ -59,7 +48,6 @@ public class TextScriptTeacher : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        time = 0;
     }
 
     void NextLine()
@@ -72,12 +60,7 @@ public class TextScriptTeacher : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(setactivefalse), 3);
+            gameObject.SetActive(false);
         }
-    }
-    void setactivefalse()
-    {
-        gameObject.SetActive(false);
-        SadSceneEnter.startsad = true;
     }
 }

@@ -5,32 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance { get; private set; }
 
-    public static bool battle1enter;
-    public static bool battle1win;
-    public static bool battle2enter;
-    public static bool battle2win;
-    public static bool battle3enter;
-    public static bool battle3win;
-    public static bool hasteacherended;
+    public bool hasteacherended;
+    public bool battle1enter;
+    public bool battle1win;
+    public bool battle2enter;
+    public bool battle2win;
+    public bool battle3enter;
+    public bool battle3win;
 
     public static Vector2 schoolpos;
 
     bool timer = false;
-    void Awake()
+    private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        battle1enter = false;
-        battle1win = false;
-        battle2enter = false;
-        battle2win = false;
-        battle3enter = false;
-        battle3win = false;
-        hasteacherended = false;
+
+      if (Instance == null)
+      {
+          Instance = this;
+          DontDestroyOnLoad(gameObject);
+      }
+      else
+      {
+          Destroy(gameObject);
+      }
+      
+
     }
     // Start is called before the first frame update
     void Start()

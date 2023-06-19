@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class SadSceneEnter : MonoBehaviour
 {
     public GameObject panel;
+    public static bool startsad = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,10 @@ public class SadSceneEnter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (panel.activeInHierarchy == false)
+        if (startsad == true && GameManager.Instance.hasteacherended == false)
         {
             SceneManager.LoadScene("SadScene");
+            startsad = false;
         }
     }
 }

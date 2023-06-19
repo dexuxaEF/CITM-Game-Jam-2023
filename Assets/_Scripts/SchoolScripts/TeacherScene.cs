@@ -5,7 +5,6 @@ using UnityEngine;
 public class TeacherScene : MonoBehaviour
 {
     public static bool teacherscene;
-    public Animator tocorridor;
     // Start is called before the first frame update
     void Start()
     {

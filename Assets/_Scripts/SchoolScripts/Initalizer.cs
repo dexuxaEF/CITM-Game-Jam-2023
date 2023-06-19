@@ -15,11 +15,11 @@ public class Initalizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.hasteacherended == true)
+        if(GameManager.Instance.hasteacherended == true)
         {
             corridor.SetBool("classToCorridor", true);
         }
-        if(GameManager.battle1win == true)
+        if(GameManager.Instance.battle1win == true)
         {
             _rigidbody.position = GameManager.schoolpos;
         }

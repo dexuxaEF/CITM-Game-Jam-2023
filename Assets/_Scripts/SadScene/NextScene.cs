@@ -17,8 +17,7 @@ public class NextScene : MonoBehaviour
     }
     void nextscene()
     {
-        GameManager.hasteacherended = true;
+        GameManager.Instance.hasteacherended = true;
         SceneManager.LoadScene("School");
-
     }
 }

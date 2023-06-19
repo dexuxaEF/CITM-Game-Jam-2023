@@ -15,7 +15,7 @@ public class Group1Battle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.battle1win == true)
+        if(GameManager.Instance.battle1win == true)
         {
             Destroy(gameObject);
         }
@@ -24,10 +24,10 @@ public class Group1Battle : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            if (GameManager.battle1win == false)
+            if (GameManager.Instance.battle1win == false)
             {
                 MoveCamera.isCutsceneOn = true;
-                GameManager.battle1enter = true;
+                GameManager.Instance.battle1enter = true;
             }
         }
     }
