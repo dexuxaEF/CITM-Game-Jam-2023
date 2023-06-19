@@ -55,6 +55,6 @@ public class GameManager : MonoBehaviour
     void startbattle1()
     {
         schoolpos = PlayerMovement.position;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Combat1Scene");
     }
 }

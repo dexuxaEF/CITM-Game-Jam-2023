@@ -10,6 +10,7 @@ TagManager:
   - CorridorTrigger
   - Projectile
   - Enemys
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backgound
+    uniqueID: 3681202983
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
