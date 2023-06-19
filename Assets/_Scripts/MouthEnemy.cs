@@ -127,7 +127,7 @@ public class MouthEnemy : Enemy
             SpawnProjectile();
             isStopped = true;
 
-            yield return new WaitForSeconds(Random.Range(minReloadTime,maxReloadTime));
+            yield return new WaitForSeconds(reloadTime);
         }
     }
 

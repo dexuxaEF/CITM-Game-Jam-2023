@@ -20,11 +20,8 @@ public class Enemy : MonoBehaviour
     protected float delayTimeToAttack = 2f;
 
     [SerializeField]
-    [Tooltip("Min. Time between each shoot")]
-    protected float minReloadTime = 1.0f;
-    [SerializeField]
-    [Tooltip("Max. Time between each shoot")]
-    protected float maxReloadTime = 1.0f;
+    [Tooltip("Time between each shoot")]
+    protected float reloadTime = 1.0f;
 
     [SerializeField]
     protected float delayTimeToMove = 0.8f;
@@ -73,8 +70,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected Animator _animator;
 
-    [SerializeField]
-    protected Rigidbody2D _rigidBody2d;
+
 
     private void Awake()
     {
