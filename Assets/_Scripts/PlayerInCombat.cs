@@ -26,6 +26,11 @@ public class PlayerInCombat : MonoBehaviour
     public ChargeBar chargeBar;
     public GameObject _chargeBarObject;
 
+    public GameObject HudLive1;
+    public GameObject HudLive2;
+    public GameObject HudLive3;
+    public GameObject HudLive4;
+
     [SerializeField]
     public float timeParryAvailable = 0.35f;
 
@@ -43,6 +48,10 @@ public class PlayerInCombat : MonoBehaviour
     public bool isDashing;
     //Nos permite saber si tiene el dash disponible
     private bool canDash=true;
+    [HideInInspector]
+    public bool win = false;
+    [HideInInspector]
+    public bool lose = false;
 
     [Header("KnockBack")]
     [SerializeField] [Min(0.01f)] private float iframes=1f;
@@ -72,13 +81,14 @@ public class PlayerInCombat : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        lives = 3;
+        lives = 4;
         invulnerability = false;
         isDashing = false;
         isKnockBack = false;
@@ -135,22 +145,53 @@ public class PlayerInCombat : MonoBehaviour
             CheckCooldown();
         }
 
+        CheckLose();
+        UpdateLiveHud();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Trigger con el Proyectil del Player
-        if (collision.gameObject.CompareTag("Enemys"))
+        if (collision.gameObject.CompareTag("Puppet"))
         {
 
             if (!invulnerability)
             {
 
                 lives--;
-                Vector3 dir = collision.transform.up;
-              
+                Vector3 dir = this.transform.up;
+
                 KnockBack(dir);
-           
+
+
+            }
+        }
+        if (collision.gameObject.CompareTag("Heart"))
+        {
+
+            if (!invulnerability)
+            {
+
+                lives--;
+                Vector3 dir = this.transform.up;
+
+                KnockBack(dir);
+
+
+            }
+        }
+        if (collision.gameObject.CompareTag("Mouth"))
+        {
+
+            if (!invulnerability)
+            {
+
+                lives--;
+                Vector3 dir = this.transform.up;
+
+                KnockBack(dir);
+
 
             }
         }
@@ -178,21 +219,7 @@ public class PlayerInCombat : MonoBehaviour
 
 
     }
-    /// <summary>
-    /// Move with coordinates
-    /// </summary>
-    //private void Move()
-    //{
-    //    float moveX = Input.GetAxisRaw("Horizontal");
-    //    float moveY = Input.GetAxisRaw("Vertical");
 
-    //    if (moveX != 0 || moveY != 0)
-    //    {
-    //        Vector2 movement = new Vector2(moveX, moveY).normalized;
-    //        Vector2 newPosition = transform.position + movement * playerSpeed * Time.deltaTime;
-    //        transform.position = newPosition;
-    //    }
-    //}
 
     /// <summary>
     /// Move with Physics
@@ -228,7 +255,7 @@ public class PlayerInCombat : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
-        iframes = 1f;
+        
         invulnerability = true;
         if (direction.x != 0 && direction.y != 0)
         {
@@ -238,7 +265,7 @@ public class PlayerInCombat : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(direction.x * DashForce, direction.y * DashForce);
         }
-        Invoke(nameof(Invulnerability), iframes);
+        Invoke(nameof(Invulnerability), 0.7f);
         yield return new WaitForSeconds(DashTime);
         isDashing = false;
         yield return new WaitForSeconds(DashCooldown);
@@ -250,6 +277,7 @@ public class PlayerInCombat : MonoBehaviour
     {
         invulnerability = true;
         isKnockBack = true;
+        lives--;
         _rigidbody.velocity = new Vector2(0, 0);
         _rigidbody.AddForce(dir * KnockBackForce, ForceMode2D.Impulse);
         Invoke(nameof(Explsion), knockbackTime);
@@ -282,16 +310,55 @@ public class PlayerInCombat : MonoBehaviour
     
     }
 
-    private void CheckCooldown()
+    private void CheckCooldown()    
     {
         if (parrycooldown >= maxparrycooldown)
         {
             canParry = true;
             _chargeBarObject.SetActive(false);
             parrycooldown = 0f;
+            isparry = false;
         }
   
     }
 
+    private void UpdateLiveHud()
+    {
+        if (lives == 4)
+        {
+            HudLive1.SetActive(true);
+            HudLive2.SetActive(false);
+            HudLive3.SetActive(false);
+            HudLive4.SetActive(false);
+        }
+        if (lives == 3)
+        {
+            HudLive1.SetActive(false);
+            HudLive2.SetActive(true);
+            HudLive3.SetActive(false);
+            HudLive4.SetActive(false);
+        }
+        if (lives == 2)
+        {
+            HudLive1.SetActive(false);
+            HudLive2.SetActive(false);
+            HudLive3.SetActive(true);
+            HudLive4.SetActive(false);
+        }
+        if (lives == 1)
+        {
+            HudLive1.SetActive(false);
+            HudLive2.SetActive(false);
+            HudLive3.SetActive(false);
+            HudLive4.SetActive(true);
+        }
+    }
 
+    private void CheckLose()
+    {
+        if (lives <= 0)
+        {
+            lose = true;
+        }
+    }
 }
