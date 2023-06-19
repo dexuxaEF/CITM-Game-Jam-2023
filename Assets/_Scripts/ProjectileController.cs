@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    [SerializeField][Min(1.0f)] private float speed;
+    [SerializeField][Min(1.0f)] public float speed;
 
     public Vector3 direction;
     private GameObject playerobject;

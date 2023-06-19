@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class PlayerInCombat : MonoBehaviour
 {
-    [SerializeField] [Min(1.0f)] private float playerSpeed=1f;
+    [Header("Game Feel")]
+    // Game Feel
+    [SerializeField]
+    private SlowMotion slowMoScript;
+    [SerializeField]
+    private GameObject bloodParticles;
 
+    [HideInInspector]
+    [SerializeField] [Min(1.0f)] private float playerSpeed;
+
+    [HideInInspector]
     private Rigidbody2D _rigidbody;
+
     public GameObject _parry;
 
     [SerializeField]
@@ -18,7 +29,7 @@ public class PlayerInCombat : MonoBehaviour
     //Tiempo que dura el DASH
     [SerializeField] [Min(0f)] private float DashTime =0.2f;
     //Tiempo que te tienes que esperar para volver a usar el DASH
-    [SerializeField] [Min(0.1f)] private float DashCooldown=1f;
+    [SerializeField] [Min(0.1f)] private float DashCooldown=1f;         
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
@@ -34,7 +45,7 @@ public class PlayerInCombat : MonoBehaviour
     [SerializeField] [Min(0.01f)] private float knockbackTime=0.1f;
 
     [HideInInspector]
-    public bool isKnockBack= false;
+    public bool isKnockBack= false; 
 
     //LaDireccion a la que te quieres mover
     [HideInInspector]
@@ -205,7 +216,13 @@ public class PlayerInCombat : MonoBehaviour
         _rigidbody.velocity = new Vector2(0, 0);
         _rigidbody.AddForce(dir * KnockBackForce, ForceMode2D.Impulse);
         Invoke(nameof(Explsion), knockbackTime);
-        Invoke(nameof(Invulnerability), iframes);   
+        Invoke(nameof(Invulnerability), iframes);
+
+        // Game feel
+        CameraShaker.Instance.ShakeOnce(5.0f, 5.0f, 0f, 1.0f);
+        slowMoScript.StartDamageSlowMo(1.0f);
+        Instantiate(bloodParticles, transform.position, Quaternion.identity);
+        //Destroy(gameObject);
 
     }
 
