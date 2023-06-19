@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c52cc179092b9cd4c847698a567e6c1e
+guid: 69387b89d2a85da4cac033380e10a105
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,106 +104,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heart_chainUp_0
+      name: marioneta_Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 804
-        height: 848
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 2186
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 799afd05fcdcd604b85c31440ccb3927
-      internalID: 489110227
+      spriteID: 8d03b87d3b7624646bbbfe4fa9e6cd0b
+      internalID: 125743807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_1
+      name: marioneta_Idle_1
       rect:
         serializedVersion: 2
-        x: 804
-        y: 0
-        width: 804
-        height: 848
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 819
+        y: 2186
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6da09758f1b7b9b47be26129863ce332
-      internalID: -1911267878
+      spriteID: 01d78eaaa41897c448ca3faf056a4270
+      internalID: -650925810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_2
+      name: marioneta_Idle_2
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 0
-        width: 804
-        height: 848
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1638
+        y: 2186
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d736cf7c710b844980cc1d5314fba84
-      internalID: 100825775
+      spriteID: fdf2f4d77df75ae42a1fc628cac42c05
+      internalID: 911284274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_3
+      name: marioneta_Idle_3
       rect:
         serializedVersion: 2
-        x: 2412
-        y: 0
-        width: 804
-        height: 848
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2457
+        y: 2186
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1adbba7729fbf14f8c0440b23cba405
-      internalID: 44209565
+      spriteID: 6cd121698230d5d4b959d47647b044d9
+      internalID: -169175547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_chainUp_4
+      name: marioneta_Idle_4
       rect:
         serializedVersion: 2
-        x: 3216
-        y: 0
-        width: 804
-        height: 848
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 1094
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fcdd7c376cca7a4aa2f6738b6a46d82
-      internalID: -1947830221
+      spriteID: d008e99754144e6458ba7c8638bfb76e
+      internalID: 1760084646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marioneta_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1094
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b3323a9741e3944a951ed44b2abf78
+      internalID: 1557275915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marioneta_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1094
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19bc1c72ced91a49930abafe8c6cf5a
+      internalID: -210112454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marioneta_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 1094
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063c7ffaca7d4d447b8bf208f89aced9
+      internalID: -580635808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marioneta_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 819
+        height: 1092
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615f0df97dcdfb840b8a3ea9b13de21b
+      internalID: -1057316134
       vertices: []
       indices: 
       edges: []
@@ -219,11 +303,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      heart_chainUp_4: -1947830221
-      heart_chainUp_0: 489110227
-      heart_chainUp_1: -1911267878
-      heart_chainUp_2: 100825775
-      heart_chainUp_3: 44209565
+      marioneta_Idle_5: 1557275915
+      marioneta_Idle_6: -210112454
+      marioneta_Idle_0: 125743807
+      marioneta_Idle_1: -650925810
+      marioneta_Idle_2: 911284274
+      marioneta_Idle_7: -580635808
+      marioneta_Idle_4: 1760084646
+      marioneta_Idle_8: -1057316134
+      marioneta_Idle_3: -169175547
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
