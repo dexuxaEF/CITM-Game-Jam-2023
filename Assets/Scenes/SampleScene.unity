@@ -1191,7 +1191,7 @@ MonoBehaviour:
   playerSpeed: 3
   _parry: {fileID: 1754282974}
   timeParryAvailable: 0.35
-  DashForce: 5
+  DashForce: 10
   DashTime: 0.2
   DashCooldown: 1
   iframes: 1
