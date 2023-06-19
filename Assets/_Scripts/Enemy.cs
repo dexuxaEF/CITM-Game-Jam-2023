@@ -51,8 +51,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int initialPoolSize = 15;
 
-    private GameObject playerobject;
-    private PlayerInCombat _player;
+
 
     protected Queue<GameObject> projectilePool = new();
     protected GameObject projectileParent;
@@ -74,8 +73,6 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        playerobject = GameObject.FindWithTag("Player");
-        _player = playerobject.GetComponent<PlayerInCombat>();
     }
     public virtual void Start()
     {
@@ -100,7 +97,6 @@ public class Enemy : MonoBehaviour
     {
 
         Explode();
-        _player.win = true;
     }
 
     protected virtual void Explode()
@@ -151,10 +147,10 @@ public class Enemy : MonoBehaviour
             nextPositionCalculated = false;
             
         }
-    }   
+    }
 
     Vector2 RandomPositionInsideBoundaries()
-    {   
+    {
 
         float x = RandomXInsideBoundaries();
         float y = RandomYInsideBoundaries();

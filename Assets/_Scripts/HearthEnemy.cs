@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class HearthEnemy : Enemy
 {
-    private GameObject playerobject;
-    private PlayerInCombat _player;
-
-
-    public int lives = 2;
-
     [Range(1.0f,180f)]
     public float coneAngle = 5f;
 
@@ -18,15 +12,6 @@ public class HearthEnemy : Enemy
 
     [Tooltip("defaultAttack: only 2 projectiles")]
     public bool defaultAttack = true;
-
-    public bool invulnerability = false;
-
-    private void Awake()
-    {
-        playerobject = GameObject.FindWithTag("Player");
-        _player = playerobject.GetComponent<PlayerInCombat>();
-
-    }
 
 
     private void Start()
@@ -52,12 +37,8 @@ public class HearthEnemy : Enemy
 
     void Update()
     {
-        if (lives <= 0)
-        {
-            _player.win = true;
+        if (health <= 0) 
             Die();
-           
-        }
 
         playerDirection = (player.transform.position - this.transform.position).normalized;
 
@@ -65,8 +46,6 @@ public class HearthEnemy : Enemy
         Attack();
         
     }
-
-
 
     public override void Move()
     {
