@@ -17,6 +17,7 @@ public class Group1Battle : MonoBehaviour
     {
         if(GameManager.Instance.battle1win == true)
         {
+            GameManager.Instance.isCutsceneOn = false;
             Destroy(gameObject);
         }
     }
@@ -26,7 +27,7 @@ public class Group1Battle : MonoBehaviour
         {
             if (GameManager.Instance.battle1win == false)
             {
-                MoveCamera.isCutsceneOn = true;
+                GameManager.Instance.isCutsceneOn = true;
                 Invoke(nameof(StartBattle), 7);
                 GameManager.Instance.battle1enter = true;
             }

@@ -25,15 +25,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MoveCamera.isCutsceneOn == false)
+        if (GameManager.Instance.isCutsceneOn == false)
         {
             Move();
         }
-        if (MoveCamera.isCutsceneOn == true)
+        if (GameManager.Instance.isCutsceneOn == true)
         {
             Stop();
         }
-        position = _rigidbody.position;
     }
 
     /// <summary>

@@ -14,7 +14,7 @@ public class AnimatorDisable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MoveCamera.isCutsceneOn == false)
+        if (GameManager.Instance.isCutsceneOn == false)
         {
             animator.enabled = false;
         }

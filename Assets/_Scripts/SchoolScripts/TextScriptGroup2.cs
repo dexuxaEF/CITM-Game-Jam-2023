@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TextScriptGroup1 : MonoBehaviour
+public class TextScriptGroup2 : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
@@ -20,10 +20,10 @@ public class TextScriptGroup1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.battle1enter)
+        if (GameManager.Instance.battle2enter)
         {
             StartDialogue();
-            GameManager.Instance.battle1enter = false;
+            GameManager.Instance.battle2enter = false;
         }
 
         if (textComponent.text == lines[index])

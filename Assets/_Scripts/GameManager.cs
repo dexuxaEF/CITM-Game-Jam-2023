@@ -14,9 +14,8 @@ public class GameManager : MonoBehaviour
     public bool battle2win;
     public bool battle3enter;
     public bool battle3win;
-
-    public static Vector2 schoolpos;
-
+    public bool isCutsceneOn = true;
+    public bool doorcloser = false;
     bool timer = false;
     private void Awake()
     {

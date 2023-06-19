@@ -14,9 +14,12 @@ public class DoorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MoveCamera.isCutsceneOn == false)
+        if(GameManager.Instance.doorcloser == true)
         {
-            classdoor.SetActive(true);
+            if (classdoor.activeInHierarchy == false)
+            {
+                classdoor.SetActive(true);
+            }
         }
     }
 }
