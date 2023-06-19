@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  speed: 2
+  speed: 3
   getDamage: 0
   delayTimeToAttack: 1
-  reloadTime: 1
+  reloadTime: 1.2
   delayTimeToMove: 0.8
   stoppedTime: 0.2
   leftBoundary: {fileID: 0}
