@@ -1,0 +1,958 @@
+fileFormatVersion: 2
+guid: ea4a40ba07305b84ebcde1100cb65893
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beta Waves_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd76d3ba88d992f44af88e0e85612117
+      internalID: -731103717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_1
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 840
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25da0cde6c678f346bf75cff49b3b424
+      internalID: 920114518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_2
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 840
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa947db2c622d3b40b1e58f65c99d99f
+      internalID: -1121542453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_3
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 840
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02a6c376cd0fdf4ba5f5f2d50a38444
+      internalID: -1056793760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_4
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 840
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4afcf34381fb44fb73c9ef1ddbeaed
+      internalID: 1792524273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71bec1412295eb242b272f8c5ee4d855
+      internalID: -886497410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_6
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 720
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee433a83353e8e4baa968ce9f3494b0
+      internalID: -1177054339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_7
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 720
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637ba5f6122cd6c41b1d329c8812c442
+      internalID: 1295198770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_8
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 720
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c7cca3df1222b408d3e905e9381f8c
+      internalID: 1170247464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_9
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 720
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8430743ff71bd6c4fbd392c3a745534e
+      internalID: -484446786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee120ac0c19e6b46bbd5479822032f3
+      internalID: -315055405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_11
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 600
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43498a6fbe12e9e4eaceac005347f1c4
+      internalID: 956945660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_12
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 600
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a341d76cc356fa14f823b00815e175c7
+      internalID: 1958083956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_13
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 600
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6d9c6b42d0cde4b89824a0e7acffd2
+      internalID: 1385872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_14
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 600
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e16e2d6d163dc9478edfbb30285ae3c
+      internalID: 2089010686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac5817cc616a4d498e50b51b3de64ba
+      internalID: -879387188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_16
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 480
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f0cdc783491934b81fc72a0ec7f547
+      internalID: 1834961600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_17
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 480
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d36d5e9092cec488c93fa37ce628d8
+      internalID: 1604095439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_18
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 480
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c51c40946cd238489f5b806d0ad1958
+      internalID: 2141812066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_19
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 480
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02863bc5709520c46b75ed2b7ee3bafe
+      internalID: -796567922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3395a5da8005707459829ea516715cef
+      internalID: 920108207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_21
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 360
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c756f5fab0ead91488483bfc19771b0f
+      internalID: 84976486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_22
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 360
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a5f2f327f4b94747a46f5b0cbf78e15
+      internalID: -1024520968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_23
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 360
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478a68878b9ff1a48b785e5f0e676a91
+      internalID: 1531491556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_24
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 360
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9e823c3abf676468ad4d4d49ea3a24
+      internalID: 485353569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b545c3f7f7d96804889cc163bd4f6b79
+      internalID: -1739623789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_26
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 240
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd5c3859c0c2804bb9dbad8a16d1db4
+      internalID: -1768396361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_27
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 240
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3123d3470467e0f4992ed116988b93e6
+      internalID: -1677447901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_28
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 240
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd6c56d2c4c62f4e9465fe43a1822b6
+      internalID: -1715431257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_29
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 240
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b42d10492b6e324e8e0beaff277e9cb
+      internalID: -1246368403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727a4aaa940392f41a1eedf70795ee95
+      internalID: 661958367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_31
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 120
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe8e2bef3097e648bfcfbb2b076ccc8
+      internalID: 835843687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_32
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 120
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2165bbd18d95545429660e21b5420664
+      internalID: -1161981853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_33
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 120
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6002e09880434cb4cb87cd8fd06ffeb2
+      internalID: -1706151801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_34
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 120
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713cf914f4804cd41abd8389374b3547
+      internalID: 1117472322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0041a168e5ca4e49955a64401a290c7
+      internalID: -1038482390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_36
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9042706e3fd6eb4da7fc45739f10e6b
+      internalID: -301409976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta Waves_37
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 0
+        width: 472
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ad5ebdebe345d469c9c92a055dcb60
+      internalID: -571997476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Beta Waves_17: 1604095439
+      Beta Waves_18: 2141812066
+      Beta Waves_16: 1834961600
+      Beta Waves_31: 835843687
+      Beta Waves_32: -1161981853
+      Beta Waves_36: -301409976
+      Beta Waves_2: -1121542453
+      Beta Waves_1: 920114518
+      Beta Waves_3: -1056793760
+      Beta Waves_6: -1177054339
+      Beta Waves_26: -1768396361
+      Beta Waves_23: 1531491556
+      Beta Waves_5: -886497410
+      Beta Waves_11: 956945660
+      Beta Waves_9: -484446786
+      Beta Waves_29: -1246368403
+      Beta Waves_8: 1170247464
+      Beta Waves_10: -315055405
+      Beta Waves_19: -796567922
+      Beta Waves_37: -571997476
+      Beta Waves_27: -1677447901
+      Beta Waves_13: 1385872
+      Beta Waves_35: -1038482390
+      Beta Waves_24: 485353569
+      Beta Waves_7: 1295198770
+      Beta Waves_0: -731103717
+      Beta Waves_28: -1715431257
+      Beta Waves_21: 84976486
+      Beta Waves_33: -1706151801
+      Beta Waves_25: -1739623789
+      Beta Waves_34: 1117472322
+      Beta Waves_12: 1958083956
+      Beta Waves_22: -1024520968
+      Beta Waves_20: 920108207
+      Beta Waves_15: -879387188
+      Beta Waves_4: 1792524273
+      Beta Waves_30: 661958367
+      Beta Waves_14: 2089010686
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

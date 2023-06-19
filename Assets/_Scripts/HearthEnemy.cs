@@ -99,6 +99,7 @@ public class HearthEnemy : Enemy
 
         }
         projectilePool.Enqueue(projectile);
+        Invoke(nameof(AllowMovement), stoppedTime);
     }
 
     public void SpawnMultipleProjectile()
@@ -120,7 +121,9 @@ public class HearthEnemy : Enemy
             }
             projectilePool.Enqueue(projectile);
         }
-       
+
+        Invoke(nameof(AllowMovement), stoppedTime);
+
     }
 
 
@@ -136,12 +139,15 @@ public class HearthEnemy : Enemy
         {
             if(defaultAttack)
             {
+
                 SpawnLeftProjectile();
                 SpawnRightProjectile();
+                isStopped = true;
             }
             else
             {
                 SpawnMultipleProjectile();
+                isStopped = true;
             }
             
             yield return new WaitForSeconds(Random.Range(minReloadTime, maxReloadTime));

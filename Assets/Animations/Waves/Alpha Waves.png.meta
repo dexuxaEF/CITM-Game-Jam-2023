@@ -1,0 +1,958 @@
+fileFormatVersion: 2
+guid: df8cc10873cfada4c89d98574a5180c6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Alpha Waves_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d51a0a2b6367f24885dee68c027ac8d
+      internalID: -1596576663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_1
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 840
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40508ad386e4e64ead623979b4f5769
+      internalID: -131288214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_2
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 840
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfe73255e1e4f445b079f484c06d58c
+      internalID: -390191817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_3
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 840
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa3a2e68bd131f4ca7d647b9c7b8a77
+      internalID: 153902774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_4
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 840
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43347d27b2f499469e070da1165a922
+      internalID: -2058498518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44be0ee3280d1ec4199be3d955b1cbae
+      internalID: -1125906954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_6
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 720
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0797ae80c92fcc14dafa14525137aa4d
+      internalID: 1231609032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 720
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0d792293e80e244b03faef303483ef
+      internalID: -1496350096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_8
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 720
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16e84644b759bd4f9602ffa487701cb
+      internalID: 1820569488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_9
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 720
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8d56036ffdc864185b68ffab3677f5
+      internalID: -1736901801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b729cadf8ee1f644b16711ea7c34e3f
+      internalID: 722167312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_11
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 600
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c71f10a6e33b14581a5bfebb196b19
+      internalID: 1343741409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_12
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 600
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ef54e882c91764bbcaf94b0f0acd11
+      internalID: -884833165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_13
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 600
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55292363bdc3164abd26cc2c7c8c6a1
+      internalID: -1732334556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_14
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 600
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e2d997bcb89e7469135b8a3c1044aa
+      internalID: 1914424143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafc6f7388c80d64aa2a4a126df907b1
+      internalID: -1438840339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_16
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 480
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c387283fd31bcb41a7c81449ce8c327
+      internalID: 191561390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_17
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 480
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0cba073d105b44da3cc7b89746bc1d
+      internalID: -1441812452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_18
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 480
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1383bbe403218cb4b8fcc518d8847611
+      internalID: -254230409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_19
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 480
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cb8b5f2827da546aef838bdb726294
+      internalID: 40582370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41165907263c55940b0b33dca70ddba4
+      internalID: 1692533372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_21
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 360
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b37cc8bc54b74488dbb73d638dd860
+      internalID: -1268224280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_22
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 360
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9655f3ffdedc1534093b5a45656f8f40
+      internalID: 1338967294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_23
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 360
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af3dd2d4cc34e14293beac795afa148
+      internalID: -900112754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_24
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 360
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767506de9aa1ad0409ed57e4d3a6df1d
+      internalID: 1832846351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e7e35279550894b88b454f2b739556
+      internalID: 1215254821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_26
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 240
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d6b4a1cbd97aa4281a183b9dfd1ab4
+      internalID: -1156080474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_27
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 240
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44abd24a95dbed740ae34cb3112c4279
+      internalID: -530200124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_28
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 240
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc72c326fc29784a91fed87863d95f8
+      internalID: 1106419621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_29
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 240
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8af17cfd14bcd7418f6670ab8c80f33
+      internalID: -36629023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344078ff4547c10499adf38a4421ab25
+      internalID: 1465196018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_31
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 120
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50b301f511fcaf47900ed97fb699233
+      internalID: 383096223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_32
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 120
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a991107b07cbd48b7a45396d7c9565
+      internalID: 1673046554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_33
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 120
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ab2ce75df5a1f47b0e95f540135efb
+      internalID: -1378116896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_34
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 120
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d1c39874b13eb4ea3bbf3e1b26e005
+      internalID: 1965519495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf35ef6789bbb3439dcfa32b0e22514
+      internalID: 572021895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_36
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338ca4f4f0db7ef4d98ea0582225ec0d
+      internalID: -1264414525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alpha Waves_37
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 0
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286bfa3c74ae3e543855fa6c1de89411
+      internalID: -735193821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Alpha Waves_10: 722167312
+      Alpha Waves_1: -131288214
+      Alpha Waves_7: -1496350096
+      Alpha Waves_2: -390191817
+      Alpha Waves_17: -1441812452
+      Alpha Waves_20: 1692533372
+      Alpha Waves_21: -1268224280
+      Alpha Waves_32: 1673046554
+      Alpha Waves_4: -2058498518
+      Alpha Waves_11: 1343741409
+      Alpha Waves_15: -1438840339
+      Alpha Waves_36: -1264414525
+      Alpha Waves_8: 1820569488
+      Alpha Waves_19: 40582370
+      Alpha Waves_25: 1215254821
+      Alpha Waves_3: 153902774
+      Alpha Waves_18: -254230409
+      Alpha Waves_31: 383096223
+      Alpha Waves_9: -1736901801
+      Alpha Waves_0: -1596576663
+      Alpha Waves_13: -1732334556
+      Alpha Waves_37: -735193821
+      Alpha Waves_22: 1338967294
+      Alpha Waves_6: 1231609032
+      Alpha Waves_23: -900112754
+      Alpha Waves_16: 191561390
+      Alpha Waves_24: 1832846351
+      Alpha Waves_28: 1106419621
+      Alpha Waves_30: 1465196018
+      Alpha Waves_14: 1914424143
+      Alpha Waves_27: -530200124
+      Alpha Waves_5: -1125906954
+      Alpha Waves_35: 572021895
+      Alpha Waves_12: -884833165
+      Alpha Waves_34: 1965519495
+      Alpha Waves_26: -1156080474
+      Alpha Waves_29: -36629023
+      Alpha Waves_33: -1378116896
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
