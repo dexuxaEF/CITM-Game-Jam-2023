@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.060127348, y: 1.2326113}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6313374, y: 3.4652226}
   m_EdgeRadius: 0
 --- !u!114 &7711265965069702294
 MonoBehaviour:
@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  speed: 3
+  speed: 2
   getDamage: 0
   delayTimeToAttack: 1.75
-  reloadTime: 1
+  reloadTime: 2.25
   delayTimeToMove: 0.8
   stoppedTime: 0.2
   leftBoundary: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   isStopped: 0
   _animator: {fileID: 0}
   minNumProjectiles: 3
-  maxNumProjectiles: 6
+  maxNumProjectiles: 5
   totalAngle: 360
 --- !u!1001 &4247705994705871020
 PrefabInstance:
