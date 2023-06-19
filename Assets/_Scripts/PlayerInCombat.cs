@@ -11,9 +11,12 @@ public class PlayerInCombat : MonoBehaviour
     private SlowMotion slowMoScript;
     [SerializeField]
     private GameObject bloodParticles;
+    private GameObject bloodParticleInstance;
 
+    [Header("Player")]
     [HideInInspector]
-    [SerializeField] [Min(1.0f)] private float playerSpeed;
+    [SerializeField] [Min(1.0f)] private float playerSpeed =10f;
+    [Min(0f)] public float lives= 3f;
 
     [HideInInspector]
     private Rigidbody2D _rigidbody;
@@ -33,7 +36,8 @@ public class PlayerInCombat : MonoBehaviour
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
-    private bool isDashing;
+    [HideInInspector]
+    public bool isDashing;
     //Nos permite saber si tiene el dash disponible
     private bool canDash=true;
 
@@ -51,9 +55,12 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     public Vector3 direction;
 
+    [Header("Parry")]
     [Min(0.01f)] public float parryacceleration =1.50f;
+    [Min(0f)] public float invulnerabilityParryTimer =0.5f;
+    [HideInInspector]
+    public bool invulnerabilityParry = false;
 
-    public int lives;
 
     private void Awake()
     {
@@ -99,10 +106,11 @@ public class PlayerInCombat : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        //if (Input.GetKeyDown(KeyCode.Z) &&  !isKnockBack)
-        //{
-        //    StartCoroutine(Knockback(new Vector3(2,2)));
-        //}
+        if (invulnerabilityParry) 
+        {
+            Invoke(nameof(Invulnerability), invulnerabilityParryTimer);
+        }
+    
 
 
     }
@@ -226,10 +234,10 @@ public class PlayerInCombat : MonoBehaviour
         // Game feel
         CameraShaker.Instance.ShakeOnce(5.0f, 5.0f, 0f, 1.0f);
         slowMoScript.StartDamageSlowMo(1.0f);
-        Instantiate(bloodParticles, transform.position, Quaternion.identity);
-        //Destroy(gameObject);
-
+        bloodParticleInstance = Instantiate(bloodParticles, transform.position, Quaternion.identity);
+        Destroy(bloodParticleInstance, 1);
     }
+
 
     private void Explsion()
     {
@@ -240,6 +248,7 @@ public class PlayerInCombat : MonoBehaviour
     public void Invulnerability() 
     {
        invulnerability = false;
+       invulnerabilityParry = false;
 
     }
 

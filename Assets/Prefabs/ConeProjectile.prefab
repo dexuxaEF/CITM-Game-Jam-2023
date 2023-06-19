@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 820995519380312780}
   - component: {fileID: 788314055856776639}
   - component: {fileID: 3106149134741842483}
-  - component: {fileID: 8692277908723133601}
   - component: {fileID: -3741337284222137577}
+  - component: {fileID: 8692277908723133601}
   - component: {fileID: -3387298807629167050}
   m_Layer: 0
   m_Name: ConeProjectile
@@ -109,6 +109,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &-3741337284222137577
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648415444523150833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &8692277908723133601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,22 +142,7 @@ MonoBehaviour:
   speed: 5
   defaultSpeed: 5
   direction: {x: 0, y: 0, z: 0}
---- !u!58 &-3741337284222137577
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648415444523150833}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  echoEffect: {fileID: -3387298807629167050}
 --- !u!114 &-3387298807629167050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d42dd4f3f0e8343b0206f73863bcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBtwSpawns: 0.1
   startTimeBtwSpawns: 0.05
+  timeBtwSpawnsDefault: 0
   destroyTime: 0.3
   echo: {fileID: 1818081262332937292, guid: f0a82768e7cbaa9439afad6854ccdea8, type: 3}
