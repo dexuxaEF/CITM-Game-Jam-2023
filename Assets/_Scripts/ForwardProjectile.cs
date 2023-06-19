@@ -100,8 +100,12 @@ public class ForwardProjectile : Projectile
                 Vector3 dir = (direction).normalized;
                 //StartCoroutine( player.Knockback(dir));
                 player.KnockBack(dir);
+                ProjectileDestruction();
             }
-            ProjectileDestruction();
+            else
+            {
+                Reset();
+            }
             
 
         }
@@ -131,12 +135,16 @@ public class ForwardProjectile : Projectile
         isTracking = false;
     }
 
-    private void OnEnable()
+    private void Reset()
     {
         DefaultSpeed();
         isTracking = false;
         stopTracking = false;
-        Debug.Log("b");
+    }
+
+    private void OnEnable()
+    {
+        Reset();        
     }
 
 }
