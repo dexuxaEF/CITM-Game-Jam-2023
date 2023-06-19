@@ -102,112 +102,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: heart_chainDown_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 816
-        height: 848
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed880c0cb21ef3f439d3b61084a9e006
-      internalID: 688801690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heart_chainDown_1
-      rect:
-        serializedVersion: 2
-        x: 816
-        y: 0
-        width: 816
-        height: 848
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7ed4aa8b9f3a5a4d9a6d2f65a0cda48
-      internalID: -1509335664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heart_chainDown_2
-      rect:
-        serializedVersion: 2
-        x: 1632
-        y: 0
-        width: 816
-        height: 848
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54d69b73152a96346b89a233757e72f1
-      internalID: 256982073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heart_chainDown_3
-      rect:
-        serializedVersion: 2
-        x: 2448
-        y: 0
-        width: 816
-        height: 848
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e920537f6c53d5b44a3a03ff01023e19
-      internalID: -1258827004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heart_chainDown_4
-      rect:
-        serializedVersion: 2
-        x: 3264
-        y: 0
-        width: 816
-        height: 848
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8b70c1ce21fb774187b3858fcfdb86d
-      internalID: -1293856470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -218,12 +113,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      heart_chainDown_0: 688801690
-      heart_chainDown_3: -1258827004
-      heart_chainDown_4: -1293856470
-      heart_chainDown_2: 256982073
-      heart_chainDown_1: -1509335664
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

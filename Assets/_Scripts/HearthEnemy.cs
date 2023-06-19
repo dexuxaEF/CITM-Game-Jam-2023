@@ -21,17 +21,13 @@ public class HearthEnemy : Enemy
 
     public bool invulnerability = false;
 
-    [Tooltip("bool to trigger animation loop")]
-    public bool triggerAnimation = false;
-
-    private float timeToRestartMoveAnimation = 0.95f;
-
-        private void Awake()
+    private void Awake()
     {
         playerobject = GameObject.FindWithTag("Player");
         _player = playerobject.GetComponent<PlayerInCombat>();
 
     }
+
 
     private void Start()
     {
@@ -158,44 +154,27 @@ public class HearthEnemy : Enemy
         
     }
 
-
     IEnumerator ProjectileCoroutine()
     {
-
         while (true)
         {
+            if(defaultAttack)
+            {
 
-            triggerAnimation = true;
-            _animator.SetBool("triggerLoop", triggerAnimation);
-
-
-
-            Invoke(nameof(PrepareAttackAnimation), timeToRestartMoveAnimation);
-            yield return new WaitForSeconds(reloadTime);
+                SpawnLeftProjectile();
+                SpawnRightProjectile();
+                isStopped = true;
+            }
+            else
+            {
+                SpawnMultipleProjectile();
+                isStopped = true;
+            }
+            
+            yield return new WaitForSeconds(Random.Range(minReloadTime, maxReloadTime));
         }
     }
 
-
-    private void PrepareAttackAnimation()
-    {
-
-        if (defaultAttack)
-        {
-
-            SpawnLeftProjectile();
-            SpawnRightProjectile();
-            isStopped = true;
-        }
-        else
-        {
-            SpawnMultipleProjectile();
-            isStopped = true;
-        }
-
-        triggerAnimation = false;
-        _animator.SetBool("triggerLoop", triggerAnimation);
-
-    }
 
 
 }

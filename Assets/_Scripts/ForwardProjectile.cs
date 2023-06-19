@@ -172,8 +172,6 @@ public class ForwardProjectile : Projectile
     private void OnEnable()
     {
         Reset();
-
-        // Restart Wave count
         echoEffect.RestartWaveCount();
     }
 
