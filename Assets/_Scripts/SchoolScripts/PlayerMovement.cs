@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
+    public static Vector2 position;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Stop();
         }
-
+        position = _rigidbody.position;
     }
 
     /// <summary>

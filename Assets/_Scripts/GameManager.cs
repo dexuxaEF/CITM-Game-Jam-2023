@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     public static bool battle2win;
     public static bool battle3enter;
     public static bool battle3win;
+    public static bool hasteacherended;
+
+    public static Vector2 schoolpos;
+
     bool timer = false;
     void Awake()
     {
@@ -26,6 +30,7 @@ public class GameManager : MonoBehaviour
         battle2win = false;
         battle3enter = false;
         battle3win = false;
+        hasteacherended = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -45,9 +50,11 @@ public class GameManager : MonoBehaviour
             Invoke(nameof(startbattle1), 4);
             timer = false;
         }
+
     }
     void startbattle1()
     {
+        schoolpos = PlayerMovement.position;
         SceneManager.LoadScene("SampleScene");
     }
 }

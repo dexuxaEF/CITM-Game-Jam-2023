@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimatorDisable : MonoBehaviour
+public class Initalizer : MonoBehaviour
 {
-    public Animator animator;
+    public Rigidbody2D _rigidbody;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +14,9 @@ public class AnimatorDisable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MoveCamera.isCutsceneOn == false)
+        if(GameManager.battle1win == true)
         {
-            animator.enabled = false;
+            _rigidbody.position = GameManager.schoolpos;
         }
 
     }
