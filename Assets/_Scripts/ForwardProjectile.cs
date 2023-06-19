@@ -131,5 +131,12 @@ public class ForwardProjectile : Projectile
         isTracking = false;
     }
 
+    private void OnEnable()
+    {
+        DefaultSpeed();
+        isTracking = false;
+        stopTracking = false;
+        Debug.Log("b");
+    }
 
 }
