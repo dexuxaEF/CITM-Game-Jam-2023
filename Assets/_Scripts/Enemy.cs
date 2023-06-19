@@ -171,6 +171,10 @@ public class Enemy : MonoBehaviour
         return Random.Range(bottomBoundary.transform.position.y, topBoundary.transform.position.y);
     }
 
+    void StopMovement()
+    {
+       
+    }
 
     #endregion
 
@@ -188,5 +192,7 @@ public class Enemy : MonoBehaviour
 
     }
     #endregion
+
+
 
 }

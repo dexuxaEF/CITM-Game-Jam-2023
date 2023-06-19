@@ -6,14 +6,12 @@ public class PuppetEnemy : Enemy
 {
     public bool isCurved = true;
 
-    private Rigidbody2D _rigidbody;
-
     [Tooltip("notDefaultAttack: kinda tracking projectile")]
     public bool defaultAttack = true;
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        
     }
     void Start()
     {

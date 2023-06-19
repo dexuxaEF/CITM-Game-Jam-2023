@@ -136,6 +136,7 @@ public class HearthEnemy : Enemy
         {
             if(defaultAttack)
             {
+
                 SpawnLeftProjectile();
                 SpawnRightProjectile();
             }
