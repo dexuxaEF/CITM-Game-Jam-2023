@@ -124,6 +124,7 @@ MonoBehaviour:
   maxWallBounces: 3
   defaultMaxWallBounces: 3
   speed: 5
+  defaultSpeed: 5
   direction: {x: 0, y: 0, z: 0}
 --- !u!58 &-3741337284222137577
 CircleCollider2D:

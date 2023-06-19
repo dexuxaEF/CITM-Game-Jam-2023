@@ -9,11 +9,8 @@ public class Enemy : MonoBehaviour
     protected int health;
 
     [SerializeField]
-    [Min(1f)] 
+    [Min(0f)] 
     protected float speed;
-
-    [SerializeField]
-    protected float radiusPlayerDetection = 1.1f;
 
     [SerializeField]
     [Tooltip("Damage done to this monster")]
@@ -21,6 +18,16 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     protected float delayTimeToAttack = 2f;
+
+    [SerializeField]
+    [Tooltip("Min. Time between each shoot")]
+    protected float minReloadTime = 1.0f;
+    [SerializeField]
+    [Tooltip("Max. Time between each shoot")]
+    protected float maxReloadTime = 1.0f;
+
+    [SerializeField]
+    protected float delayTimeToMove = 0.8f;
 
 
     [Header("Map Info:")]
@@ -41,8 +48,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int initialPoolSize = 15;
 
-    [Tooltip("Time between shoot")]
-    protected float reloadTime = 1.0f;
+
 
     protected Queue<GameObject> projectilePool = new();
     protected GameObject projectileParent;
@@ -54,6 +60,9 @@ public class Enemy : MonoBehaviour
 
     protected Vector3 nextPosition;
     protected Vector3 newDirection;
+
+    private bool nextPositionCalculated = false;
+    protected bool isMoving = false;
 
     private void Awake()
     {
@@ -100,12 +109,20 @@ public class Enemy : MonoBehaviour
 
     public virtual void Move()
     {
-        if (Vector2.Distance(transform.position, nextPosition) < 0.1f || !PlayerOutOfNextPosition())
+        if (Vector2.Distance(transform.position, nextPosition) < 0.1f)
         {
-            nextPosition = RandomPositionInsideBoundaries();
+            //nextPosition = RandomPositionInsideBoundaries();
+            if(!nextPositionCalculated)
+            {
+                nextPositionCalculated = true;
+                isMoving = false;
+                Invoke(nameof(CalculateNextPosition), delayTimeToMove);
+
+            }
         }
         else
         {
+            isMoving = true;
             newDirection = (nextPosition - this.transform.position).normalized;
         }
 
@@ -115,20 +132,10 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
     }
 
-    bool PlayerOutOfNextPosition()
+    void CalculateNextPosition()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radiusPlayerDetection);
-
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.CompareTag("Player"))
-            {
-                return false;
-            }
-        }
-
-        return true;
-
+        nextPosition = RandomPositionInsideBoundaries();
+        nextPositionCalculated = false;
     }
 
     Vector2 RandomPositionInsideBoundaries()
@@ -139,12 +146,6 @@ public class Enemy : MonoBehaviour
 
         Vector2 newPosition = new Vector2(x, y);
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, newPosition - (Vector2)transform.position, Vector2.Distance(transform.position, newPosition));
-
-        //if (hit.collider != null && hit.collider.CompareTag("Player"))
-        //{
-
-        //    return RandomPositionInsideBoundaries();
-        //}
 
         foreach (RaycastHit2D hit in hits)
         {
@@ -170,6 +171,7 @@ public class Enemy : MonoBehaviour
         return Random.Range(bottomBoundary.transform.position.y, topBoundary.transform.position.y);
     }
 
+
     #endregion
 
     #region debug
@@ -186,11 +188,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radiusPlayerDetection);
-    }
     #endregion
 
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using EZCameraShake;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class ConeProjectile : Projectile
@@ -30,7 +31,8 @@ public class ConeProjectile : Projectile
     {
         
         Move();
-        Debug.Log(speed);
+        
+        
     }
 
     protected override void Move()
@@ -54,6 +56,7 @@ public class ConeProjectile : Projectile
             maxWallBounces -= 1;
             Vector2 wallNormal = collision.transform.up;
             direction = Vector2.Reflect(direction, wallNormal).normalized;
+            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
         }
 
         if (collision.gameObject.CompareTag("Parry"))
@@ -87,7 +90,7 @@ public class ConeProjectile : Projectile
 
     private void ProjectileDestruction()
     {
-        speed = 5;
+        speed = defaultSpeed;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;
     }

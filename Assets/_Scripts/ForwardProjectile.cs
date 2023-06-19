@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class ForwardProjectile : Projectile
 {
@@ -9,7 +10,12 @@ public class ForwardProjectile : Projectile
     private GameObject playerobject;
     private PlayerInCombat player;
     private bool parryTrigger = false;
-   
+
+    public float timeToTrackPlayer = 1.0f;
+
+    [HideInInspector]
+    public bool isTracking = false;
+    private bool stopTracking = false;
 
     private void Awake()
     {
@@ -27,36 +33,54 @@ public class ForwardProjectile : Projectile
     {
 
         Move();
-        Debug.Log(speed);
+        
 
 
     }
 
     protected override void Move()
     {
+
         if (!parryTrigger)
         {
+            if(isTracking)
+            {
+                direction = (player.transform.position - this.transform.position).normalized;
+                if(!stopTracking)
+                {
+                   stopTracking = true;
+                   Invoke(nameof(StopTracking), timeToTrackPlayer);
+                }
+               
+            }
+
+
             _rigidbody.velocity = speed * direction;
         }
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
+
         if (collision.gameObject.CompareTag("Wall"))
         {
+            isTracking = false;
             maxWallBounces -= 1;
             Vector2 wallNormal = collision.transform.up;
             direction = Vector2.Reflect(direction, wallNormal).normalized;
+            // Trigger screen shake when ball colliding with wall
+            // For game feel
+            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
+
+
         }
 
         if (collision.gameObject.CompareTag("Parry"))
         {
+            isTracking = false;
             parryTrigger = true;
             direction = collision.transform.up;
             _rigidbody.velocity = new Vector2(0, 0);
@@ -66,17 +90,17 @@ public class ForwardProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Player"))
         {
+
             if (!player.invulnerability)
             {
 
                 Vector3 dir = (direction).normalized;
                 //StartCoroutine( player.Knockback(dir));
                 player.KnockBack2(dir);
-               
-
-                ProjectileDestruction();
             }
-          
+            ProjectileDestruction();
+            
+
         }
 
         if (maxWallBounces <= 0)
@@ -88,7 +112,7 @@ public class ForwardProjectile : Projectile
     private void ProjectileDestruction()
     {
         gameObject.SetActive(false);
-        speed = 5;
+        speed = defaultSpeed;
         maxWallBounces = defaultMaxWallBounces;
     }
     private void Parry()
@@ -96,4 +120,11 @@ public class ForwardProjectile : Projectile
         speed = speed * player.parryacceleration;
         parryTrigger = false;
     }
+
+    private void StopTracking()
+    {
+        isTracking = false;
+    }
+
+
 }

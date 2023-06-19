@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class PuppetEnemy : Enemy
 {
+    public bool isCurved = true;
 
-    
+    private Rigidbody2D _rigidbody;
+
+    [Tooltip("notDefaultAttack: kinda tracking projectile")]
+    public bool defaultAttack = true;
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         base.Start();
@@ -40,18 +49,17 @@ public class PuppetEnemy : Enemy
     {
         base.Move();
 
-        //transform.Translate(playerDirection * speed * Time.deltaTime);
+        if(isMoving && isCurved) 
+        {
+            this.transform.position = new Vector3(this.transform.position.x + Mathf.Sin((0.8f * Time.deltaTime)),
+                                                this.transform.position.y + Mathf.Sin((0.8f * Time.deltaTime)),
+                                                this.transform.position.z);
+        }
     }
 
     public override void Attack()
     {
         base.Attack();
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    SpawnProjectile();
-        //}
-
     }
 
     public void SpawnProjectile()
@@ -63,10 +71,22 @@ public class PuppetEnemy : Enemy
             ForwardProjectile projectileBehavior = projectile.GetComponent<ForwardProjectile>();
             projectile.SetActive(true);
             projectileBehavior.direction = playerDirection;
+           
+
+            if (defaultAttack)
+            {
+                projectileBehavior.isTracking = false;
+            }
+            else
+            {
+                projectileBehavior.isTracking = true;
+            }
+            
 
         }
         projectilePool.Enqueue(projectile);
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,7 +109,7 @@ public class PuppetEnemy : Enemy
         while (true)
         {
             SpawnProjectile();
-            yield return new WaitForSeconds(reloadTime); // Espera 1 segundo
+            yield return new WaitForSeconds(Random.Range(minReloadTime, maxReloadTime));
         }
     }
 }

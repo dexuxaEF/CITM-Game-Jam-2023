@@ -14,6 +14,9 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField]
     public float speed;
 
+    [SerializeField]
+    public float defaultSpeed;
+
     private AudioSource _audioSource;
 
     [HideInInspector]
@@ -35,6 +38,16 @@ public abstract class Projectile : MonoBehaviour
     void SpawnVFX(GameObject vfx)
     {
 
+    }
+
+    public void DefaultSpeed()
+    {
+        speed = defaultSpeed;
+    }
+
+    private void OnEnable()
+    {
+        DefaultSpeed();
     }
 
 }

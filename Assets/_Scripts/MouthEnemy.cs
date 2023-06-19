@@ -10,6 +10,8 @@ public class MouthEnemy : Enemy
     [Tooltip("Area to spawn projectiles")]
     public float totalAngle = 360f;
 
+
+
     void Start()
     {
         base.Start();
@@ -21,6 +23,7 @@ public class MouthEnemy : Enemy
             GameObject projectile = Instantiate(projectilePrefab, projectileParent.transform);
             projectile.SetActive(false);
             projectilePool.Enqueue(projectile);
+
         }
 
         playerDirection = (player.transform.position - this.transform.position);
@@ -43,7 +46,7 @@ public class MouthEnemy : Enemy
     {
         base.Move();
 
-
+        
 
         
     }
@@ -80,6 +83,7 @@ public class MouthEnemy : Enemy
                 Quaternion angle = Quaternion.Euler(0f, 0f, angleBetweenProjectile * (i + 1) + randomAngle);
 
                 projectileBehavior.direction = angle * playerDirection;
+                
 
             }
             projectilePool.Enqueue(projectile);
@@ -88,6 +92,7 @@ public class MouthEnemy : Enemy
 
        
     }
+
 
     //Función proyectil
 
@@ -119,7 +124,8 @@ public class MouthEnemy : Enemy
         while (true)
         {
             SpawnProjectile();
-            yield return new WaitForSeconds(reloadTime); // Espera 1 segundo
+
+            yield return new WaitForSeconds(Random.Range(minReloadTime,maxReloadTime));
         }
     }
 
