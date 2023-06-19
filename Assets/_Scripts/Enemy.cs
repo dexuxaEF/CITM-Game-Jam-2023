@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected float delayTimeToMove = 0.8f;
 
+    [SerializeField]
+    protected float stoppedTime = 0.2f;
+
 
     [Header("Map Info:")]
     [SerializeField]
@@ -63,6 +66,9 @@ public class Enemy : MonoBehaviour
 
     private bool nextPositionCalculated = false;
     protected bool isMoving = false;
+
+    [SerializeField]
+    protected bool isStopped = false;
 
     private void Awake()
     {
@@ -111,7 +117,7 @@ public class Enemy : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, nextPosition) < 0.1f)
         {
-            //nextPosition = RandomPositionInsideBoundaries();
+            
             if(!nextPositionCalculated)
             {
                 nextPositionCalculated = true;
@@ -129,13 +135,18 @@ public class Enemy : MonoBehaviour
         DebugNextPosition();
 
         //transform.Translate(playerDirection * speed*Time.deltaTime);
-        transform.position = Vector2.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
+        if(!isStopped)
+            transform.position = Vector2.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
     }
 
     void CalculateNextPosition()
     {
-        nextPosition = RandomPositionInsideBoundaries();
-        nextPositionCalculated = false;
+        while(Vector2.Distance(transform.position, nextPosition) < 3f)
+        {
+            nextPosition = RandomPositionInsideBoundaries();
+            nextPositionCalculated = false;
+            
+        }
     }
 
     Vector2 RandomPositionInsideBoundaries()
@@ -172,6 +183,12 @@ public class Enemy : MonoBehaviour
     }
 
 
+    public void AllowMovement()
+    {
+        isStopped = false;
+    }
+
+
     #endregion
 
     #region debug
@@ -188,5 +205,7 @@ public class Enemy : MonoBehaviour
 
     }
     #endregion
+
+
 
 }

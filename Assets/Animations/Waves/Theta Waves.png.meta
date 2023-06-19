@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: b69e77483aa306840ae1150a01988c80
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Theta Waves_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 848
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727375dd0bde13f4a9dae62defd9564d
+      internalID: -1391649489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_1
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 848
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4328593f5e58733428fbdd85a8627760
+      internalID: 1130918921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_2
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 848
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0089cbbc4b2a7ba4fa8e79792927109a
+      internalID: -1607494115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_3
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 848
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f5614b3020762498fe751016ad3f3c
+      internalID: -170477992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_4
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 848
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff7e987ff4a3bd489fbf86727a238cd
+      internalID: 893795014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 728
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fb51ebeab8d0043ad860fe27a3b9b7
+      internalID: -1333817578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_6
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 728
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45b670e1fb790b48a5b59b39a60ab46
+      internalID: -950333869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 728
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45cbeb8e4c0f35744a4193d4e7e8f82a
+      internalID: 1595146666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_8
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 728
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf80a7207ad80814fb68f26b6a0609e2
+      internalID: 941757309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_9
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 728
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113652a9221893a438ab4b7c811cfd38
+      internalID: -788647256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e566f7708d235a5418bee561fe4fdd58
+      internalID: -1071586764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_11
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 608
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e55655e9506eb49b43178c988620d9
+      internalID: 1861511231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_12
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 608
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac1462f719afe747855fab8048811ad
+      internalID: -1198848330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_13
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 608
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4964a9f552e78d46ba85f9ef9791f27
+      internalID: -862022931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_14
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 608
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4df938395ec304a80e2249b3b44a29
+      internalID: 426729080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 488
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128007c858088a84284c445836040555
+      internalID: -321991967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_16
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 488
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6abcb0f1f3a8e4daa135e8a00b3882
+      internalID: -725309727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_17
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 488
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5aab5621a60be94cad6ae87ac32a60e
+      internalID: -1457271224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_18
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 488
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49b7150d2562da4d8fea6aff669e7c0
+      internalID: 1503068900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_19
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 488
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9982e48c62fe446962fe05ad83d32c
+      internalID: -1411068131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ff293d1dcd86f48a9d1bc58d4d77a9
+      internalID: -287339865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_21
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 368
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce67192667d55314a995ff6422acab44
+      internalID: -1334370662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_22
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 368
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785ddd9200f8fa045a322c48181f0cc7
+      internalID: -1839013645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_23
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 368
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea40b4d1523754a4fa7e9c5b112277b3
+      internalID: -623773431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_24
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 368
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e810e29c5de26428525aac52ce5fcd
+      internalID: 1530570060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2c0e9d18af504438059d5f1d5640de
+      internalID: -416545258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_26
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 248
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f8bea04296c1b418190a6d598245a5
+      internalID: 425813728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_27
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 248
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3568d34af277f45a110d7a6770e4ca
+      internalID: 512915569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_28
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 248
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3284b531f7a735a4b9c46405ee114e31
+      internalID: 1673921545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_29
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 248
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33af99a9c1cc43a4b9912c820b4c2594
+      internalID: 66463796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c49ba82926e3b54f9c83878e47490d8
+      internalID: 1028089625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_31
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 128
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cf65fa4252aa4469f873ae29711371
+      internalID: -1333081113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_32
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 128
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4639231bf512d5646a8de7f942296775
+      internalID: -125226383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_33
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 128
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60739171324262e4aab63e407425b13f
+      internalID: 4772992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_34
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 128
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a202397081900974b89bc99905d270f3
+      internalID: 1302290165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b8c39857ec71148bd20fd9a26f69b9
+      internalID: -1686181213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_36
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 8
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30531156f93893743baf94f79c56b8de
+      internalID: 1440964134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_37
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 8
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2bf0c2b289b8c4f83d5ab157143b06
+      internalID: 622933906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Theta Waves_38
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 8
+        width: 470
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5887f77e71dd1ae4fa77b52c767be3c1
+      internalID: 591690714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Theta Waves_3: -170477992
+      Theta Waves_1: 1130918921
+      Theta Waves_10: -1071586764
+      Theta Waves_4: 893795014
+      Theta Waves_32: -125226383
+      Theta Waves_24: 1530570060
+      Theta Waves_21: -1334370662
+      Theta Waves_28: 1673921545
+      Theta Waves_5: -1333817578
+      Theta Waves_9: -788647256
+      Theta Waves_20: -287339865
+      Theta Waves_31: -1333081113
+      Theta Waves_18: 1503068900
+      Theta Waves_23: -623773431
+      Theta Waves_25: -416545258
+      Theta Waves_27: 512915569
+      Theta Waves_11: 1861511231
+      Theta Waves_6: -950333869
+      Theta Waves_16: -725309727
+      Theta Waves_37: 622933906
+      Theta Waves_13: -862022931
+      Theta Waves_8: 941757309
+      Theta Waves_17: -1457271224
+      Theta Waves_12: -1198848330
+      Theta Waves_34: 1302290165
+      Theta Waves_36: 1440964134
+      Theta Waves_2: -1607494115
+      Theta Waves_19: -1411068131
+      Theta Waves_26: 425813728
+      Theta Waves_15: -321991967
+      Theta Waves_7: 1595146666
+      Theta Waves_22: -1839013645
+      Theta Waves_38: 591690714
+      Theta Waves_35: -1686181213
+      Theta Waves_33: 4772992
+      Theta Waves_30: 1028089625
+      Theta Waves_0: -1391649489
+      Theta Waves_29: 66463796
+      Theta Waves_14: 426729080
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

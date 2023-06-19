@@ -90,7 +90,8 @@ public class MouthEnemy : Enemy
 
         }
 
-       
+        Invoke(nameof(AllowMovement), stoppedTime);
+
     }
 
 
@@ -124,6 +125,7 @@ public class MouthEnemy : Enemy
         while (true)
         {
             SpawnProjectile();
+            isStopped = true;
 
             yield return new WaitForSeconds(Random.Range(minReloadTime,maxReloadTime));
         }

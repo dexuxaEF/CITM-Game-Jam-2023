@@ -104,7 +104,10 @@ public class ForwardProjectile : Projectile
                 player.KnockBack(dir);
                 ProjectileDestruction();
             }
-
+            else
+            {
+                Reset();
+            }
             
 
         }
@@ -133,5 +136,16 @@ public class ForwardProjectile : Projectile
         isTracking = false;
     }
 
+    private void Reset()
+    {
+        DefaultSpeed();
+        isTracking = false;
+        stopTracking = false;
+    }
+
+    private void OnEnable()
+    {
+        Reset();        
+    }
 
 }
