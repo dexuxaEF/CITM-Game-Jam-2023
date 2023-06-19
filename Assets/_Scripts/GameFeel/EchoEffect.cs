@@ -6,6 +6,7 @@ public class EchoEffect : MonoBehaviour
 {
     private float timeBtwSpawns;
     public float startTimeBtwSpawns;
+    [HideInInspector]
     public float destroyTime = 0.5f;
 
     public GameObject echo;
@@ -45,5 +46,9 @@ public class EchoEffect : MonoBehaviour
         }
     }
 
+    public void RestartWaveCount()
+    {
+        startTimeBtwSpawns = 0.05f;
+    }
 
 }

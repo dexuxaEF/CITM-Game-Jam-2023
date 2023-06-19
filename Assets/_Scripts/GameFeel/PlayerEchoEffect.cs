@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerEchoEffect : MonoBehaviour
 {
     private float timeBtwSpawns;
+
     public float startTimeBtwSpawns;
     public float destroyTime = 0.5f;
 
@@ -17,6 +18,7 @@ public class PlayerEchoEffect : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerInCombat = GetComponent<PlayerInCombat>();
+
     }
 
     // Update is called once per frame

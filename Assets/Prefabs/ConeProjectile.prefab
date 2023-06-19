@@ -142,6 +142,7 @@ MonoBehaviour:
   speed: 5
   defaultSpeed: 5
   direction: {x: 0, y: 0, z: 0}
+  echoEffect: {fileID: -3387298807629167050}
 --- !u!114 &-3387298807629167050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,5 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTimeBtwSpawns: 0.05
+  timeBtwSpawnsDefault: 0
   destroyTime: 0.3
   echo: {fileID: 1818081262332937292, guid: f0a82768e7cbaa9439afad6854ccdea8, type: 3}

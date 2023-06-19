@@ -22,6 +22,8 @@ public abstract class Projectile : MonoBehaviour
     [HideInInspector]
     public Vector3 direction;
 
+    public EchoEffect echoEffect;
+
 
     private void Awake()
     {
@@ -48,6 +50,9 @@ public abstract class Projectile : MonoBehaviour
     private void OnEnable()
     {
         DefaultSpeed();
+
+        // Restart Wave count
+        echoEffect.RestartWaveCount();
     }
 
 }
