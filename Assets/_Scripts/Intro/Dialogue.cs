@@ -9,18 +9,24 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
-
+    public static bool startdialogue = false;
+    public static bool next = false;
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(startdialogue == true)
+        {
+            StartDialogue();
+            startdialogue = false;
+            next = true;
+        }
+        if (Input.GetMouseButtonDown(0) && next == true)
         {
             if (textComponent.text == lines[index])
             {

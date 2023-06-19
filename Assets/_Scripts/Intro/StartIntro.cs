@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class NextScene : MonoBehaviour
+
+public class StartIntro : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,11 +13,15 @@ public class NextScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke(nameof(nextscene), 11);
+
+        Invoke(nameof(StartDialogue), 7);
+
     }
-    void nextscene()
+    void StartDialogue()
     {
-        GameManager.Instance.hasteacherended = true;
-        SceneManager.LoadScene("School");
+        if (Dialogue.next == false)
+        {
+            Dialogue.startdialogue = true;
+        }
     }
 }
