@@ -8,6 +8,18 @@ public class ChargeBar : MonoBehaviour
     // Start is called before the first frame update
 
     public Slider slider;
+    public void SetCharge(float charge) 
+    {
+
+        slider.value = charge;
+    }
+
+    public void SetMaxCharge(float maxcharge)
+    {
+
+        slider.maxValue = maxcharge;
+    }
+
     void Start()
     {
         

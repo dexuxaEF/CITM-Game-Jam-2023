@@ -23,6 +23,9 @@ public class PlayerInCombat : MonoBehaviour
 
     public GameObject _parry;
 
+    public ChargeBar chargeBar;
+    public GameObject _chargeBarObject;
+
     [SerializeField]
     public float timeParryAvailable = 0.35f;
 
@@ -60,6 +63,10 @@ public class PlayerInCombat : MonoBehaviour
     [Min(0f)] public float invulnerabilityParryTimer =0.5f;
     [HideInInspector]
     public bool invulnerabilityParry = false;
+    public float maxparrycooldown = 1f;
+    private bool isparry = false;
+    private bool canParry = true;
+    private float parrycooldown;
 
 
     private void Awake()
@@ -75,6 +82,9 @@ public class PlayerInCombat : MonoBehaviour
         invulnerability = false;
         isDashing = false;
         isKnockBack = false;
+        chargeBar.SetCharge(0);
+        chargeBar.SetMaxCharge(maxparrycooldown);
+        canParry = true;
 
     }
 
@@ -89,11 +99,12 @@ public class PlayerInCombat : MonoBehaviour
         if (!isDashing && !isKnockBack)
         {
             Move();
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && canParry )
             {
                 if (!_parry.activeInHierarchy)
                 {
                     _parry.SetActive(true);
+                    canParry = false;
                     playerSpeed = 0;
                     Invoke(nameof(DesactivateParry), timeParryAvailable);
                     Invoke(nameof(NormalSpeed), 0.5f);
@@ -110,8 +121,19 @@ public class PlayerInCombat : MonoBehaviour
         {
             Invoke(nameof(Invulnerability), invulnerabilityParryTimer);
         }
-    
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            chargeBar.SetCharge(2);
+        }
+
+        if (isparry)
+        {
+
+            parrycooldown +=Time.deltaTime;
+            chargeBar.SetCharge(parrycooldown);
+            CheckCooldown();
+        }
 
     }
 
@@ -198,6 +220,8 @@ public class PlayerInCombat : MonoBehaviour
     private void DesactivateParry()
     {
         _parry.SetActive(false);
+        _chargeBarObject.SetActive(true);
+        isparry = true;
     }
 
     private IEnumerator Dash()
@@ -256,6 +280,17 @@ public class PlayerInCombat : MonoBehaviour
     {
         playerSpeed = 5;
     
+    }
+
+    private void CheckCooldown()
+    {
+        if (parrycooldown >= maxparrycooldown)
+        {
+            canParry = true;
+            _chargeBarObject.SetActive(false);
+            parrycooldown = 0f;
+        }
+  
     }
 
 
