@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Explode()
     {
-        // Lógica básica de explosión común a todos los enemigos
+        // Lï¿½gica bï¿½sica de explosiï¿½n comï¿½n a todos los enemigos
         Destroy(gameObject);
     }
 
@@ -151,7 +151,7 @@ public class Enemy : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.CompareTag("Player"))
             {
-                // El raycast chocó con el jugador, calcular otra posición
+                // El raycast chocï¿½ con el jugador, calcular otra posiciï¿½n
                 return RandomPositionInsideBoundaries();
             }
         }
@@ -187,7 +187,6 @@ public class Enemy : MonoBehaviour
         );
 
     }
-
     #endregion
 
 }

@@ -33,7 +33,7 @@ public class ForwardProjectile : Projectile
     {
 
         Move();
-        
+       
 
 
     }
@@ -82,9 +82,12 @@ public class ForwardProjectile : Projectile
         {
             isTracking = false;
             parryTrigger = true;
-            direction = collision.transform.up;
+            //direction = collision.transform.up;
+            Vector2 worldPos = Input.mousePosition;
+            worldPos = Camera.main.ScreenToWorldPoint(worldPos);
+            direction = (worldPos - _rigidbody.position).normalized;
             _rigidbody.velocity = new Vector2(0, 0);
-            Invoke(nameof(Parry), 0.1f);
+            Invoke(nameof(Parry), 0.2f);
             maxWallBounces = 1; 
         }
 
@@ -117,6 +120,8 @@ public class ForwardProjectile : Projectile
     }
     private void Parry()
     {
+        player.invulnerability = true;
+        Invoke(nameof(player.Invulnerability), 0.5f);
         speed = speed * player.parryacceleration;
         parryTrigger = false;
     }

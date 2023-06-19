@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
+    - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
+      propertyPath: radiusPlayerDetection
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
 --- !u!1001 &220537955
@@ -778,6 +782,10 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
+    - target: {fileID: 5398531977255211059, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
+      propertyPath: radiusPlayerDetection
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6763311481521984809, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
       propertyPath: m_Name
       value: Puppet Enemy

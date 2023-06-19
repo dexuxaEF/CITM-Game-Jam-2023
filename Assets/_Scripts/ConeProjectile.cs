@@ -75,7 +75,7 @@ public class ConeProjectile : Projectile
 
                 Vector3 dir = (direction).normalized;
                 //StartCoroutine( player.Knockback(dir));
-                player.KnockBack2(dir);
+                player.KnockBack(dir);
                
 
                 ProjectileDestruction();
@@ -97,6 +97,8 @@ public class ConeProjectile : Projectile
 
     private void Parry()
     {
+        player.invulnerability = true;
+        Invoke(nameof(player.Invulnerability), 0.5f);
         speed = speed * player.parryacceleration;
         parryTrigger = false;
     }
