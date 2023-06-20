@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5944567757411551368}
   - component: {fileID: 5944567757411551369}
   m_Layer: 5
-  m_Name: HudVIda
+  m_Name: HudVIda - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
