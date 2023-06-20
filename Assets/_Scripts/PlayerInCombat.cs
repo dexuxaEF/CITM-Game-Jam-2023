@@ -82,6 +82,8 @@ public class PlayerInCombat : MonoBehaviour
     string nombreEscena;
     // Obtener el nombre de la escena actual
 
+
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -106,6 +108,7 @@ public class PlayerInCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (win == true)
         {
             win = false;
