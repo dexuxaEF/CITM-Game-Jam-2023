@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class ParryScript : MonoBehaviour
 {
@@ -30,7 +31,9 @@ public class ParryScript : MonoBehaviour
            collision.gameObject.CompareTag("PuppetProjectile"))
         {
             rippleParticleInstance = Instantiate(rippleParticles, transform.position, Quaternion.identity);
-            Destroy(rippleParticleInstance, 1);
+            Destroy(rippleParticleInstance, .5f);
+            // Game feel
+            CameraShaker.Instance.ShakeOnce(1.0f, 1.0f, 0f, 1.0f);
             slowMoScript.StartDamageSlowMo(.2f);
 
         }

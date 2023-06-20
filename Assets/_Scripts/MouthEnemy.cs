@@ -47,8 +47,12 @@ public class MouthEnemy : Enemy
     
     void Update()
     {
-        if (health <= 0)
+        if (lives <= 0)
+        {
+            _player.win = true;
             Die();
+
+        }
 
         playerDirection = (player.transform.position - this.transform.position).normalized;
 
@@ -57,17 +61,6 @@ public class MouthEnemy : Enemy
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("MouthProjectile") && projectile.isparried)
-        {
-
-            health--;
-            projectile.ProjectileDestruction();
-
-        }
-
-    }
     public override void Move()
     {
         base.Move();
