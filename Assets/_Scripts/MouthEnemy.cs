@@ -47,8 +47,12 @@ public class MouthEnemy : Enemy
     
     void Update()
     {
-        if (health <= 0)
+        if (lives <= 0)
+        {
+            _player.win = true;
             Die();
+
+        }
 
         playerDirection = (player.transform.position - this.transform.position).normalized;
 
