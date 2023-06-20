@@ -28,7 +28,7 @@ public class MoveCamera : MonoBehaviour
         }
         if (count >= 6)
         {
-            GameManager.Instance.isCutsceneOn = false;
+            PlayVideo.headsetstart = true;
             camAnim.SetBool("CutSceneGroup1", false);
             Destroy(gameObject);
         }

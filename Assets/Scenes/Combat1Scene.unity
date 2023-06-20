@@ -378,6 +378,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51bec6a4aa8ebd54095e895a0e6b0307, type: 3}
+--- !u!1 &346979425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346979427}
+  - component: {fileID: 346979426}
+  m_Layer: 0
+  m_Name: Ajuda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &346979426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346979425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7afd540f55e8a141bdf12177c1cbf0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasteacherended: 0
+  battle1enter: 0
+  battle1win: 0
+  battle2enter: 0
+  battle2win: 0
+  battle3enter: 0
+  battle3win: 0
+  isCutsceneOn: 1
+  doorcloser: 0
+--- !u!4 &346979427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346979425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6208818, y: -1.0267717, z: 0.02546901}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &385191958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6521912270275115583, guid: 51bec6a4aa8ebd54095e895a0e6b0307, type: 3}
@@ -1280,7 +1333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6763311481521984809, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6763311481521984809, guid: 3267d7527e2fc3f4e9d6eaafee1708f6, type: 3}
       propertyPath: m_TagString
@@ -2621,7 +2674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2840073294628358655, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: topBoundary
