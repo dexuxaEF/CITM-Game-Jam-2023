@@ -2119,6 +2119,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4966997107071205440, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015493847952785424, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614436572364439259, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5944567757411551370, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
       propertyPath: m_Name
       value: HudVIda
@@ -2211,6 +2223,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8940940003682709123, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
 --- !u!1001 &7048049942500890835
