@@ -13,6 +13,10 @@ public class CircleProjectile : Projectile
     private GameObject mouthobject;
     private MouthEnemy mouth;
 
+    [SerializeField]
+    private GameObject enemybloodParticles;
+    private GameObject enemybloodParticleInstance;
+
     private bool parryTrigger = false;
     public bool isparried = false;
 
@@ -97,7 +101,8 @@ public class CircleProjectile : Projectile
 
             if (!mouth.invulnerability)
             {
-
+                enemybloodParticleInstance = Instantiate(enemybloodParticles, transform.position, Quaternion.identity);
+                Destroy(enemybloodParticleInstance, 1);
                 mouth.lives--;
                 ProjectileDestruction();
             }

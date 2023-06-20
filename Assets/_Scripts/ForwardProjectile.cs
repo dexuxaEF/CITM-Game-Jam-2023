@@ -19,6 +19,9 @@ public class ForwardProjectile : Projectile
     [HideInInspector]
     public bool isparried = false;
 
+    [SerializeField]
+    private GameObject enemybloodParticles;
+    private GameObject enemybloodParticleInstance;
 
     public float timeToTrackPlayer = 1.0f;
 
@@ -123,16 +126,15 @@ public class ForwardProjectile : Projectile
             {
                 Reset();
             }
-            
-
         }
 
         if (collision.gameObject.CompareTag("Puppet") && !puppet.invulnerability && isparried )
         {
+            enemybloodParticleInstance = Instantiate(enemybloodParticles, transform.position, Quaternion.identity);
+            Destroy(enemybloodParticleInstance, 1);
 
             puppet.lives--;
             ProjectileDestruction();
-
 
         }
 

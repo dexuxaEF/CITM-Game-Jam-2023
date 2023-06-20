@@ -143,6 +143,7 @@ MonoBehaviour:
   defaultSpeed: 5
   direction: {x: 0, y: 0, z: 0}
   echoEffect: {fileID: 2666732231893798844}
+  enemybloodParticles: {fileID: 6420312384819764332, guid: ffb92076b21b6484f8a58c077fcae817, type: 3}
   isparried: 0
 --- !u!114 &2666732231893798844
 MonoBehaviour:
