@@ -365,7 +365,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80739091}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 48ddeb593b2a3094380111b9a2ae0f1c, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 72b5f78fb63d24142b347626e1ad1075, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -2512,10 +2512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7afd540f55e8a141bdf12177c1cbf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasteacherended: 0
+  hasteacherended: 1
   onCorridor: 0
   battle1enter: 0
-  battle1win: 1
+  battle1win: 0
   battle2enter: 0
   battle2win: 0
   battle3enter: 0
