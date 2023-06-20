@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be2e036f63d09bc449905c760b254675
+guid: db11f5f7d05474f4c8c1c0e8b0a22dc9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdleNH_0
+      name: WalkRight_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca5a3ab3d2c02f548879e43f2bcd581e
-      internalID: 2050114403
+      spriteID: 43690e1e13eee3645b952b51afeb734e
+      internalID: -1758192978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_1
+      name: WalkRight_1
       rect:
         serializedVersion: 2
         x: 714
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca07596afa3380f42a8b465ee4d2744c
-      internalID: -792313569
+      spriteID: e64e1add3d7965b449c08cee21b6bcc3
+      internalID: -1014339581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_2
+      name: WalkRight_2
       rect:
         serializedVersion: 2
         x: 1428
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9529545fc86ab3947b28016006ffb1ea
-      internalID: -530085958
+      spriteID: 462980eb3e4f7da42abfb066b6945180
+      internalID: 6875262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_3
+      name: WalkRight_3
       rect:
         serializedVersion: 2
         x: 2142
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 266ac1ca941fecf42a8eb469865cc4c3
-      internalID: 20834905
+      spriteID: 3e9ed9152b24fea4c95a207fe3600aa9
+      internalID: 972428791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_4
+      name: WalkRight_4
       rect:
         serializedVersion: 2
         x: 2856
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0213d73b1bfb22947b7a81ed81da5476
-      internalID: -654190598
+      spriteID: 036eb3903ee08fa49848298f8a5a8a6b
+      internalID: 986595790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_5
+      name: WalkRight_5
       rect:
         serializedVersion: 2
         x: 3570
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b277913d546a597499e25cfef13c837d
-      internalID: 895716000
+      spriteID: cb75201874d19734eb430bf0e2ad9efa
+      internalID: 2048797203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_6
+      name: WalkRight_6
       rect:
         serializedVersion: 2
         x: 4284
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 351d7f278e764b846835f0645b7c9766
-      internalID: -1945718812
+      spriteID: ec377c435525d3a4699a66274ad85e94
+      internalID: 475850425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_7
+      name: WalkRight_7
       rect:
         serializedVersion: 2
         x: 4998
@@ -265,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 757459df2d4985f4ca763115985ac894
-      internalID: -432740292
+      spriteID: 5af71aae0ce66f5439f4ad943a2bbdc8
+      internalID: 1393722373
       vertices: []
       indices: 
       edges: []
@@ -282,14 +282,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IdleNH_6: -1945718812
-      IdleNH_3: 20834905
-      IdleNH_7: -432740292
-      IdleNH_5: 895716000
-      IdleNH_0: 2050114403
-      IdleNH_4: -654190598
-      IdleNH_2: -530085958
-      IdleNH_1: -792313569
+      WalkRight_2: 6875262
+      WalkRight_7: 1393722373
+      WalkRight_3: 972428791
+      WalkRight_6: 475850425
+      WalkRight_5: 2048797203
+      WalkRight_0: -1758192978
+      WalkRight_4: 986595790
+      WalkRight_1: -1014339581
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
