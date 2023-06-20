@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] [Min(1.0f)] private float playerSpeed;
@@ -168,6 +168,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("CorridorTrigger"))
         {
             GameManager.Instance.onCorridor = true;
+        }
+
+        if (collision.gameObject.CompareTag("ToCredits"))
+        {
+            SceneManager.LoadScene("CreditsScene");
         }
     }
 

@@ -7,15 +7,20 @@ public class ChangeToMainMenu : MonoBehaviour
 {
     public string nextSceneName;
 
-    public Animator namesAnimator;
+    // When  clik 2
+    private int clicks = 0;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if(Input.GetMouseButton(0))
+        {
+            clicks++;
+        }
 
-        //if (namesAnimator.)
-        //{
-        //    SceneManager.LoadScene(nextSceneName);
-        //}
+        if(clicks >= 2)
+        {
+            SceneManager.LoadScene(nextSceneName);
+            clicks = 0;
+        }
     }
 }

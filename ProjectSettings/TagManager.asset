@@ -16,6 +16,7 @@ TagManager:
   - PuppetProjectile
   - MouthProjectile
   - HeartProjectile
+  - ToCredits
   layers:
   - Default
   - TransparentFX
