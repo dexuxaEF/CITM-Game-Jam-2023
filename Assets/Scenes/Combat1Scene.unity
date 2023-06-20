@@ -2619,6 +2619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2840073294628358655, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: topBoundary
       value: 
@@ -3010,3 +3014,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
+--- !u!1 &7048049942500890836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7048049943967851277, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
+  m_PrefabInstance: {fileID: 7048049942500890835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7048049942500890837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048049942500890836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ddd6fd7ffd9274caf0676595283978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rippleParticles: {fileID: 866571402164685173, guid: ea8272cefae16af47b88d01763ad11ce, type: 3}
+  slowMoScript: {fileID: 7048049942500890841}
+--- !u!114 &7048049942500890841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048049942500890836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50377e55f01b48b4eb62683684e30f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowMotionTimescale: 0.1

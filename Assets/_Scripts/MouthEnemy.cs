@@ -24,8 +24,7 @@ public class MouthEnemy : Enemy
         playerobject = GameObject.FindWithTag("Player");
         _player = playerobject.GetComponent<PlayerInCombat>();
        
-        projectileobject = GameObject.FindWithTag("MouthProjectile");
-        projectile = projectileobject.GetComponent<CircleProjectile>();
+
     }
     void Start()
     {
