@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TextScriptGroup3 : MonoBehaviour
+public class TextScriptGroup5 : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
@@ -23,8 +23,6 @@ public class TextScriptGroup3 : MonoBehaviour
         if (GameManager.Instance.battle3enter)
         {
             StartDialogue();
-            GameManager.Instance.battle3enter = false;
-
         }
 
         if (textComponent.text == lines[index])
