@@ -35,7 +35,7 @@ public class Group3Battle : MonoBehaviour
     }
     void StartBattle()
     {
-        //SceneManager.LoadScene("Combat3Scene");
+        SceneManager.LoadScene("Combat3Scene");
 
     }
 }

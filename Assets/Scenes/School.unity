@@ -2054,14 +2054,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasteacherended: 1
   battle1enter: 0
-  battle1win: 1
+  battle1win: 0
   battle2enter: 0
   battle2win: 0
   battle3enter: 0
   battle3win: 0
   isCutsceneOn: 1
-  doorcloser: 1
-  hascinematicended: 1
+  doorcloser: 0
+  hascinematicended: 0
 --- !u!4 &780711318
 Transform:
   m_ObjectHideFlags: 0

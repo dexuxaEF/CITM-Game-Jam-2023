@@ -41,8 +41,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        if(SceneManager.GetActiveScene().name == "Combat1Scene")
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
+        }
+        if (SceneManager.GetActiveScene().name == "School")
+        {
+            if(gameObject.GetComponent<AudioSource>().isPlaying == false)
+            gameObject.GetComponent<AudioSource>().Play();
+        }
     }
 
 }
