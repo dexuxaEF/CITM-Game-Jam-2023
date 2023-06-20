@@ -917,6 +917,10 @@ PrefabInstance:
       value: HeartEnemy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
+      propertyPath: lives
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: topBoundary
       value: 
       objectReference: {fileID: 1333172893}
