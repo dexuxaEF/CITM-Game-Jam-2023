@@ -26,6 +26,7 @@ public class PlayVideo : MonoBehaviour
     void startvideo()
     {
         animat.SetBool("HS", false);
+        animat.SetBool("IsIdle", false);
         GameManager.Instance.hasheadset = true;
         animat.SetBool("HSidle", true);
         videoplayer.SetActive(true);

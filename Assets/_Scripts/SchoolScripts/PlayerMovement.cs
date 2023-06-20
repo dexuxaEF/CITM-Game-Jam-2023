@@ -51,13 +51,13 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
 
-            if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x == 0 || idle == true)
+            if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x == 0)
             {
                 gameObject.GetComponent<Animator>().SetBool("HSidle", true);
             }
             else
             {
-                gameObject.GetComponent<Animator>().SetBool("Hsidle", false);
+                gameObject.GetComponent<Animator>().SetBool("HSidle", false);
 
             }
 
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("IsRight", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+            gameObject.GetComponent<Animator>().SetBool("HSidle", false);
 
         }
         else
@@ -77,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("IsLeft", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+            gameObject.GetComponent<Animator>().SetBool("HSidle", false);
 
         }
         else
@@ -87,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("IsUp", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+            gameObject.GetComponent<Animator>().SetBool("HSidle", false);
 
         }
         else
@@ -98,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("IsDown", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+            gameObject.GetComponent<Animator>().SetBool("HSidle", false);
 
         }
         else

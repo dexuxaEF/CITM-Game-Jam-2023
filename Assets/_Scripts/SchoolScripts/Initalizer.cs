@@ -23,14 +23,16 @@ public class Initalizer : MonoBehaviour
         }
         if(GameManager.Instance.battle1win == true && cantp == true)
         {
+            GameManager.Instance.isCutsceneOn = false;
             if (GameManager.Instance.battle2win == false)
             {
-                _rigidbody.position = new Vector2(10.446f, 17.06502f);
+                 _rigidbody.position = new Vector2(10.446f, 17.06502f);
                 cantp = false;
             }
         }
         if (GameManager.Instance.battle2win == true && cantp == true)
         {
+            GameManager.Instance.isCutsceneOn = false;
             if (GameManager.Instance.battle3win == false)
             {
                 _rigidbody.position = new Vector2(10.446f,24.56795f);
@@ -39,7 +41,7 @@ public class Initalizer : MonoBehaviour
         }
         if (GameManager.Instance.battle3win == true && cantp == true)
         {
-
+            GameManager.Instance.isCutsceneOn = false;
             _rigidbody.position = new Vector2(10.446f, 31.58f);
             cantp = false;
 
