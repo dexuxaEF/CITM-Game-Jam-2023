@@ -100,9 +100,9 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-
+        
         Explode();
-        _player.win = true;
+       
     }
 
     protected virtual void Explode()
