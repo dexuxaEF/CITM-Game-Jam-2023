@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
+using UnityEngine.SceneManagement;
 
 public class PlayerInCombat : MonoBehaviour
 {
@@ -77,6 +78,8 @@ public class PlayerInCombat : MonoBehaviour
     private bool canParry = true;
     private float parrycooldown;
 
+    string nombreEscena;
+    // Obtener el nombre de la escena actual
 
     private void Awake()
     {
@@ -95,13 +98,31 @@ public class PlayerInCombat : MonoBehaviour
         chargeBar.SetCharge(0);
         chargeBar.SetMaxCharge(maxparrycooldown);
         canParry = true;
-
+        nombreEscena = SceneManager.GetActiveScene().name; 
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (win == true)
+        {
+            win = false;
+            if(nombreEscena == "Combat1Scene")
+            {
+                GameManager.Instance.battle1win = true;
+            }
+            if (nombreEscena == "Combat2Scene")
+            {
+                GameManager.Instance.battle2win = true;
+            }
+            if (nombreEscena == "Combat3Scene")
+            {
+                GameManager.Instance.battle3win = true;
+            }
+            Invoke(nameof(changescene), 3);
+
+        }
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
         Rotate();
@@ -360,5 +381,9 @@ public class PlayerInCombat : MonoBehaviour
         {
             lose = true;
         }
+    }
+    void changescene()
+    {
+        SceneManager.LoadScene("School");
     }
 }
