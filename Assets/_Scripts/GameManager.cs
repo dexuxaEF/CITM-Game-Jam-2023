@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public bool isCutsceneOn = true;
     public bool doorcloser = false;
     public bool hascinematicended = false;
-
+    public bool hasheadset = false;
     public PostProcessProfile postProcessingProfile;
     private ColorGrading colorGrading;
 

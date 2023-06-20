@@ -6,6 +6,7 @@ public class MoveCamera : MonoBehaviour
 {
    
     public Animator camAnim;
+    public static bool videostart;
     float count = -1;
     private void OnTriggerEnter2D(Collider2D collision)
     {

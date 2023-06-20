@@ -35,15 +35,31 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.hasheadset == false) {
+            if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x == 0 || idle == true)
+            {
+                gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
 
-        if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x==0 || idle == true)
-        {
-            gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
+            }
+            else
+            {
+                gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
 
+            }
         }
         else
         {
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+
+            if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x == 0 || idle == true)
+            {
+                gameObject.GetComponent<Animator>().SetBool("HSidle", true);
+            }
+            else
+            {
+                gameObject.GetComponent<Animator>().SetBool("Hsidle", false);
+
+            }
 
         }
         if (_rigidbody.velocity.x >0 || right==true)
