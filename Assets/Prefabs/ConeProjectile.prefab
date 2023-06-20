@@ -160,3 +160,5 @@ MonoBehaviour:
   startTimeBtwSpawns: 0.05
   destroyTime: 0.3
   echo: {fileID: 1818081262332937292, guid: f0a82768e7cbaa9439afad6854ccdea8, type: 3}
+  echoAfterParry: {fileID: 1818081262332937292, guid: 1c35562e724093a47a9e72c7e8474124, type: 3}
+  echoRestart: {fileID: 1818081262332937292, guid: 0d530457a12c6814688a4f63c8466d43, type: 3}

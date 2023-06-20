@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
             if(TextScriptTeacher.useless)
             {
-                ChangeFixedSaturation(-100);
+                ChangeFixedSaturation(-100.0f);
             }
         }
 
@@ -70,32 +70,36 @@ public class GameManager : MonoBehaviour
 
     public void ChangeSaturation()
     {
-        int battleCount = CountBattlesWon();
-
-        if (colorGrading != null)
+        if(hascinematicended)
         {
-            // Determine the new saturation value based on the number of battles won
-            float newSaturation = 0f;
+            int battleCount = CountBattlesWon();
 
-            if (battleCount >= 1)
+            if (colorGrading != null)
             {
-                newSaturation = -60f;
-            }
+                // Determine the new saturation value based on the number of battles won
+                float newSaturation = 0f;
 
-            if (battleCount >= 2)
-            {
-                newSaturation = -30f;
-            }
+                if (battleCount >= 1)
+                {
+                    newSaturation = -60f;
+                }
 
-            if (battleCount >= 3)
-            {
-                newSaturation = 0f;
-            }
+                if (battleCount >= 2)
+                {
+                    newSaturation = -30f;
+                }
 
-            // Set the new saturation value
-            colorGrading.saturation.value = newSaturation;
-            Debug.Log("New saturation: " + newSaturation);
+                if (battleCount >= 3)
+                {
+                    newSaturation = 0f;
+                }
+
+                // Set the new saturation value
+                colorGrading.saturation.value = newSaturation;
+                Debug.Log("New saturation: " + newSaturation);
+            }
         }
+        
     }
 
     public void ChangeFixedSaturation(float value)

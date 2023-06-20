@@ -940,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 385191958}
     - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: initialPoolSize
-      value: 2
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
