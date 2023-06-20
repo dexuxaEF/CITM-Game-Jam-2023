@@ -1100,6 +1100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasteacherended: 0
+  onCorridor: 0
   battle1enter: 0
   battle1win: 0
   battle2enter: 0
@@ -1109,6 +1110,7 @@ MonoBehaviour:
   isCutsceneOn: 1
   doorcloser: 0
   hascinematicended: 0
+  hasheadset: 0
   postProcessingProfile: {fileID: 0}
 --- !u!4 &1809575674
 Transform:
