@@ -10,7 +10,7 @@ public class TextScriptGroup3 : MonoBehaviour
     public float textSpeed;
     public float lineDelay; // Tiempo de espera antes de pasar a la siguiente línea
     private int index;
-
+    public static bool start = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +20,14 @@ public class TextScriptGroup3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.battle3enter)
+        if (start == true && TextScriptGroup4.start && TextScriptGroup5.start && TextScriptGroup6.start)
+        {
+            GameManager.Instance.battle3enter = false;
+        }
+        if (GameManager.Instance.battle3enter && start==false)
         {
             StartDialogue();
-            GameManager.Instance.battle3enter = false;
-
+            start = true;
         }
 
         if (textComponent.text == lines[index])
