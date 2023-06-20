@@ -25,10 +25,10 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        up = true;
-        down = true;
-        right = true;
-        left = true;
+        up = false;
+        down = false;
+        right = false;
+        left = false;
         idle = true;
     }
 

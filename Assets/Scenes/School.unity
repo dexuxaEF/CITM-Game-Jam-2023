@@ -1940,8 +1940,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9394102, y: 2.6833334}
-    newSize: {x: 1.9394102, y: 2.6833334}
+    oldSize: {x: 1.8794259, y: 2.5842106}
+    newSize: {x: 1.8794259, y: 2.5842106}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1995,7 +1995,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.9394102, y: 2.6833334}
+  m_Size: {x: 1.8794259, y: 2.5842106}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -2344,8 +2344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7afd540f55e8a141bdf12177c1cbf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasteacherended: 1
-  onCorridor: 1
+  hasteacherended: 0
+  onCorridor: 0
   battle1enter: 0
   battle1win: 0
   battle2enter: 0
@@ -5221,7 +5221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 7.61, y: 27.1}
+  m_AnchoredPosition: {x: 8.56, y: 27.42}
   m_SizeDelta: {x: 1.9017, y: 1.0475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1749511855
