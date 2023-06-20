@@ -9,6 +9,10 @@ public class ConeProjectile : Projectile
 {
     private Rigidbody2D _rigidbody;
 
+    [SerializeField]
+    private GameObject enemybloodParticles;
+    private GameObject enemybloodParticleInstance;
+
     private GameObject playerobject;
     private PlayerInCombat player;
 
@@ -102,6 +106,8 @@ public class ConeProjectile : Projectile
 
             if (!heart.invulnerability)
             {
+                enemybloodParticleInstance = Instantiate(enemybloodParticles, transform.position, Quaternion.identity);
+                Destroy(enemybloodParticleInstance, 1);
 
                 heart.lives--;
                 ProjectileDestruction();
