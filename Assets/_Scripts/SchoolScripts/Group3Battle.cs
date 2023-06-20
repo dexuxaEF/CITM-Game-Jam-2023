@@ -28,7 +28,7 @@ public class Group3Battle : MonoBehaviour
             if (GameManager.Instance.battle3win == false)
             {
                 GameManager.Instance.isCutsceneOn = true;
-                Invoke(nameof(StartBattle), 7);
+                Invoke(nameof(StartBattle), 4);
                 GameManager.Instance.battle3enter = true;
             }
         }

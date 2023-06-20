@@ -18,7 +18,7 @@ public class PlayVideo : MonoBehaviour
     {
         if (headsetstart == true)
         {
-            Invoke(nameof(startvideo), 2);
+            Invoke(nameof(startvideo), 1.5f);
             animat.SetBool("HS", true);
         }
 
