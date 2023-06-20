@@ -2226,7 +2226,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 7048049943413860096, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7048049943413860097, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
       propertyPath: HudLive1
