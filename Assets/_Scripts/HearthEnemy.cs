@@ -8,6 +8,8 @@ public class HearthEnemy : Enemy
     private PlayerInCombat _player;
 
 
+
+
     public int lives = 2;
 
     [Range(1.0f,180f)]

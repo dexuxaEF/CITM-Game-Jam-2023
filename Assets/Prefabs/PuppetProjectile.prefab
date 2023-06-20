@@ -144,6 +144,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   echoEffect: {fileID: 2971485162887740720}
   isparried: 0
+  enemybloodParticles: {fileID: 6420312384819764332, guid: ffb92076b21b6484f8a58c077fcae817, type: 3}
   timeToTrackPlayer: 1
   isTracking: 0
 --- !u!114 &2971485162887740720

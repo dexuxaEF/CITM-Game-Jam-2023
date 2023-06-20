@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    public static bool isCutsceneOn = true;
+   
     public Animator camAnim;
     float count = -1;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,11 +12,15 @@ public class MoveCamera : MonoBehaviour
         if(collision.tag == "Player")
         {
             count = 0;
+            GameManager.Instance.doorcloser = true;
         }
     }
     void Update()
     {
-
+        if(GameManager.Instance.hascinematicended == true)
+        {
+            Destroy(gameObject);
+        }
         if(count >= 0)
         {
             count += Time.deltaTime;
@@ -27,7 +31,7 @@ public class MoveCamera : MonoBehaviour
         }
         if (count >= 6)
         {
-            isCutsceneOn = false;
+            PlayVideo.headsetstart = true;
             camAnim.SetBool("CutSceneGroup1", false);
             Destroy(gameObject);
         }

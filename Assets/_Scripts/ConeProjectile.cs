@@ -9,6 +9,10 @@ public class ConeProjectile : Projectile
 {
     private Rigidbody2D _rigidbody;
 
+    [SerializeField]
+    private GameObject enemybloodParticles;
+    private GameObject enemybloodParticleInstance;
+
     private GameObject playerobject;
     private PlayerInCombat player;
 
@@ -30,6 +34,7 @@ public class ConeProjectile : Projectile
 
         heartobject = GameObject.FindWithTag("Heart");
         heart = heartobject.GetComponent<HearthEnemy>();
+     
     }
 
 
@@ -102,6 +107,8 @@ public class ConeProjectile : Projectile
 
             if (!heart.invulnerability)
             {
+                enemybloodParticleInstance = Instantiate(enemybloodParticles, transform.position, Quaternion.identity);
+                Destroy(enemybloodParticleInstance, 1);
 
                 heart.lives--;
                 ProjectileDestruction();
@@ -119,6 +126,7 @@ public class ConeProjectile : Projectile
 
     public void ProjectileDestruction()
     {
+        isparried = false;
         speed = defaultSpeed;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;

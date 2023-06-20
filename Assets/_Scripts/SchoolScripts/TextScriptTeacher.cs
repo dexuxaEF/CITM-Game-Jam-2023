@@ -25,8 +25,11 @@ public class TextScriptTeacher : MonoBehaviour
     {
         if(start==true && TeacherScene.teacherscene == true)
         {
-            StartDialogue();
-            start = false;
+            if (GameManager.Instance.hasteacherended == false)
+            {
+                StartDialogue();
+                start = false;
+            }
         }
         if (time > 2.5)
         {
@@ -75,6 +78,6 @@ public class TextScriptTeacher : MonoBehaviour
     void setactivefalse()
     {
         gameObject.SetActive(false);
-
+        SadSceneEnter.startsad = true;
     }
 }

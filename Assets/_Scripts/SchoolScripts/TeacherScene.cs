@@ -5,11 +5,12 @@ using UnityEngine;
 public class TeacherScene : MonoBehaviour
 {
     public static bool teacherscene;
-    public Animator tocorridor;
+    AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
         teacherscene = false;
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,6 +23,8 @@ public class TeacherScene : MonoBehaviour
         if(collision.tag == "Player")
         {
             teacherscene = true;
+            if(GameManager.Instance.hasteacherended == false)
+            audio.Play();
         }
     }
     

@@ -5,32 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance { get; private set; }
 
-    public static bool battle1enter;
-    public static bool battle1win;
-    public static bool battle2enter;
-    public static bool battle2win;
-    public static bool battle3enter;
-    public static bool battle3win;
-    public static bool hasteacherended;
-
-    public static Vector2 schoolpos;
-
-    bool timer = false;
-    void Awake()
+    public bool hasteacherended;
+    public bool battle1enter;
+    public bool battle1win;
+    public bool battle2enter;
+    public bool battle2win;
+    public bool battle3enter;
+    public bool battle3win;
+    public bool isCutsceneOn = true;
+    public bool doorcloser = false;
+    public bool hascinematicended = false;
+    private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        battle1enter = false;
-        battle1win = false;
-        battle2enter = false;
-        battle2win = false;
-        battle3enter = false;
-        battle3win = false;
-        hasteacherended = false;
+
+      if (Instance == null)
+      {
+          Instance = this;
+          DontDestroyOnLoad(gameObject);
+      }
+      else
+      {
+          Destroy(gameObject);
+      }
+      
+
     }
     // Start is called before the first frame update
     void Start()
@@ -41,20 +41,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(battle1enter == true)
+        if(SceneManager.GetActiveScene().name == "Combat1Scene")
         {
-            timer = true;
+            gameObject.GetComponent<AudioSource>().Stop();
         }
-        if (timer == true)
+        if (SceneManager.GetActiveScene().name == "School")
         {
-            Invoke(nameof(startbattle1), 4);
-            timer = false;
+            if(gameObject.GetComponent<AudioSource>().isPlaying == false)
+            gameObject.GetComponent<AudioSource>().Play();
         }
+    }
 
-    }
-    void startbattle1()
-    {
-        schoolpos = PlayerMovement.position;
-        SceneManager.LoadScene("Combat1Scene");
-    }
 }
