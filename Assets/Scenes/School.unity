@@ -1928,7 +1928,7 @@ MonoBehaviour:
   textComponent: {fileID: 1893708758}
   lines:
   - Hey, loser!
-  - Have you done our whomework yet?
+  - Have you done our homework yet?
   textSpeed: 0.05
   lineDelay: 1.02
 --- !u!1 &679417099
