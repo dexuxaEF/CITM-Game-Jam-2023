@@ -95,7 +95,7 @@ public class ForwardProjectile : Projectile
 
         }
 
-        if (collision.gameObject.CompareTag("Parry"))
+        if (collision.gameObject.CompareTag("Parry") && !isparried)
         {
             isTracking = false;
             parryTrigger = true;
@@ -148,6 +148,7 @@ public class ForwardProjectile : Projectile
 
     public void ProjectileDestruction()
     {
+        isparried = false;
         gameObject.SetActive(false);
         speed = defaultSpeed;
         maxWallBounces = defaultMaxWallBounces;

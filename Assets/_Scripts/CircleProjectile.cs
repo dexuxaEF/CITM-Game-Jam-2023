@@ -67,7 +67,7 @@ public class CircleProjectile : Projectile
             CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
         }
 
-        if (collision.gameObject.CompareTag("Parry"))
+        if (collision.gameObject.CompareTag("Parry") && isparried)
         {
             isparried = true;
             parryTrigger = true;
@@ -119,6 +119,7 @@ public class CircleProjectile : Projectile
 
     public void ProjectileDestruction()
     {
+        isparried = false;
         speed = defaultSpeed;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;

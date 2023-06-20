@@ -12,11 +12,13 @@ public class TextScriptTeacher : MonoBehaviour
     private bool start;
     private int index;
     private float time;
+    public static bool useless;
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         start = true;
+        useless = false;
         time = -1;
     }
 
@@ -72,6 +74,7 @@ public class TextScriptTeacher : MonoBehaviour
         }
         else
         {
+            useless = true;
             Invoke(nameof(setactivefalse), 3);
         }
     }

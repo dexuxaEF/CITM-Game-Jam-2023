@@ -37,11 +37,12 @@ public class PlayerInCombat : MonoBehaviour
 
     [Header("Dash")]
     //Fuerza del DASH
-    [SerializeField] [Min(5f)] private float DashForce =10f;
+    [SerializeField] [Min(5f)] private float DashForce =15f;
     //Tiempo que dura el DASH
     [SerializeField] [Min(0f)] private float DashTime =0.2f;
     //Tiempo que te tienes que esperar para volver a usar el DASH
-    [SerializeField] [Min(0.1f)] private float DashCooldown=1f;         
+    [SerializeField] [Min(0.1f)] private float DashCooldown=0.5f;
+    [SerializeField] [Min(0.1f)] private float IframesDash = 2f;
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
@@ -81,6 +82,8 @@ public class PlayerInCombat : MonoBehaviour
     string nombreEscena;
     // Obtener el nombre de la escena actual
 
+
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -105,6 +108,7 @@ public class PlayerInCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (win == true)
         {
             win = false;
@@ -286,7 +290,7 @@ public class PlayerInCombat : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(direction.x * DashForce, direction.y * DashForce);
         }
-        Invoke(nameof(Invulnerability), 0.7f);
+        Invoke(nameof(Invulnerability), IframesDash);
         yield return new WaitForSeconds(DashTime);
         isDashing = false;
         yield return new WaitForSeconds(DashCooldown);

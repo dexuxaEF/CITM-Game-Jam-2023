@@ -34,6 +34,7 @@ public class ConeProjectile : Projectile
 
         heartobject = GameObject.FindWithTag("Heart");
         heart = heartobject.GetComponent<HearthEnemy>();
+     
     }
 
 
@@ -70,7 +71,7 @@ public class ConeProjectile : Projectile
             CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .1f);
         }
 
-        if (collision.gameObject.CompareTag("Parry"))
+        if (collision.gameObject.CompareTag("Parry") && !isparried)
         {
             parryTrigger = true;
             isparried = true;
@@ -125,6 +126,7 @@ public class ConeProjectile : Projectile
 
     public void ProjectileDestruction()
     {
+        isparried = false;
         speed = defaultSpeed;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;

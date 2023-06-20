@@ -10,6 +10,8 @@ public class EchoEffect : MonoBehaviour
     public float destroyTime = 0.5f;
 
     public GameObject echo;
+    public GameObject echoAfterParry;
+    public GameObject echoRestart;
     private ProjectileController projectile;
     private Rigidbody2D projectileRB;
     private void Start()
@@ -44,11 +46,21 @@ public class EchoEffect : MonoBehaviour
         {
             startTimeBtwSpawns += 0.04f;
         }
+
+        if (collision.gameObject.CompareTag("Parry"))
+        {
+            echo = echoAfterParry;
+        }
     }
 
     public void RestartWaveCount()
     {
         startTimeBtwSpawns = 0.05f;
+    }
+
+    private void OnDisable()
+    {
+        echo = echoRestart;
     }
 
 }
