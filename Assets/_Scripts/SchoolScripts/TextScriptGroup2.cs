@@ -64,7 +64,7 @@ public class TextScriptGroup2 : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(SetActiveFalse), 3);
+            Invoke(nameof(SetActiveFalse), 5);
         }
     }
 

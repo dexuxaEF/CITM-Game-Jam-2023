@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool battle3win;
     public bool isCutsceneOn = true;
     public bool doorcloser = false;
+    public bool hascinematicended = false;
     private void Awake()
     {
 

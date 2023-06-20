@@ -35,7 +35,7 @@ public class Group2Battle : MonoBehaviour
     }
     void StartBattle()
     {
-        //SceneManager.LoadScene("Combat2Scene");
+        SceneManager.LoadScene("Combat2Scene");
 
     }
 }

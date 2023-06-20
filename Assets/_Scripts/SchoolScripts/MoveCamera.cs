@@ -17,7 +17,10 @@ public class MoveCamera : MonoBehaviour
     }
     void Update()
     {
-
+        if(GameManager.Instance.hascinematicended == true)
+        {
+            Destroy(gameObject);
+        }
         if(count >= 0)
         {
             count += Time.deltaTime;

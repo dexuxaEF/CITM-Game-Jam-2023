@@ -26,6 +26,7 @@ public class PlayVideo : MonoBehaviour
     void stopvideo()
     {
         GameManager.Instance.isCutsceneOn = false;
+        GameManager.Instance.hascinematicended = true;
         videoplayer.SetActive(false);
     }
 }

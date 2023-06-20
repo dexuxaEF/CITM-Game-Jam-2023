@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SadScene.unity
     guid: 0c76c6d0ed8e665409b9e0e87c604ed7
+  - enabled: 1
+    path: Assets/Scenes/Combat2Scene.unity
+    guid: d27ddaf0368cc8b40af895c736deb4e9
+  - enabled: 1
+    path: Assets/Scenes/Combat3Scene.unity
+    guid: b77c69a6dce5e3b4b8c1935310c200cb
   m_configObjects: {}

@@ -1053,7 +1053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000000059604645, y: -0.0000005364418}
+  m_AnchoredPosition: {x: 0, y: -0.0000005364418}
   m_SizeDelta: {x: 0, y: -0.00000035763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660551286
@@ -1108,8 +1108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1893708758}
   lines:
-  - Look at him!!!
-  - What a &$%@!
+  - Hey, loser!
+  - Have you done our whomework yet?
   textSpeed: 0.05
   lineDelay: 1.02
 --- !u!1 &679417099
@@ -2054,13 +2054,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasteacherended: 1
   battle1enter: 0
-  battle1win: 0
+  battle1win: 1
   battle2enter: 0
   battle2win: 0
   battle3enter: 0
   battle3win: 0
   isCutsceneOn: 1
-  doorcloser: 0
+  doorcloser: 1
+  hascinematicended: 1
 --- !u!4 &780711318
 Transform:
   m_ObjectHideFlags: 0
@@ -4648,7 +4649,7 @@ RectTransform:
   m_GameObject: {fileID: 1725015407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3090187, y: 1.3090187, z: 1.3090187}
+  m_LocalScale: {x: 2.1812546, y: 1.7253776, z: 1.7253776}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 660551284}
@@ -4657,7 +4658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 7.61, y: 26.92}
+  m_AnchoredPosition: {x: 7.61, y: 27.1}
   m_SizeDelta: {x: 1.9017, y: 1.0475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1749511855
@@ -5332,8 +5333,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.37
-  m_fontSizeBase: 0.37
+  m_fontSize: 0.3
+  m_fontSizeBase: 0.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
