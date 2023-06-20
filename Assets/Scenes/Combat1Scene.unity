@@ -335,6 +335,7 @@ MonoBehaviour:
   battle3win: 0
   isCutsceneOn: 1
   doorcloser: 0
+  hascinematicended: 0
 --- !u!4 &346979427
 Transform:
   m_ObjectHideFlags: 0
@@ -936,6 +937,10 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
+    - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
+      propertyPath: initialPoolSize
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
 --- !u!1001 &685020607
