@@ -74,5 +74,13 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = new Vector3(0, 0, 0); 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("CorridorTrigger"))
+        {
+            GameManager.Instance.onCorridor = true;
+        }
+    }
+
 
 }

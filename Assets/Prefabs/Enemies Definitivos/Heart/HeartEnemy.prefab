@@ -114,9 +114,11 @@ MonoBehaviour:
   initialPoolSize: 55
   isStopped: 0
   _animator: {fileID: 4110933821386589895}
+  lives: 6
   coneAngle: 10
   numProjectiles: 6
   defaultAttack: 0
+  invulnerability: 0
   triggerAnimation: 0
 --- !u!58 &6278441303333874038
 CircleCollider2D:
