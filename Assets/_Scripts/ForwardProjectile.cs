@@ -148,6 +148,7 @@ public class ForwardProjectile : Projectile
 
     public void ProjectileDestruction()
     {
+        isparried = false;
         gameObject.SetActive(false);
         speed = defaultSpeed;
         maxWallBounces = defaultMaxWallBounces;

@@ -119,6 +119,7 @@ public class CircleProjectile : Projectile
 
     public void ProjectileDestruction()
     {
+        isparried = false;
         speed = defaultSpeed;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;

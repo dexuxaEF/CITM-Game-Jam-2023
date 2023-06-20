@@ -34,6 +34,7 @@ public class ConeProjectile : Projectile
 
         heartobject = GameObject.FindWithTag("Heart");
         heart = heartobject.GetComponent<HearthEnemy>();
+     
     }
 
 
@@ -125,6 +126,7 @@ public class ConeProjectile : Projectile
 
     public void ProjectileDestruction()
     {
+        isparried = false;
         speed = defaultSpeed;
         gameObject.SetActive(false);
         maxWallBounces = defaultMaxWallBounces;
