@@ -22,7 +22,10 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     private Rigidbody2D _rigidbody;
 
-    public GameObject _parry;
+   
+
+    public GameObject _newparry;
+    
 
     public ChargeBar chargeBar;
     public GameObject _chargeBarObject;
@@ -79,6 +82,9 @@ public class PlayerInCombat : MonoBehaviour
     private bool canParry = true;
     private float parrycooldown;
 
+    [HideInInspector]
+    public Vector3 mousedirection;
+
     string nombreEscena;
     // Obtener el nombre de la escena actual
 
@@ -109,6 +115,10 @@ public class PlayerInCombat : MonoBehaviour
     void Update()
     {
 
+        Vector2 worldPos = Input.mousePosition;
+        worldPos = Camera.main.ScreenToWorldPoint(worldPos);
+        mousedirection = (worldPos - _rigidbody.position).normalized;
+
         if (win == true)
         {
             win = false;
@@ -129,16 +139,17 @@ public class PlayerInCombat : MonoBehaviour
         }
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
-        Rotate();
+        //Rotate();
 
         if (!isDashing && !isKnockBack)
         {
             Move();
             if (Input.GetMouseButtonDown(0) && canParry )
             {
-                if (!_parry.activeInHierarchy)
+                if (!_newparry.activeInHierarchy )
                 {
-                    _parry.SetActive(true);
+                  
+                    _newparry.SetActive(true);
                     canParry = false;
                     playerSpeed = 0;
                     Invoke(nameof(DesactivateParry), timeParryAvailable);
@@ -271,7 +282,8 @@ public class PlayerInCombat : MonoBehaviour
 
     private void DesactivateParry()
     {
-        _parry.SetActive(false);
+        
+        _newparry.SetActive(false);
         _chargeBarObject.SetActive(true);
         isparry = true;
     }

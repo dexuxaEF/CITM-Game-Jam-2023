@@ -23,7 +23,7 @@ public class MouthEnemy : Enemy
     {
         playerobject = GameObject.FindWithTag("Player");
         _player = playerobject.GetComponent<PlayerInCombat>();
-       
+
 
     }
     void Start()
