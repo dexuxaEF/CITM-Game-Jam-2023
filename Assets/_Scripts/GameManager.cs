@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public bool hasteacherended;
+    public bool onCorridor;
+
     public bool battle1enter;
     public bool battle1win;
     public bool battle2enter;
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     public bool isCutsceneOn = true;
     public bool doorcloser = false;
     public bool hascinematicended = false;
+
+    bool prueba = false;
 
     public PostProcessProfile postProcessingProfile;
     private ColorGrading colorGrading;
@@ -55,11 +59,6 @@ public class GameManager : MonoBehaviour
         {
             if(gameObject.GetComponent<AudioSource>().isPlaying == false)
             gameObject.GetComponent<AudioSource>().Play();
-
-            if(TextScriptTeacher.useless)
-            {
-                ChangeFixedSaturation(-100);
-            }
         }
 
 
@@ -70,12 +69,23 @@ public class GameManager : MonoBehaviour
 
     public void ChangeSaturation()
     {
+        if(hasteacherended  && !prueba)
+        {
+            prueba = true;
+            ChangeFixedSaturation(-100.0f);
+        }
+
         int battleCount = CountBattlesWon();
 
-        if (colorGrading != null)
+        if (colorGrading != null && onCorridor)
         {
             // Determine the new saturation value based on the number of battles won
             float newSaturation = 0f;
+
+            if(battleCount <= 0)
+            {
+                newSaturation = -100f;
+            }
 
             if (battleCount >= 1)
             {
@@ -96,6 +106,7 @@ public class GameManager : MonoBehaviour
             colorGrading.saturation.value = newSaturation;
             Debug.Log("New saturation: " + newSaturation);
         }
+
     }
 
     public void ChangeFixedSaturation(float value)

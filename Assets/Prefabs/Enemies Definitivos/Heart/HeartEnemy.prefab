@@ -114,9 +114,9 @@ MonoBehaviour:
   initialPoolSize: 60
   isStopped: 0
   _animator: {fileID: 4110933821386589895}
-  lives: 16
-  coneAngle: 20
-  numProjectiles: 4
+  lives: 6
+  coneAngle: 10
+  numProjectiles: 6
   defaultAttack: 0
   invulnerability: 0
   triggerAnimation: 0

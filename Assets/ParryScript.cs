@@ -44,7 +44,7 @@ public class ParryScript : MonoBehaviour
             Destroy(rippleParticleInstance, .5f);
             // Game feel
             CameraShaker.Instance.ShakeOnce(1.0f, 1.0f, 0f, 1.0f);
-            slowMoScript.StartDamageSlowMo(.2f);
+            //slowMoScript.StartDamageSlowMo(.2f);
 
         }
     }
