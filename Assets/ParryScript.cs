@@ -9,19 +9,29 @@ public class ParryScript : MonoBehaviour
     private GameObject rippleParticles;
     private GameObject rippleParticleInstance;
 
+    private GameObject playerobject;
+    private PlayerInCombat player;
+    public float distance;
+
     // Game Feel
     [SerializeField]
     private SlowMotion slowMoScript;
 
     void Start()
     {
-        
+        playerobject = GameObject.FindWithTag("Player");
+        player = playerobject.GetComponent<PlayerInCombat>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 newPosition = transform.position + player.mousedirection * distance;
+        Quaternion newRotation = Quaternion.LookRotation(player.mousedirection, Vector3.up);
+
+        // Aplicar la nueva posición y orientación al elemento
+        this.transform.position = newPosition;
+        this.transform.rotation = newRotation;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

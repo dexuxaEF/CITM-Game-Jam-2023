@@ -49,12 +49,13 @@ public class Enemy : MonoBehaviour
     protected int initialPoolSize = 15;
 
     private GameObject playerobject;
-    private PlayerInCombat _player;
+  
 
     protected Queue<GameObject> projectilePool = new();
     protected GameObject projectileParent;
 
     protected GameObject player;
+   
     protected Vector3 playerDirection;
 
     private AudioSource _audioSource;
@@ -77,7 +78,7 @@ public class Enemy : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         playerobject = GameObject.FindWithTag("Player");
-        _player = playerobject.GetComponent<PlayerInCombat>();
+       
     }
     public virtual void Start()
     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7711265965069702294}
   m_Layer: 0
   m_Name: Mouth Enemy
-  m_TagString: Untagged
+  m_TagString: Mouth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,10 @@ MonoBehaviour:
   _animator: {fileID: 0}
   minNumProjectiles: 3
   maxNumProjectiles: 5
+  lives: 2
   totalAngle: 360
+  invulnerability: 0
+  isKnockBack: 0
 --- !u!1001 &4247705994705871020
 PrefabInstance:
   m_ObjectHideFlags: 0
