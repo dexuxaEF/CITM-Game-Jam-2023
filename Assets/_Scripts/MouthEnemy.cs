@@ -61,17 +61,6 @@ public class MouthEnemy : Enemy
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("MouthProjectile") && projectile.isparried)
-        {
-
-            health--;
-            projectile.ProjectileDestruction();
-
-        }
-
-    }
     public override void Move()
     {
         base.Move();
