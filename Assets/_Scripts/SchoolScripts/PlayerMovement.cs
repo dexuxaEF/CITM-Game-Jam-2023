@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
 
     public static Vector2 position;
+    Vector2 previousposition;
+    int time;
 
     private void Awake()
     {
@@ -19,15 +21,74 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        time = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x==0)
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
+
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+
+        }
+        if (_rigidbody.velocity.x >0)
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsRight", true);
+            gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsRight", false);
+
+        }
+        if (_rigidbody.velocity.x < 0)
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsLeft", true);
+            gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsLeft", false);
+        }
+        if (_rigidbody.velocity.y > 0)
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsUp", true);
+            gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsUp", false);
+
+        }
+        if (_rigidbody.velocity.y < 0)
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsDown", true);
+            gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsDown", false);
+        }
+
+        
         if (GameManager.Instance.isCutsceneOn == false)
         {
             Move();
+        }
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            Stop();
         }
         if (GameManager.Instance.isCutsceneOn == true)
         {
