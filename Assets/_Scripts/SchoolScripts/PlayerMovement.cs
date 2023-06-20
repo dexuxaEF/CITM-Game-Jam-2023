@@ -10,7 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     public static Vector2 position;
     Vector2 previousposition;
-    int time;
+    public bool up;
+    public bool down;
+    public bool right;
+    public bool left;
+    public bool idle;
 
     private void Awake()
     {
@@ -21,14 +25,18 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = 0;
+        up = true;
+        down = true;
+        right = true;
+        left = true;
+        idle = true;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x==0)
+        if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x==0 || idle == true)
         {
             gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
 
@@ -38,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
 
         }
-        if (_rigidbody.velocity.x >0)
+        if (_rigidbody.velocity.x >0 || right==true)
         {
             gameObject.GetComponent<Animator>().SetBool("IsRight", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
@@ -49,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("IsRight", false);
 
         }
-        if (_rigidbody.velocity.x < 0)
+        if (_rigidbody.velocity.x < 0 || left==true)
         {
             gameObject.GetComponent<Animator>().SetBool("IsLeft", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
@@ -59,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("IsLeft", false);
         }
-        if (_rigidbody.velocity.y > 0)
+        if (_rigidbody.velocity.y > 0 || up==true)
         {
             gameObject.GetComponent<Animator>().SetBool("IsUp", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
@@ -70,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("IsUp", false);
 
         }
-        if (_rigidbody.velocity.y < 0)
+        if (_rigidbody.velocity.y < 0 || down == true)
         {
             gameObject.GetComponent<Animator>().SetBool("IsDown", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);

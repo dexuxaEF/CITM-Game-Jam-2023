@@ -1680,6 +1680,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 4
+  up: 0
+  down: 0
+  right: 0
+  left: 0
+  idle: 0
 --- !u!50 &753517348
 Rigidbody2D:
   serializedVersion: 4
@@ -1714,18 +1719,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17}
+  m_Offset: {x: 0, y: -0.36}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9394102, y: 2.6833334}
+    oldSize: {x: 2.053493, y: 2.8411765}
     newSize: {x: 1.9394102, y: 2.6833334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.67}
+  m_Size: {x: 1, y: 0.94}
   m_EdgeRadius: 0
 --- !u!212 &753517350
 SpriteRenderer:
@@ -2122,7 +2127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7afd540f55e8a141bdf12177c1cbf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasteacherended: 0
+  hasteacherended: 1
   battle1enter: 0
   battle1win: 1
   battle2enter: 0
@@ -2130,8 +2135,8 @@ MonoBehaviour:
   battle3enter: 0
   battle3win: 0
   isCutsceneOn: 1
-  doorcloser: 0
-  hascinematicended: 0
+  doorcloser: 1
+  hascinematicended: 1
   postProcessingProfile: {fileID: 11400000, guid: 69d6749100e65c74bb49a1567fd9ec7f, type: 2}
 --- !u!4 &780711318
 Transform:
