@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasteacherended: 0
+  onCorridor: 0
   battle1enter: 0
   battle1win: 0
   battle2enter: 0
@@ -264,6 +265,7 @@ MonoBehaviour:
   isCutsceneOn: 1
   doorcloser: 0
   hascinematicended: 0
+  hasheadset: 0
   postProcessingProfile: {fileID: 11400000, guid: 69d6749100e65c74bb49a1567fd9ec7f, type: 2}
 --- !u!4 &185536027
 Transform:
@@ -1713,6 +1715,10 @@ PrefabInstance:
     - target: {fileID: 945281388935107550, guid: b365438750af41c4fa9e9169ee20dede, type: 3}
       propertyPath: m_TagString
       value: Puppet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885103495897536196, guid: b365438750af41c4fa9e9169ee20dede, type: 3}
+      propertyPath: lives
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1885103495897536196, guid: b365438750af41c4fa9e9169ee20dede, type: 3}
       propertyPath: topBoundary
