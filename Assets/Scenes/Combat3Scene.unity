@@ -211,6 +211,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
+      propertyPath: lives
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
       propertyPath: topBoundary
       value: 
       objectReference: {fileID: 1333172893}
@@ -226,6 +230,14 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
+    - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
+      propertyPath: maxNumProjectiles
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
+      propertyPath: minNumProjectiles
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
 --- !u!1001 &153558272
