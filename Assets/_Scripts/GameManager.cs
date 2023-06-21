@@ -70,25 +70,28 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Combat1Scene")
         {
-            gameObject.GetComponent<AudioSource>().Stop();
+            StopSong();        
         }
         if (SceneManager.GetActiveScene().name == "Combat2Scene")
         {
-            gameObject.GetComponent<AudioSource>().Stop();
+            StopSong();
         }
         if (SceneManager.GetActiveScene().name == "Combat3Scene")
         {
-            gameObject.GetComponent<AudioSource>().Stop();
+            StopSong();
         }
-        if (SceneManager.GetActiveScene().name == "School") 
+        if (SceneManager.GetActiveScene().name == "School")
         {
             //Time.timeScale = 1.0f;
-            if (gameObject.GetComponent<AudioSource>().isPlaying == false)
-            gameObject.GetComponent<AudioSource>().Play();
+            PlaySong();
+            if(hasheadset==true && gameObject.GetComponent<AudioSource>().isPlaying == true)
+            {
+                StopSong();
+            }
         }
         if (SceneManager.GetActiveScene().name == "CreditsScene")
         {
-                gameObject.GetComponent<AudioSource>().Stop();
+            StopSong();
         }
 
         if (battle1lost || battle2lost || battle3lost)
@@ -107,8 +110,18 @@ public class GameManager : MonoBehaviour
         // Post process when battle is won
         // Changes the saturation :|
         ChangeSaturation();
-    }
 
+
+    }
+    public void PlaySong()
+    {
+        if (gameObject.GetComponent<AudioSource>().isPlaying == false)
+            gameObject.GetComponent<AudioSource>().Play();
+    }
+    public void StopSong()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
+    }
     public void ChangeSaturation()
     {
         //if(hasteacherended  && !prueba)
