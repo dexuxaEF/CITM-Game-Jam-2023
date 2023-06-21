@@ -61,10 +61,10 @@ public class HearthEnemy : Enemy
     void Update()
     {
 
-        if (previuslives > lives)
+        if (previouslives > lives)
         {
             hitSFX.Play();
-            previuslives = lives;
+            previouslives = lives;
         }
         if (lives <= 0)
         {

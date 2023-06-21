@@ -262,6 +262,9 @@ MonoBehaviour:
   battle2win: 0
   battle3enter: 0
   battle3win: 0
+  battle1lost: 0
+  battle2lost: 0
+  battle3lost: 0
   isCutsceneOn: 1
   doorcloser: 0
   hascinematicended: 0
@@ -1532,7 +1535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &905364790 stripped
 Transform:
@@ -1904,7 +1907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2798114257651721890, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2798114257651721890, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2276,7 +2279,7 @@ Transform:
   - {fileID: 837037712}
   - {fileID: 560561324}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2055071172 stripped
 Transform:
@@ -2487,7 +2490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5944567757411551374, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5944567757411551374, guid: 396c9eea1cba8ed47b653ab9a061af33, type: 3}
       propertyPath: m_AnchorMax.x

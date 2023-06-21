@@ -10,7 +10,7 @@ public class MouthEnemy : Enemy
     private CircleProjectile projectile;
 
     public AudioSource hitSFX;
-
+    public AudioSource attackSFX;
     public int minNumProjectiles = 3;
     public int maxNumProjectiles = 6;
     public int lives = 2;
@@ -52,10 +52,10 @@ public class MouthEnemy : Enemy
     void Update()
     {
 
-        if (previuslives > lives)
+        if (previouslives > lives)
         {
             hitSFX.Play();
-            previuslives = lives;
+            previouslives = lives;
         }
         if (lives <= 0)
         {
@@ -82,6 +82,7 @@ public class MouthEnemy : Enemy
 
     public override void Attack()
     {
+      
         base.Attack();
 
         //if (Input.GetMouseButtonDown(0))
@@ -144,6 +145,7 @@ public class MouthEnemy : Enemy
     {
         while (true)
         {
+            attackSFX.Play();
             SpawnProjectile();
             isStopped = true;
 
