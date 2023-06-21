@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     public bool battle2win;
     public bool battle3enter;
     public bool battle3win;
+
+    public bool battle1lost;
+    public bool battle2lost;
+    public bool battle3lost;
+
     public bool isCutsceneOn = true;
     public bool doorcloser = false;
     public bool hascinematicended = false;
@@ -56,10 +61,32 @@ public class GameManager : MonoBehaviour
         {
             gameObject.GetComponent<AudioSource>().Stop();
         }
-        if (SceneManager.GetActiveScene().name == "School")
+        if (SceneManager.GetActiveScene().name == "Combat2Scene")
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
+        }
+        if (SceneManager.GetActiveScene().name == "Combat3Scene")
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
+        }
+        if (SceneManager.GetActiveScene().name == "School") 
         {
             if(gameObject.GetComponent<AudioSource>().isPlaying == false)
             gameObject.GetComponent<AudioSource>().Play();
+        }
+        if (SceneManager.GetActiveScene().name == "CreditsScene")
+        {
+                gameObject.GetComponent<AudioSource>().Stop();
+        }
+
+        if (battle1lost || battle2lost || battle3lost)
+        {
+            isCutsceneOn = false;
+            doorcloser = true;
+            hascinematicended = true;
+            hasheadset = true;
+
+            prueba = true;
         }
 
 
