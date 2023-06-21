@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public bool left;
     public bool idle;
 
+    private bool isMoving=false;
+    public AudioSource walkSFX;
+
     [Header("Respawn")]
     public Transform spawn1;
     public Transform spawn2;
@@ -95,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
 
+
+
             }
         }
         else
@@ -104,10 +109,14 @@ public class PlayerMovement : MonoBehaviour
             if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x == 0)
             {
                 gameObject.GetComponent<Animator>().SetBool("HSidle", true);
+
+
             }
             else
             {
                 gameObject.GetComponent<Animator>().SetBool("HSidle", false);
+
+   
 
             }
 
@@ -117,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("IsRight", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
             gameObject.GetComponent<Animator>().SetBool("HSidle", false);
+
 
         }
         else
@@ -130,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
             gameObject.GetComponent<Animator>().SetBool("HSidle", false);
 
+
         }
         else
         {
@@ -140,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("IsUp", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
             gameObject.GetComponent<Animator>().SetBool("HSidle", false);
+    
 
         }
         else
@@ -152,6 +164,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("IsDown", true);
             gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
             gameObject.GetComponent<Animator>().SetBool("HSidle", false);
+
 
         }
         else
@@ -196,9 +209,26 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         Vector3 movement = new Vector3();
+        Vector3 dir;
+        dir.x = Input.GetAxisRaw("Horizontal");
+        dir.y = Input.GetAxisRaw("Vertical");
 
         movement.x += Input.GetAxis("Horizontal");
         movement.y += Input.GetAxis("Vertical");
+
+        if (dir.x != 0 || dir.y != 0)
+        {
+            if (!isMoving)
+            {
+                walkSFX.Play();
+                isMoving = true;
+            }
+        }
+        else
+        {
+            walkSFX.Stop();
+            isMoving = false;
+        }
 
         if (movement.x > 0 && movement.y > 0)
             movement.Normalize();

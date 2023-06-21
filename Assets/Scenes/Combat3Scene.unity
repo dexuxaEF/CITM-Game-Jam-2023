@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
       propertyPath: lives
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7711265965069702294, guid: 88feb4594ceaff3499da46ee403b44d0, type: 3}
       propertyPath: topBoundary
@@ -1457,6 +1457,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2863879202861644731, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863879202861644731, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863879202861644731, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863879202861644731, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7048049943413860097, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
       propertyPath: HudLive1
       value: 
@@ -1584,6 +1600,7 @@ MonoBehaviour:
   hasheadset: 0
   postProcessingProfile: {fileID: 11400000, guid: 69d6749100e65c74bb49a1567fd9ec7f, type: 2}
   slowmo: {fileID: 0}
+  newSaturation: 0
 --- !u!4 &1252731049
 Transform:
   m_ObjectHideFlags: 0
