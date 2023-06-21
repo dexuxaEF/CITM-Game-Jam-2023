@@ -90,15 +90,14 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     public Vector3 mousedirection;
 
-  
-
-
-
     string nombreEscena;
     // Obtener el nombre de la escena actual
 
 
     public Animator _animator;
+
+    public SpriteRenderer playerSpriteRenderer;
+    public SpriteRenderer playerSpriteRendererI;
 
 
     private void Awake()
@@ -133,6 +132,20 @@ public class PlayerInCombat : MonoBehaviour
             previouslives = lives;
         }
 
+        if (invulnerability)
+        {
+            playerSpriteRendererI.gameObject.SetActive(true);
+            playerSpriteRenderer.gameObject.SetActive(false);
+            //playerSpriteRenderer.color = new Color(playerSpriteRenderer.color.r, playerSpriteRenderer.color.g,
+            //    playerSpriteRenderer.color.b, 128.0f);
+        }
+        else
+        {
+            playerSpriteRendererI.gameObject.SetActive(false);
+            playerSpriteRenderer.gameObject.SetActive(true);
+            //playerSpriteRenderer.color = new Color(playerSpriteRenderer.color.r, playerSpriteRenderer.color.g,
+            //    playerSpriteRenderer.color.b, 255.0f);
+        }
 
         Vector2 worldPos = Input.mousePosition;
         worldPos = Camera.main.ScreenToWorldPoint(worldPos);
@@ -504,7 +517,7 @@ public class PlayerInCombat : MonoBehaviour
             HudLive4.SetActive(true);
         }
     }
-
+        
     private void CheckLose()
     {
         if (lives <= 0)
