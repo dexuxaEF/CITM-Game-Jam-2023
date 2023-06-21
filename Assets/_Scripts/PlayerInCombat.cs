@@ -23,7 +23,6 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     private Rigidbody2D _rigidbody;
 
-   
 
     public GameObject _newparry;
     
@@ -49,6 +48,8 @@ public class PlayerInCombat : MonoBehaviour
     [SerializeField] [Min(0.1f)] private float IframesDash = 2f;
     public AudioSource dashSFX;
     public AudioSource hurtSFX;
+    public AudioSource walkSFX;
+
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
@@ -83,6 +84,7 @@ public class PlayerInCombat : MonoBehaviour
     public float maxparrycooldown = 1f;
     private bool isparry = false;
     private bool canParry = true;
+    private bool isMoving = false;
     private float parrycooldown;
 
     [HideInInspector]
@@ -175,6 +177,20 @@ public class PlayerInCombat : MonoBehaviour
 
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
+
+        if (direction.x != 0 || direction.y != 0)
+        {
+            if (!isMoving)
+            {
+                walkSFX.Play();
+                isMoving = true;
+            }
+        }
+        else
+        {
+            walkSFX.Stop();
+            isMoving = false;
+        }
 
         UpdateAnimations(direction.x, direction.y);
         //Rotate();
@@ -364,6 +380,8 @@ public class PlayerInCombat : MonoBehaviour
         movement.y += Input.GetAxis("Vertical");
 
         if (movement.x > 0 && movement.y > 0)
+            movement.Normalize();
+        if (movement.x < 0 && movement.y < 0)
             movement.Normalize();
 
         if (movement.magnitude > 0)
