@@ -19,7 +19,7 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     [SerializeField] [Min(1.0f)] private float playerSpeed =10f;
     [Min(0f)] public float lives= 3f;
-
+    private float previouslives;
     [HideInInspector]
     private Rigidbody2D _rigidbody;
 
@@ -48,6 +48,7 @@ public class PlayerInCombat : MonoBehaviour
     [SerializeField] [Min(0.1f)] private float DashCooldown=0.5f;
     [SerializeField] [Min(0.1f)] private float IframesDash = 2f;
     public AudioSource dashSFX;
+    public AudioSource hurtSFX;
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
@@ -115,7 +116,8 @@ public class PlayerInCombat : MonoBehaviour
         chargeBar.SetCharge(0);
         chargeBar.SetMaxCharge(maxparrycooldown);
         canParry = true;
-        nombreEscena = SceneManager.GetActiveScene().name; 
+        nombreEscena = SceneManager.GetActiveScene().name;
+        previouslives = lives;
     
     }
 
@@ -123,7 +125,12 @@ public class PlayerInCombat : MonoBehaviour
     void Update()
     {
 
-      
+        if (previouslives > lives)
+        {
+            hurtSFX.Play();
+            previouslives = lives;
+        }
+
 
         Vector2 worldPos = Input.mousePosition;
         worldPos = Camera.main.ScreenToWorldPoint(worldPos);
