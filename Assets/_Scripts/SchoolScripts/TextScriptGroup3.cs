@@ -24,6 +24,7 @@ public class TextScriptGroup3 : MonoBehaviour
         {
             StartDialogue();
             GameManager.Instance.battle3enter = false;
+
         }
 
         if (textComponent.text == lines[index])
@@ -64,7 +65,7 @@ public class TextScriptGroup3 : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(SetActiveFalse), 3);
+            Invoke(nameof(SetActiveFalse), 1);
         }
     }
 

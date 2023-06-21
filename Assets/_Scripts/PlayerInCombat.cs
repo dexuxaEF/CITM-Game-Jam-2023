@@ -86,6 +86,8 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     public Vector3 mousedirection;
 
+
+
     string nombreEscena;
     // Obtener el nombre de la escena actual
 
@@ -139,9 +141,28 @@ public class PlayerInCombat : MonoBehaviour
             {
                 GameManager.Instance.battle3win = true;
             }
-            Invoke(nameof(changescene), 3);
+            Invoke(nameof(changescene), 1);
 
         }
+        if(lose == true)
+        {
+            lose = false;
+            if (nombreEscena == "Combat1Scene")
+            {
+                GameManager.Instance.battle1lost = true;
+            }
+            if (nombreEscena == "Combat2Scene")
+            {
+                GameManager.Instance.battle2lost = true;
+            }
+            if (nombreEscena == "Combat3Scene")
+            {
+                GameManager.Instance.battle3lost = true;
+            }
+
+            Invoke(nameof(changescene), 1);
+        }
+
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
 
@@ -507,6 +528,7 @@ public class PlayerInCombat : MonoBehaviour
         if (lives <= 0)
         {
             lose = true;
+            //if()
         }
     }
     void changescene()

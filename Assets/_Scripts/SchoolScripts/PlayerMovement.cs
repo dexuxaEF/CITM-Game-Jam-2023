@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] [Min(1.0f)] private float playerSpeed;
@@ -16,25 +16,49 @@ public class PlayerMovement : MonoBehaviour
     public bool left;
     public bool idle;
 
+    [Header("Respawn")]
+    public Transform spawn1;
+    public Transform spawn2;
+    public Transform spawn3;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        up = true;
-        down = true;
-        right = true;
-        left = true;
+        up = false;
+        down = false;
+        right = false;
+        left = false;
         idle = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Do TP before battle if lost that battle
+        if(GameManager.Instance.battle1lost)
+        {
+            this.transform.position = spawn1.transform.position;
+            GameManager.Instance.battle1lost = false;
+        }
+        if (GameManager.Instance.battle2lost)
+        {
+            this.transform.position = spawn2.transform.position;
+            GameManager.Instance.battle2lost = false;
+        }
+        if (GameManager.Instance.battle3lost)
+        {
+            this.transform.position = spawn3.transform.position;
+            GameManager.Instance.battle3lost = false;
+        }
+
+
+
         if (GameManager.Instance.hasheadset == false) {
             if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x == 0 || idle == true)
             {
@@ -168,6 +192,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("CorridorTrigger"))
         {
             GameManager.Instance.onCorridor = true;
+        }
+
+        if (collision.gameObject.CompareTag("ToCredits"))
+        {
+            SceneManager.LoadScene("CreditsScene");
         }
     }
 

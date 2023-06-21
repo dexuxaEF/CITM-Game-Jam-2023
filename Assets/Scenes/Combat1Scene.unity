@@ -335,6 +335,9 @@ MonoBehaviour:
   battle2win: 0
   battle3enter: 0
   battle3win: 0
+  battle1lost: 0
+  battle2lost: 0
+  battle3lost: 0
   isCutsceneOn: 1
   doorcloser: 0
   hascinematicended: 0
@@ -1877,6 +1880,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2798114257651721891, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d335529eb3aaedb40a3e9a7631a8cc64, type: 3}
+    - target: {fileID: 2798114257651721891, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798114257651721891, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798114257651721892, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.776
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798114257651721892, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.329
+      objectReference: {fileID: 0}
     - target: {fileID: 2798114257651721894, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
       propertyPath: player
       value: 
@@ -1884,6 +1907,10 @@ PrefabInstance:
     - target: {fileID: 2798114257651721895, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
       propertyPath: m_Name
       value: NewParry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798114257651721895, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2724617b1fcc88499cc8f7ab1e1fcdf, type: 3}
