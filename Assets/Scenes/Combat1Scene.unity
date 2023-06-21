@@ -421,6 +421,7 @@ MonoBehaviour:
   hasheadset: 0
   postProcessingProfile: {fileID: 11400000, guid: 69d6749100e65c74bb49a1567fd9ec7f, type: 2}
   slowmo: {fileID: 0}
+  newSaturation: 0
 --- !u!4 &346979427
 Transform:
   m_ObjectHideFlags: 0
@@ -1102,6 +1103,10 @@ PrefabInstance:
     - target: {fileID: 2840073294628358655, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: m_Name
       value: HeartEnemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840073294628358655, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: lives
