@@ -2952,6 +2952,7 @@ MonoBehaviour:
   right: 0
   left: 0
   idle: 0
+  walkSFX: {fileID: 0}
   spawn1: {fileID: 995099965}
   spawn2: {fileID: 1909777412}
   spawn3: {fileID: 1987580649}
@@ -3493,7 +3494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7afd540f55e8a141bdf12177c1cbf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasteacherended: 1
+  hasteacherended: 0
   onCorridor: 0
   battle1enter: 0
   battle1win: 0
