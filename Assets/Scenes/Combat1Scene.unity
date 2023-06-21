@@ -1021,14 +1021,6 @@ PrefabInstance:
       value: HeartEnemy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
-      propertyPath: lives
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
-      propertyPath: coneAngle
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
       propertyPath: topBoundary
       value: 
       objectReference: {fileID: 1333172893}
@@ -1044,14 +1036,6 @@ PrefabInstance:
       propertyPath: bottomBoundary
       value: 
       objectReference: {fileID: 385191958}
-    - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
-      propertyPath: numProjectiles
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3485395043766405048, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
-      propertyPath: initialPoolSize
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13cf76db0acb0e94bb4e5b632e488a09, type: 3}
 --- !u!1001 &685020607
@@ -2590,13 +2574,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136376410}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1001 &820744501982200244
+=======
+--- !u!1001 &5564889232833950765
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 820744502211409571, guid: b244ad27c87b46a4e83395b2009fa731, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2671,6 +2660,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b244ad27c87b46a4e83395b2009fa731, type: 3}
+=======
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874509, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564889231925874546, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+      propertyPath: m_Name
+      value: Parry Audio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26cbad666f04feb44800ee80c63c1cf6, type: 3}
+>>>>>>> Stashed changes
 --- !u!1001 &5944567758637252019
 PrefabInstance:
   m_ObjectHideFlags: 0

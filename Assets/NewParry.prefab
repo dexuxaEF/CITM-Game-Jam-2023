@@ -139,6 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rippleParticles: {fileID: 866571402164685173, guid: ea8272cefae16af47b88d01763ad11ce, type: 3}
-  player: {fileID: 7048049943413860098, guid: 18d235508f68fb14e813736d7fd5c32a, type: 3}
+  player: {fileID: 0}
   radius: 1
   slowMoScript: {fileID: 2798114257651721893}

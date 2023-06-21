@@ -7,10 +7,14 @@ public class HearthEnemy : Enemy
     private GameObject playerobject;
     private PlayerInCombat _player;
 
+    public AudioSource hitSFX;
 
 
 
-    public int lives = 2;
+
+    public int lives = 7;
+
+    private int previuslives;
 
     [Range(1.0f,180f)]
     public float coneAngle = 5f;
@@ -51,6 +55,7 @@ public class HearthEnemy : Enemy
         playerDirection = (player.transform.position - this.transform.position);
         Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
 
+        previuslives = lives;
        
 
     }
@@ -58,6 +63,13 @@ public class HearthEnemy : Enemy
 
     void Update()
     {
+
+        if(previuslives>lives)
+        {
+            hitSFX.Play();
+            previuslives = lives;
+        }
+
         if (lives <= 0)
         {
             _player.win = true;
