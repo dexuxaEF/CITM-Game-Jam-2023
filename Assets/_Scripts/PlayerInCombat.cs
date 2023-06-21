@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerInCombat : MonoBehaviour
 {
@@ -89,6 +90,8 @@ public class PlayerInCombat : MonoBehaviour
     // Obtener el nombre de la escena actual
 
 
+    public Animator _animator;
+
 
     private void Awake()
     {
@@ -115,6 +118,8 @@ public class PlayerInCombat : MonoBehaviour
     void Update()
     {
 
+      
+
         Vector2 worldPos = Input.mousePosition;
         worldPos = Camera.main.ScreenToWorldPoint(worldPos);
         mousedirection = (worldPos - _rigidbody.position).normalized;
@@ -139,6 +144,8 @@ public class PlayerInCombat : MonoBehaviour
         }
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
+
+        UpdateAnimations(direction.x, direction.y);
         //Rotate();
 
         if (!isDashing && !isKnockBack)
@@ -183,6 +190,110 @@ public class PlayerInCombat : MonoBehaviour
 
         CheckLose();
         UpdateLiveHud();
+
+    }
+
+    private void UpdateAnimations(float x, float y)
+    {
+
+        if (x > 0.1)
+        {
+            _animator.SetBool("Right", true);
+
+
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Down", false);
+            _animator.SetBool("Idle", false);
+
+        }
+        else if (x < -0.1)
+        {
+            _animator.SetBool("Left", true);
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Down", false);
+            _animator.SetBool("Idle", false);
+        }
+        else if (y > 0.1)
+        {
+            _animator.SetBool("Up", true);
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Down", false);
+            _animator.SetBool("Idle", false);
+        }
+        else if (y < -0.1)
+        {
+            _animator.SetBool("Down", true);
+
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Idle", false);
+        }
+        else
+        {
+            _animator.SetBool("Idle", true);
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Down", false);
+        }
+
+        //if (_rigidbody.velocity.x > 0.1)
+        //{
+        //    _animator.SetBool("Right", true);
+
+
+        //    _animator.SetBool("Left", false);
+        //    _animator.SetBool("Up", false);
+        //    _animator.SetBool("Down", false);
+        //    _animator.SetBool("Idle", false);
+
+        //}
+        //else if (_rigidbody.velocity.x < -0.1)
+        //{
+        //    _animator.SetBool("Left", true);
+
+        //    _animator.SetBool("Right", false);
+        //    _animator.SetBool("Up", false);
+        //    _animator.SetBool("Down", false);
+        //    _animator.SetBool("Idle", false);
+        //}
+        //else if (_rigidbody.velocity.y > 0.1)
+        //{
+        //    _animator.SetBool("Up", true);
+
+        //    _animator.SetBool("Right", false);
+        //    _animator.SetBool("Left", false);
+        //    _animator.SetBool("Down", false);
+        //    _animator.SetBool("Idle", false);
+        //}
+        //else if (_rigidbody.velocity.y < -0.1)
+        //{
+        //    _animator.SetBool("Down", true);
+
+
+        //    _animator.SetBool("Right", false);
+        //    _animator.SetBool("Left", false);
+        //    _animator.SetBool("Up", false);
+        //    _animator.SetBool("Idle", false);
+        //}
+        //else
+        //{
+        //    _animator.SetBool("Idle", true);
+
+        //    _animator.SetBool("Right", false);
+        //    _animator.SetBool("Left", false);
+        //    _animator.SetBool("Up", false);
+        //    _animator.SetBool("Down", false);
+        //}
+
 
     }
 
