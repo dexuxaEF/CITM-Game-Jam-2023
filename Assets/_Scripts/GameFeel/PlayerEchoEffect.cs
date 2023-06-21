@@ -29,8 +29,8 @@ public class PlayerEchoEffect : MonoBehaviour
             if (timeBtwSpawns <= 0)
             {
                 Vector2 speedDirection = playerRB.velocity.normalized;
-                GameObject instance = (GameObject)Instantiate(echo, transform.position, Quaternion.LookRotation(Vector3.forward, speedDirection));
-                instance.transform.rotation = Quaternion.LookRotation(Vector3.forward, speedDirection);
+                GameObject instance = (GameObject)Instantiate(echo, transform.position, transform.rotation);
+                instance.transform.rotation = transform.rotation;
                 Destroy(instance, destroyTime);
                 timeBtwSpawns = startTimeBtwSpawns;
             }

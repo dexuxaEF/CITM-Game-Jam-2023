@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerInCombat : MonoBehaviour
 {
@@ -18,11 +19,10 @@ public class PlayerInCombat : MonoBehaviour
     [HideInInspector]
     [SerializeField] [Min(1.0f)] private float playerSpeed =10f;
     [Min(0f)] public float lives= 3f;
-
+    private float previouslives;
     [HideInInspector]
     private Rigidbody2D _rigidbody;
 
-   
 
     public GameObject _newparry;
     
@@ -46,6 +46,10 @@ public class PlayerInCombat : MonoBehaviour
     //Tiempo que te tienes que esperar para volver a usar el DASH
     [SerializeField] [Min(0.1f)] private float DashCooldown=0.5f;
     [SerializeField] [Min(0.1f)] private float IframesDash = 2f;
+    public AudioSource dashSFX;
+    public AudioSource hurtSFX;
+    public AudioSource walkSFX;
+
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
@@ -80,6 +84,7 @@ public class PlayerInCombat : MonoBehaviour
     public float maxparrycooldown = 1f;
     private bool isparry = false;
     private bool canParry = true;
+    private bool isMoving = false;
     private float parrycooldown;
 
     [HideInInspector]
@@ -88,6 +93,11 @@ public class PlayerInCombat : MonoBehaviour
     string nombreEscena;
     // Obtener el nombre de la escena actual
 
+
+    public Animator _animator;
+
+    public SpriteRenderer playerSpriteRenderer;
+    public SpriteRenderer playerSpriteRendererI;
 
 
     private void Awake()
@@ -107,13 +117,35 @@ public class PlayerInCombat : MonoBehaviour
         chargeBar.SetCharge(0);
         chargeBar.SetMaxCharge(maxparrycooldown);
         canParry = true;
-        nombreEscena = SceneManager.GetActiveScene().name; 
+        nombreEscena = SceneManager.GetActiveScene().name;
+        previouslives = lives;
     
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (previouslives > lives)
+        {
+            hurtSFX.Play();
+            previouslives = lives;
+        }
+
+        if (invulnerability)
+        {
+            playerSpriteRendererI.gameObject.SetActive(true);
+            playerSpriteRenderer.gameObject.SetActive(false);
+            //playerSpriteRenderer.color = new Color(playerSpriteRenderer.color.r, playerSpriteRenderer.color.g,
+            //    playerSpriteRenderer.color.b, 128.0f);
+        }
+        else
+        {
+            playerSpriteRendererI.gameObject.SetActive(false);
+            playerSpriteRenderer.gameObject.SetActive(true);
+            //playerSpriteRenderer.color = new Color(playerSpriteRenderer.color.r, playerSpriteRenderer.color.g,
+            //    playerSpriteRenderer.color.b, 255.0f);
+        }
 
         Vector2 worldPos = Input.mousePosition;
         worldPos = Camera.main.ScreenToWorldPoint(worldPos);
@@ -134,11 +166,46 @@ public class PlayerInCombat : MonoBehaviour
             {
                 GameManager.Instance.battle3win = true;
             }
-            Invoke(nameof(changescene), 3);
+            Invoke(nameof(changescene), 1.0f);
 
         }
+        if(lose == true)
+        {
+            lose = false;
+            if (nombreEscena == "Combat1Scene")
+            {
+                GameManager.Instance.battle1lost = true;
+            }
+            if (nombreEscena == "Combat2Scene")
+            {
+                GameManager.Instance.battle2lost = true;
+            }
+            if (nombreEscena == "Combat3Scene")
+            {
+                GameManager.Instance.battle3lost = true;
+            }
+
+            Invoke(nameof(changescene), 1.0f);
+        }
+
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
+
+        if (direction.x != 0 || direction.y != 0)
+        {
+            if (!isMoving)
+            {
+                walkSFX.Play();
+                isMoving = true;
+            }
+        }
+        else
+        {
+            walkSFX.Stop();
+            isMoving = false;
+        }
+
+        UpdateAnimations(direction.x, direction.y);
         //Rotate();
 
         if (!isDashing && !isKnockBack)
@@ -160,6 +227,7 @@ public class PlayerInCombat : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && !isKnockBack)
         {
+            dashSFX.Play();
             StartCoroutine(Dash());
         }
 
@@ -183,6 +251,63 @@ public class PlayerInCombat : MonoBehaviour
 
         CheckLose();
         UpdateLiveHud();
+
+    }
+
+    private void UpdateAnimations(float x, float y)
+    {
+
+        if (x > 0.1)
+        {
+            _animator.SetBool("Right", true);
+
+
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Down", false);
+            _animator.SetBool("Idle", false);
+
+        }
+        else if (x < -0.1)
+        {
+            _animator.SetBool("Left", true);
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Down", false);
+            _animator.SetBool("Idle", false);
+        }
+        else if (y > 0.1)
+        {
+            _animator.SetBool("Up", true);
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Down", false);
+            _animator.SetBool("Idle", false);
+        }
+        else if (y < -0.1)
+        {
+            _animator.SetBool("Down", true);
+
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Idle", false);
+        }
+        else
+        {
+            _animator.SetBool("Idle", true);
+
+            _animator.SetBool("Right", false);
+            _animator.SetBool("Left", false);
+            _animator.SetBool("Up", false);
+            _animator.SetBool("Down", false);
+        }
+
+     
+
 
     }
 
@@ -268,6 +393,8 @@ public class PlayerInCombat : MonoBehaviour
         movement.y += Input.GetAxis("Vertical");
 
         if (movement.x > 0 && movement.y > 0)
+            movement.Normalize();
+        if (movement.x < 0 && movement.y < 0)
             movement.Normalize();
 
         if (movement.magnitude > 0)
@@ -390,12 +517,13 @@ public class PlayerInCombat : MonoBehaviour
             HudLive4.SetActive(true);
         }
     }
-
+        
     private void CheckLose()
     {
         if (lives <= 0)
         {
             lose = true;
+            //if()
         }
     }
     void changescene()

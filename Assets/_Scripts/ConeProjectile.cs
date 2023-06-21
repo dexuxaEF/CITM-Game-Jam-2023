@@ -21,6 +21,9 @@ public class ConeProjectile : Projectile
     private bool parryTrigger = false;
     public bool isparried = false;
 
+    public AudioSource parrySFX;
+
+
 
 
     private void Awake()
@@ -73,6 +76,7 @@ public class ConeProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Parry") && !isparried)
         {
+            parrySFX.Play();
             parryTrigger = true;
             isparried = true;
             player.invulnerability = true;

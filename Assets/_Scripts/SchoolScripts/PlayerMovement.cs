@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,10 +18,21 @@ public class PlayerMovement : MonoBehaviour
     public bool left;
     public bool idle;
 
+    [Header("Respawn")]
+    public Transform spawn1;
+    public Transform spawn2;
+    public Transform spawn3;
+
+    //[Header("HEART UI")]
+    //public GameObject normalHeart1;
+    //public GameObject normalHeart2;
+    //public GameObject brokenHeart1;
+    //public GameObject brokenHeart2;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        
+
     }
 
     // Start is called before the first frame update
@@ -35,6 +48,43 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (GameManager.Instance.lostBattleCount == 1)
+        //{
+        //    normalHeart1.SetActive(false);
+        //    normalHeart2.SetActive(true);
+        //    brokenHeart1.SetActive(true);
+        //    brokenHeart2.SetActive(false);
+        //}
+        //else if (GameManager.Instance.lostBattleCount == 0)
+        //{
+        //    normalHeart1.SetActive(true);
+        //    normalHeart2.SetActive(true);
+        //    brokenHeart1.SetActive(false);
+        //    brokenHeart2.SetActive(false);
+        //}
+
+        // Do TP before battle if lost that battle
+        if (GameManager.Instance.battle1lost)
+        {
+            this.transform.position = spawn1.transform.position;
+           // GameManager.Instance.lostBattleCount++;
+            GameManager.Instance.battle1lost = false;
+        }
+        if (GameManager.Instance.battle2lost)
+        {
+            this.transform.position = spawn2.transform.position;
+            //GameManager.Instance.lostBattleCount++;
+            GameManager.Instance.battle2lost = false;
+        }
+        if (GameManager.Instance.battle3lost)
+        {
+            this.transform.position = spawn3.transform.position;
+            //GameManager.Instance.lostBattleCount++;
+            GameManager.Instance.battle3lost = false;
+        }
+
+
+
         if (GameManager.Instance.hasheadset == false) {
             if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.x == 0 || idle == true)
             {
@@ -169,7 +219,32 @@ public class PlayerMovement : MonoBehaviour
         {
             GameManager.Instance.onCorridor = true;
         }
+
+        if (collision.gameObject.CompareTag("ToCredits"))
+        {
+            SceneManager.LoadScene("CreditsScene");
+        }
     }
+
+    //private int CountBattlesLost()
+    //{
+    //    if (GameManager.Instance.battle1lost)
+    //    {
+    //        GameManager.Instance.lostBattleCount++;
+    //    }
+
+    //    if (GameManager.Instance.battle2lost)
+    //    {
+    //        GameManager.Instance.lostBattleCount++;
+    //    }
+
+    //    if (GameManager.Instance.battle3lost)
+    //    {
+    //        GameManager.Instance.lostBattleCount++;
+    //    }
+
+    //    return GameManager.Instance.lostBattleCount;
+    //}
 
 
 }

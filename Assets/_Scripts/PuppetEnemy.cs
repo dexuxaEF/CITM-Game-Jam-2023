@@ -8,10 +8,12 @@ public class PuppetEnemy : Enemy
      private GameObject playerobject;
      private PlayerInCombat _player;
 
+    public AudioSource hitSFX;
+
     public bool isCurved = true;
 
     public int lives = 2;
-
+    private int previouslives;
     [Tooltip("notDefaultAttack: kinda tracking projectile")]
     public bool defaultAttack = true;
     public bool invulnerability = false;
@@ -41,12 +43,20 @@ public class PuppetEnemy : Enemy
 
         playerDirection = (player.transform.position - this.transform.position);
         Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
-       
+
+
+        previouslives = lives;
     }
 
     
     void Update()
     {
+
+        if (previouslives > lives)
+        {
+            hitSFX.Play();
+            previouslives = lives;
+        }
         if (lives <= 0)
         {
             _player.win = true;

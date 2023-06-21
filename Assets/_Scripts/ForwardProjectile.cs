@@ -29,6 +29,9 @@ public class ForwardProjectile : Projectile
     public bool isTracking = false;
     private bool stopTracking = false;
 
+    public AudioSource parrySFX;
+
+
     private void Awake()
     {
 
@@ -97,6 +100,7 @@ public class ForwardProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Parry") && !isparried)
         {
+            parrySFX.Play();
             isTracking = false;
             parryTrigger = true;
             player.invulnerability = true;
