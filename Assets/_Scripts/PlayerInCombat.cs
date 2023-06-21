@@ -144,7 +144,7 @@ public class PlayerInCombat : MonoBehaviour
             {
                 GameManager.Instance.battle3win = true;
             }
-            Invoke(nameof(changescene), 1);
+            Invoke(nameof(changescene), 1.0f);
 
         }
         if(lose == true)
@@ -163,7 +163,7 @@ public class PlayerInCombat : MonoBehaviour
                 GameManager.Instance.battle3lost = true;
             }
 
-            Invoke(nameof(changescene), 1);
+            Invoke(nameof(changescene), 1.0f);
         }
 
         direction.x = Input.GetAxisRaw("Horizontal");

@@ -13,6 +13,9 @@ public class SlowMotion : MonoBehaviour
     {
         startTimescale = Time.timeScale;
         startFixedDeltaTime = Time.fixedDeltaTime;
+
+        //Debug.Log(startFixedDeltaTime);
+
     }
 
     //void Update()
@@ -31,7 +34,7 @@ public class SlowMotion : MonoBehaviour
         Time.fixedDeltaTime = startFixedDeltaTime * slowMotionTimescale;
     }
 
-    private void StopSlowMotion()
+    public void StopSlowMotion()
     {
         Time.timeScale = startTimescale;
         Time.fixedDeltaTime = startFixedDeltaTime;
@@ -46,6 +49,11 @@ public class SlowMotion : MonoBehaviour
     {
         StartSlowMotion();
         yield return new WaitForSecondsRealtime(duration);
+        StopSlowMotion();
+    }
+
+    private void OnDisable()
+    {
         StopSlowMotion();
     }
 }

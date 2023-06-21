@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,24 +33,30 @@ public class GameManager : MonoBehaviour
     public PostProcessProfile postProcessingProfile;
     private ColorGrading colorGrading;
 
+    public SlowMotion slowmo;
+
+
+
+    [HideInInspector]
+   // public int lostBattleCount;
+
     private void Awake()
     {
 
-      if (Instance == null)
-      {
-          Instance = this;
-          DontDestroyOnLoad(gameObject);
-      }
-      else
-      {
-          Destroy(gameObject);
-      }
-      
-
+       if (Instance == null)
+       {
+           Instance = this;
+            DontDestroyOnLoad(gameObject);
+       }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
+
         postProcessingProfile.TryGetSettings(out colorGrading);
         float initialSaturation = colorGrading.saturation.value;
     }
@@ -71,7 +78,8 @@ public class GameManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "School") 
         {
-            if(gameObject.GetComponent<AudioSource>().isPlaying == false)
+            //Time.timeScale = 1.0f;
+            if (gameObject.GetComponent<AudioSource>().isPlaying == false)
             gameObject.GetComponent<AudioSource>().Play();
         }
         if (SceneManager.GetActiveScene().name == "CreditsScene")
@@ -88,6 +96,8 @@ public class GameManager : MonoBehaviour
 
             prueba = true;
         }
+
+
 
 
         // Post process when battle is won
@@ -167,5 +177,6 @@ public class GameManager : MonoBehaviour
         return battleCount;
     }
 
+    
 
 }
