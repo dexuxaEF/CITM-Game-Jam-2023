@@ -84,10 +84,7 @@ public class GameManager : MonoBehaviour
         {
             //Time.timeScale = 1.0f;
             PlaySong();
-            if(hasheadset==true && gameObject.GetComponent<AudioSource>().isPlaying == true)
-            {
-                StopSong();
-            }
+           
         }
         if (SceneManager.GetActiveScene().name == "CreditsScene")
         {

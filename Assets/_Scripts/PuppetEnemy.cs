@@ -9,6 +9,7 @@ public class PuppetEnemy : Enemy
      private PlayerInCombat _player;
 
     public AudioSource hitSFX;
+    public AudioSource attackSFX;
 
     public bool isCurved = true;
 
@@ -124,6 +125,7 @@ public class PuppetEnemy : Enemy
     {
         while (true)
         {
+            attackSFX.Play();
             SpawnProjectile();
             isStopped = true;
             yield return new WaitForSeconds(reloadTime);
