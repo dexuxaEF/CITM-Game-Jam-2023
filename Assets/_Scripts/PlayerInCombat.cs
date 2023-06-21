@@ -47,6 +47,7 @@ public class PlayerInCombat : MonoBehaviour
     //Tiempo que te tienes que esperar para volver a usar el DASH
     [SerializeField] [Min(0.1f)] private float DashCooldown=0.5f;
     [SerializeField] [Min(0.1f)] private float IframesDash = 2f;
+    public AudioSource dashSFX;
 
 
     //Mientras esta varialbe sea True el personaje estar haciendo el DASH
@@ -85,6 +86,8 @@ public class PlayerInCombat : MonoBehaviour
 
     [HideInInspector]
     public Vector3 mousedirection;
+
+  
 
 
 
@@ -188,6 +191,7 @@ public class PlayerInCombat : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && !isKnockBack)
         {
+            dashSFX.Play();
             StartCoroutine(Dash());
         }
 

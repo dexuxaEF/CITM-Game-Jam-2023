@@ -17,6 +17,8 @@ public class CircleProjectile : Projectile
     private GameObject enemybloodParticles;
     private GameObject enemybloodParticleInstance;
 
+    public AudioSource parrySFX;
+
     private bool parryTrigger = false;
     public bool isparried = false;
 
@@ -69,6 +71,7 @@ public class CircleProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Parry") && !isparried)
         {
+            parrySFX.Play();
             isparried = true;
             parryTrigger = true;
             player.invulnerability = true;
