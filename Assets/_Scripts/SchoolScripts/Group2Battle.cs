@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class Group2Battle : MonoBehaviour
 {
 
-
+    AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +27,7 @@ public class Group2Battle : MonoBehaviour
         {
             if (GameManager.Instance.battle2win == false)
             {
+                audio.Play();
                 GameManager.Instance.isCutsceneOn = true;
                 Invoke(nameof(StartBattle), 7);
                 GameManager.Instance.battle2enter = true;

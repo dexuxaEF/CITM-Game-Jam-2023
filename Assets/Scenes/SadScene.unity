@@ -1213,11 +1213,16 @@ MonoBehaviour:
   battle2win: 0
   battle3enter: 0
   battle3win: 0
+  battle1lost: 0
+  battle2lost: 0
+  battle3lost: 0
   isCutsceneOn: 1
   doorcloser: 0
   hascinematicended: 0
   hasheadset: 0
   postProcessingProfile: {fileID: 0}
+  slowmo: {fileID: 0}
+  newSaturation: 0
 --- !u!4 &1809575674
 Transform:
   m_ObjectHideFlags: 0
@@ -1336,6 +1341,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 435910421314331205, guid: 01d3736c7664abe4e9d0312c4413f7f9, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435910421314331205, guid: 01d3736c7664abe4e9d0312c4413f7f9, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435910421314331205, guid: 01d3736c7664abe4e9d0312c4413f7f9, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 435910421314331205, guid: 01d3736c7664abe4e9d0312c4413f7f9, type: 3}
       propertyPath: m_SortingOrder
       value: 1

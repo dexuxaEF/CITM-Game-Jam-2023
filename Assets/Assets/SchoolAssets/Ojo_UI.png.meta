@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be2e036f63d09bc449905c760b254675
+guid: 289988391ab2e154b85a62a8342e5612
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 380
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,169 +104,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdleNH_0
+      name: Ojo_UI_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 55
         y: 0
-        width: 714
-        height: 1184
+        width: 1705
+        height: 1329
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca5a3ab3d2c02f548879e43f2bcd581e
-      internalID: 2050114403
+      spriteID: e43990991830903479fa21976b454e5d
+      internalID: 1912004314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_1
+      name: Ojo_UI_1
       rect:
         serializedVersion: 2
-        x: 714
+        x: 1760
         y: 0
-        width: 714
-        height: 1184
+        width: 1760
+        height: 1329
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca07596afa3380f42a8b465ee4d2744c
-      internalID: -792313569
+      spriteID: 07cb159bb4304434f9c575c4168834c0
+      internalID: -112119999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleNH_2
+      name: Ojo_UI_2
       rect:
         serializedVersion: 2
-        x: 1428
+        x: 3520
         y: 0
-        width: 714
-        height: 1184
+        width: 1760
+        height: 1329
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9529545fc86ab3947b28016006ffb1ea
-      internalID: -530085958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleNH_3
-      rect:
-        serializedVersion: 2
-        x: 2142
-        y: 0
-        width: 714
-        height: 1184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 266ac1ca941fecf42a8eb469865cc4c3
-      internalID: 20834905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleNH_4
-      rect:
-        serializedVersion: 2
-        x: 2856
-        y: 0
-        width: 714
-        height: 1184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0213d73b1bfb22947b7a81ed81da5476
-      internalID: -654190598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleNH_5
-      rect:
-        serializedVersion: 2
-        x: 3570
-        y: 0
-        width: 714
-        height: 1184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b277913d546a597499e25cfef13c837d
-      internalID: 895716000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleNH_6
-      rect:
-        serializedVersion: 2
-        x: 4284
-        y: 0
-        width: 714
-        height: 1184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 351d7f278e764b846835f0645b7c9766
-      internalID: -1945718812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleNH_7
-      rect:
-        serializedVersion: 2
-        x: 4998
-        y: 0
-        width: 714
-        height: 1184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 757459df2d4985f4ca763115985ac894
-      internalID: -432740292
+      spriteID: 22fbb961f2d2c5f409391812daa56f2a
+      internalID: 933748896
       vertices: []
       indices: 
       edges: []
@@ -282,14 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IdleNH_6: -1945718812
-      IdleNH_3: 20834905
-      IdleNH_7: -432740292
-      IdleNH_5: 895716000
-      IdleNH_0: 2050114403
-      IdleNH_4: -654190598
-      IdleNH_2: -530085958
-      IdleNH_1: -792313569
+      Ojo_UI_2: 933748896
+      Ojo_UI_1: -112119999
+      Ojo_UI_0: 1912004314
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

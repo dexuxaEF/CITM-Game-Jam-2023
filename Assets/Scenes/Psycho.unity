@@ -502,6 +502,7 @@ MonoBehaviour:
   hasheadset: 0
   postProcessingProfile: {fileID: 11400000, guid: 69d6749100e65c74bb49a1567fd9ec7f, type: 2}
   slowmo: {fileID: 0}
+  newSaturation: 0
 --- !u!4 &454758269
 Transform:
   m_ObjectHideFlags: 0
@@ -988,7 +989,7 @@ Animator:
   m_GameObject: {fileID: 1817724481}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b02ea3b2bfc394549b7f5c922dd232fa, type: 2}
+  m_Controller: {fileID: 9100000, guid: ff16d5343d5c61d4f90a95fc90ea99a0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
