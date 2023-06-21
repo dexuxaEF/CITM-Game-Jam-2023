@@ -6,6 +6,7 @@ public class MoveCamera : MonoBehaviour
 {
    
     public Animator camAnim;
+    public GameObject ull;
     public static bool videostart;
     float count = -1;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,9 +31,15 @@ public class MoveCamera : MonoBehaviour
         {
             camAnim.SetBool("CutSceneGroup1", true);
         }
+        if(count >= 4)
+        {
+            ull.SetActive(true);
+
+        }
         if (count >= 6)
         {
             PlayVideo.headsetstart = true;
+            ull.SetActive(false);
             camAnim.SetBool("CutSceneGroup1", false);
             Destroy(gameObject);
         }
