@@ -35,9 +35,11 @@ public class GameManager : MonoBehaviour
 
     public SlowMotion slowmo;
 
+    public float newSaturation;
 
 
-    [HideInInspector]
+
+   // [HideInInspector]
    // public int lostBattleCount;
 
     private void Awake()
@@ -59,6 +61,8 @@ public class GameManager : MonoBehaviour
 
         postProcessingProfile.TryGetSettings(out colorGrading);
         float initialSaturation = colorGrading.saturation.value;
+
+        newSaturation = 0f;
     }
 
     // Update is called once per frame
@@ -107,37 +111,53 @@ public class GameManager : MonoBehaviour
 
     public void ChangeSaturation()
     {
-        if(hasteacherended  && !prueba)
-        {
-            prueba = true;
-            ChangeFixedSaturation(-100.0f);
-        }
+        //if(hasteacherended  && !prueba)
+        //{
+        //    prueba = true;
+        //    ChangeFixedSaturation(-100.0f);
+        //}
 
         int battleCount = CountBattlesWon();
 
         if (colorGrading != null && onCorridor)
         {
             // Determine the new saturation value based on the number of battles won
-            float newSaturation = 0f;
-
+            //float newSaturation = 0f;
+            
             if(battleCount <= 0)
             {
-                newSaturation = -100f;
+                if(newSaturation > -90)
+                {
+                    newSaturation -= Time.deltaTime * 150;
+                }
+                //newSaturation = -100f;
             }
 
             if (battleCount >= 1)
             {
-                newSaturation = -60f;
+                if (newSaturation < -60)
+                {
+                    newSaturation += Time.deltaTime * 150;
+                }
+                //newSaturation = -60f;
             }
 
             if (battleCount >= 2)
             {
-                newSaturation = -30f;
+                if (newSaturation < -30f)
+                {
+                    newSaturation += Time.deltaTime * 150;
+                }
+                //newSaturation = -30f;
             }
 
             if (battleCount >= 3)
             {
-                newSaturation = 0f;
+                if(newSaturation < 0.0f)
+                {
+                    newSaturation += Time.deltaTime * 150;
+                }
+                //newSaturation = 0f;
             }
 
             // Set the new saturation value
@@ -177,6 +197,29 @@ public class GameManager : MonoBehaviour
         return battleCount;
     }
 
+    public void RestartVariables()
+    {
+        hasteacherended = false;
+        onCorridor = false;
+
+        battle1enter = false;
+        battle1win = false;
+        battle2enter = false;
+        battle2win = false;
+        battle3enter = false;
+        battle3win = false;
+
+        battle1lost = false;
+        battle2lost = false;
+        battle3lost = false;
+
+        isCutsceneOn = true;
+        doorcloser = false;
+        hascinematicended = false;
+        hasheadset = false;
+
+        prueba = false;
+}
     
 
 }

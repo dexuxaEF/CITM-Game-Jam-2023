@@ -19,6 +19,7 @@ public class ChangeToMainMenu : MonoBehaviour
 
         if(clicks >= 2)
         {
+            GameManager.Instance.RestartVariables();
             SceneManager.LoadScene(nextSceneName);
             clicks = 0;
         }
