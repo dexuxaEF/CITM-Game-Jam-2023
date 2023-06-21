@@ -1712,6 +1712,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puppet Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 945281388935107550, guid: b365438750af41c4fa9e9169ee20dede, type: 3}
+      propertyPath: m_TagString
+      value: Puppet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885103495897536196, guid: b365438750af41c4fa9e9169ee20dede, type: 3}
+      propertyPath: lives
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1885103495897536196, guid: b365438750af41c4fa9e9169ee20dede, type: 3}
       propertyPath: topBoundary
       value: 

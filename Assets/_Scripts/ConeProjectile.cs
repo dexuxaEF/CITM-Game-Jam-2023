@@ -15,14 +15,12 @@ public class ConeProjectile : Projectile
 
     private GameObject playerobject;
     private PlayerInCombat player;
-    public AudioSource parrySFX;
 
     private GameObject heartobject;
     private HearthEnemy heart;
     private bool parryTrigger = false;
     public bool isparried = false;
 
-  
 
 
     private void Awake()
@@ -36,8 +34,6 @@ public class ConeProjectile : Projectile
 
         heartobject = GameObject.FindWithTag("Heart");
         heart = heartobject.GetComponent<HearthEnemy>();
-
-     
      
     }
 
@@ -79,7 +75,6 @@ public class ConeProjectile : Projectile
         {
             parryTrigger = true;
             isparried = true;
-            parrySFX.Play();
             player.invulnerability = true;
             //direction = collision.transform.up;
             Vector2 worldPos = Input.mousePosition;
@@ -112,8 +107,6 @@ public class ConeProjectile : Projectile
 
             if (!heart.invulnerability)
             {
-
-               
                 enemybloodParticleInstance = Instantiate(enemybloodParticles, transform.position, Quaternion.identity);
                 Destroy(enemybloodParticleInstance, 1);
 

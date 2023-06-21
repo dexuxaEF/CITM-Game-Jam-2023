@@ -22,7 +22,6 @@ public class ForwardProjectile : Projectile
     [SerializeField]
     private GameObject enemybloodParticles;
     private GameObject enemybloodParticleInstance;
-    public AudioSource parrySFX;
 
     public float timeToTrackPlayer = 1.0f;
 
@@ -98,7 +97,6 @@ public class ForwardProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Parry") && !isparried)
         {
-            parrySFX.Play();
             isTracking = false;
             parryTrigger = true;
             player.invulnerability = true;

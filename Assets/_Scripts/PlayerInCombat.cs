@@ -26,8 +26,6 @@ public class PlayerInCombat : MonoBehaviour
    
 
     public GameObject _newparry;
-    public AudioSource dashSFX;
-    public AudioSource parrySFX;
     
 
     public ChargeBar chargeBar;
@@ -178,7 +176,7 @@ public class PlayerInCombat : MonoBehaviour
             {
                 if (!_newparry.activeInHierarchy )
                 {
-                    
+                  
                     _newparry.SetActive(true);
                     canParry = false;
                     playerSpeed = 0;
@@ -190,7 +188,6 @@ public class PlayerInCombat : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && !isKnockBack)
         {
-            dashSFX.Play(); 
             StartCoroutine(Dash());
         }
 

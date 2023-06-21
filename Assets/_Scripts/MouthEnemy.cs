@@ -9,15 +9,9 @@ public class MouthEnemy : Enemy
     private GameObject projectileobject;
     private CircleProjectile projectile;
 
-
-    public AudioSource hitSFX;
-    public AudioSource attackSFX;
-
     public int minNumProjectiles = 3;
     public int maxNumProjectiles = 6;
-    public int lives = 5;
-
-    private int previuslives;
+    public int lives = 2;
 
     [Tooltip("Area to spawn projectiles")]
     public float totalAngle = 360f;
@@ -48,18 +42,11 @@ public class MouthEnemy : Enemy
 
         playerDirection = (player.transform.position - this.transform.position);
         Invoke(nameof(CoroutineWithDelay), delayTimeToAttack);
-
-        previuslives = lives;
     }
 
     
     void Update()
     {
-        if (previuslives > lives)
-        {
-            hitSFX.Play();
-            previuslives = lives;
-        }
         if (lives <= 0)
         {
             _player.win = true;
@@ -147,7 +134,6 @@ public class MouthEnemy : Enemy
     {
         while (true)
         {
-            attackSFX.Play();
             SpawnProjectile();
             isStopped = true;
 
