@@ -266,54 +266,7 @@ public class PlayerInCombat : MonoBehaviour
             _animator.SetBool("Down", false);
         }
 
-        //if (_rigidbody.velocity.x > 0.1)
-        //{
-        //    _animator.SetBool("Right", true);
-
-
-        //    _animator.SetBool("Left", false);
-        //    _animator.SetBool("Up", false);
-        //    _animator.SetBool("Down", false);
-        //    _animator.SetBool("Idle", false);
-
-        //}
-        //else if (_rigidbody.velocity.x < -0.1)
-        //{
-        //    _animator.SetBool("Left", true);
-
-        //    _animator.SetBool("Right", false);
-        //    _animator.SetBool("Up", false);
-        //    _animator.SetBool("Down", false);
-        //    _animator.SetBool("Idle", false);
-        //}
-        //else if (_rigidbody.velocity.y > 0.1)
-        //{
-        //    _animator.SetBool("Up", true);
-
-        //    _animator.SetBool("Right", false);
-        //    _animator.SetBool("Left", false);
-        //    _animator.SetBool("Down", false);
-        //    _animator.SetBool("Idle", false);
-        //}
-        //else if (_rigidbody.velocity.y < -0.1)
-        //{
-        //    _animator.SetBool("Down", true);
-
-
-        //    _animator.SetBool("Right", false);
-        //    _animator.SetBool("Left", false);
-        //    _animator.SetBool("Up", false);
-        //    _animator.SetBool("Idle", false);
-        //}
-        //else
-        //{
-        //    _animator.SetBool("Idle", true);
-
-        //    _animator.SetBool("Right", false);
-        //    _animator.SetBool("Left", false);
-        //    _animator.SetBool("Up", false);
-        //    _animator.SetBool("Down", false);
-        //}
+     
 
 
     }
